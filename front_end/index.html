@@ -7,17 +7,58 @@
 
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/cssStyle/header/header.css">
 </head>
 <body>
-<header>
-    <nav class="navbar bg-body-tertiary">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="assets/images/ezicar.png" alt="Bootstrap" width="30" height="24">
-            </a>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+       <!-- <img src="assets/images/ezicar.png" alt="">-->
+
+         <a  href="index.html" class="logo me-auto"><img src="assets/images/ezicar%20White.png" alt="" class="img-fluid"></a>
+
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                <li><a class="nav-link scrollto" href="#">About Us</a></li>
+                <li><a class="nav-link scrollto" href="#">Services</a></li>
+                <li><a class="nav-link   scrollto" href="#">Cars</a></li>
+
+                <li><a class="nav-link scrollto" href="#">Contact Us</a></li>
+
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+<!-- ======= top key change picture Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                <h1>Car Rental</h1>
+                <h2>THE LOWEST RENT FOR THE CARS</h2>
+                <div class="d-flex justify-content-center justify-content-lg-start">
+                    <a href="#" class="btn-get-started scrollto">Book Now</a>
+                    <a href="#" class="btn-get-started scrollto">Sign In </a>
+                    <a href="#" class="btn-get-started scrollto">Log In</a>
+                </div>
+            </div>
+           <!-- <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+                <img src="assets/images/keychange%20picture.jpeg" class="img-fluid animated" alt="">
+            </div>-->
         </div>
-    </nav>
-</header>
+    </div>
+
+</section><!-- End top key change picture section -->
+
+
+
 <main>
     <div>
         <section></section>
@@ -28,6 +69,10 @@
     </div>
 </main>
 <footer></footer>
+
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <script SRC="assets/js/bootstrap.min.js"></script>
 </body>
