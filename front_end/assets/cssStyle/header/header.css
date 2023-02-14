@@ -77,14 +77,14 @@
     border-radius: 50px;
     color: #fff;
     font-size: 14px;
-    border: 2px solid #e51b14;
+    border: 2px solid #ec1414;
     font-weight: 600;
 }
 
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
     color: #fff;
-    background: #e51b14;
+    background: #f33b0c;
 }
 
 #hero {
@@ -102,36 +102,38 @@
 }
 
 #hero h1 {
+    position: absolute;
+    top: 92px;
     margin: 0 0 10px 0;
-    font-size: 48px;
+    font-size: 57px;
     font-weight: 700;
     line-height: 56px;
     color: #fff;
 }
 
 #hero h2 {
-    color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    top: 159px;
+    color: rgb(255, 255, 255);
     margin-bottom: 50px;
     font-size: 24px;
 }
-
-#hero .btn-get-started {
-    font-family: "Jost", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 10px 28px 11px 28px;
-    border-radius: 50px;
-    transition: 0.5s;
-    margin: 10px 0 0 0;
-    color: #fff;
-    background: #47b2e4;
+#signInBtn{
+    position: absolute;
+    right: 17vw;
+    top: 302px;
+}
+#logInBtn{
+    position: absolute;
+    right: 7vw;
+    top: 302px;
+}
+#bookNowBtn{
+    position: absolute;
+    left: 15vw;
+    top: 204px;
 }
 
-#hero .btn-get-started:hover {
-    background: #209dd8;
-}
 
 
 #hero .animated {
