@@ -12,7 +12,7 @@
 
 #header.header-scrolled,
 #header.header-inner-pages {
-    background: rgba(40, 58, 90, 0.9);
+    background: rgba(32, 49, 80, 0.9);
 }
 
 #header .logo img {
@@ -21,7 +21,15 @@
 
 
 }
-
+/*#header .logo {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}*/
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -135,6 +143,8 @@
 
 
 
+/*
 #hero .animated {
     animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
+*/
