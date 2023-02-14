@@ -1,0 +1,46 @@
+#about{
+    width: 100%;
+    height:20vh ;
+}
+.section-title {
+
+    position: absolute;
+    width: 333px;
+    height: 69px;
+    left: 45vw;
+    top: 393px;
+    font-family: 'IM FELL DW Pica SC',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 80px;
+    color: #000000;
+}
+
+#whitecar{
+    position: absolute;
+    z-index: 3;
+    width: 54%;
+    height: 34vh;
+    top: 549px;
+    left: 0vw;
+    background: url("../../images/white car.png");
+    background-position: center;
+    background-size: cover;
+}
+
+#AboutParagraph{
+    position: absolute;
+    z-index: 3;
+    top: 476px;
+    left: 47vw;
+    font-family: 'IM FELL DW Pica SC',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 38px;
+    color: #000000;
+}
+
+
+

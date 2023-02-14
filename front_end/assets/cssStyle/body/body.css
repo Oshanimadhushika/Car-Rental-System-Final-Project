@@ -14,10 +14,11 @@ a:hover {
 }
 
 
+/*
 
-/*--------------------------------------------------------------
+!*--------------------------------------------------------------
 # Preloader
---------------------------------------------------------------*/
+--------------------------------------------------------------*!
 #preloader {
     position: fixed;
     top: 0;
@@ -26,7 +27,7 @@ a:hover {
     bottom: 0;
     z-index: 9999;
     overflow: hidden;
-    background: #37517e;
+    background: #030a15;
 }
 
 #preloader:before {
@@ -34,7 +35,7 @@ a:hover {
     position: fixed;
     top: calc(50% - 30px);
     left: calc(50% - 30px);
-    border: 6px solid #37517e;
+    border: 6px solid #0d0f11;
     border-top-color: #fff;
     border-bottom-color: #fff;
     border-radius: 50%;
@@ -62,4 +63,4 @@ a:hover {
     100% {
         transform: rotate(360deg);
     }
-}
+}*/
