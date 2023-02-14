@@ -1,18 +1,35 @@
-section {
+.container2{
+    position: absolute;
+    width: 100%;
+    height: 70vh;
+    top: 946px;
+    background: url("../../images/The Twins Almighty.jpeg");
+    background-position: center;
+    background-size: cover;
+}
+#service {
     padding: 60px 0;
     overflow: hidden;
 }
-
-.section-bg {
-    background-color: #f3f5fa;
-}
-
-.section-title {
+/*
+.section-title-service {
     text-align: center;
     padding-bottom: 30px;
 }
+*/
 
-.section-title h2 {
+
+.section-title-service {
+    position:absolute;
+    text-align: center;
+    padding-bottom: 60px;
+    top: 22px;
+    left: 43vw;
+    z-index: 5;
+
+}
+
+.section-title-service h2 {
     font-size: 32px;
     font-weight: bold;
     text-transform: uppercase;
@@ -20,10 +37,10 @@ section {
     font-family: 'IM FELL DW Pica SC',serif;
     padding-bottom: 3px;
     position: relative;
-    color: #000102;
+    color: #ededee;
 }
 
-.section-title h2::before {
+.section-title-service h2::before {
     content: "";
     position: absolute;
     display: block;
@@ -44,27 +61,3 @@ section {
     bottom: 0;
     left: calc(50% - 20px);
 }
-
-.section-title p {
-    margin-bottom: 0;
-}
-
-
-
-.about .content p{
-    position: absolute;
-    margin-bottom: 0;
-    font-family: 'IM FELL DW Pica SC',serif;
-    font-size: 27px;
-    line-height: 38px;
-}
-
-#whiteCar{
-     position: absolute;
-    left: 0vw;
-    margin-bottom: 0;
-    top: 510px;
-
-}
-
-
