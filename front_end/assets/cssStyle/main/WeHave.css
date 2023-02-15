@@ -2,47 +2,64 @@
 #Wehaveeverything{
     position: absolute;
     width: 100%;
-    height: 84vh;
+    height: 100vh;
     top:300vh;
 }
-.services .icon-box {
-    box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+#Wehaveeverything .icon-box {
+    box-shadow: 0px 0 25px 0 rgba(12, 11, 11, 0.82);
     padding: 50px 30px;
     transition: all ease-in-out 0.4s;
-    background: #fff;
+    background: white;
+    border: black;
 }
 
-.services .icon-box .icon {
+#Wehaveeverything .icon-box .icon {
     margin-bottom: 10px;
 }
 
-.services .icon-box .icon i {
-    color: #47b2e4;
-    font-size: 36px;
-    transition: 0.3s;
-}
 
-.services .icon-box h4 {
+
+#Wehaveeverything  .icon-box h3 {
     font-weight: 500;
     margin-bottom: 15px;
     font-size: 24px;
+    font-family: 'Hahmlet',serif;
 }
 
-.services .icon-box h4 a {
-    color: #37517e;
-    transition: ease-in-out 0.3s;
+#Wehaveeverything  .icon-box h2 {
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-family: 'Gotu',sans-serif;
 }
 
-.services .icon-box p {
+
+#Wehaveeverything  .icon-box p {
     line-height: 24px;
     font-size: 14px;
     margin-bottom: 0;
+    font-family: 'Hahmlet',serif;
 }
 
-.services .icon-box:hover {
+#Wehaveeverything  .icon-box:hover {
     transform: translateY(-10px);
 }
 
-.services .icon-box:hover h4 a {
-    color: #47b2e4;
+#Wehaveeverything.icon-box.img{
+    width: 20%;
+    height: 5vh;
 }
+
+/*#generalcar{
+    background: url("../../images/Maruti Alto.jpeg");
+    background-position: center;
+    background-size: cover;
+}*/
+
+/*
+#PictureCar.div:nth-child(2){
+    box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+    padding: 50px 30px;
+    transition: all ease-in-out 0.4s;
+    background: #ad3232;
+}*/
