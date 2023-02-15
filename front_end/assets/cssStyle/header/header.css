@@ -21,15 +21,7 @@
 
 
 }
-/*#header .logo {
-    font-size: 30px;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}*/
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -58,7 +50,7 @@
     padding: 10px 0 10px 30px;
     font-size: 15px;
     font-weight: 500;
-    color: #fff;
+    color: #ffffff;
     white-space: nowrap;
     transition: 0.3s;
 }
@@ -74,7 +66,7 @@
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-    color: #e51b14;
+    color: #f3d410;
 }
 
 .navbar .getstarted,
@@ -84,14 +76,14 @@
     border-radius: 50px;
     color: #fff;
     font-size: 14px;
-    border: 2px solid #ec1414;
+    border: 2px solid #f3d410;
     font-weight: 600;
 }
 
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
     color: #fff;
-    background: #f33b0c;
+    background:#f3d410;
 }
 
 #hero {
