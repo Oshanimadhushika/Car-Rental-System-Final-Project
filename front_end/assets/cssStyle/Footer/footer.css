@@ -1,0 +1,15 @@
+footer {
+    position: absolute;
+    width: 100%;
+    height:8vh;
+    top: 500vh;
+    font-size: 14px;
+    background: #727474;
+    color: #070707;
+    text-align: center;
+    font-family: 'Hahmlet',serif;
+}
+footer>small{
+    font-size: 18px;
+    top: 495vh;
+}
