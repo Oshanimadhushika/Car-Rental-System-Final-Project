@@ -96,7 +96,7 @@
 
 #hero {
     width: 100%;
-    height: 68vh;
+    height: 100vh;
    /* background: #37517e;*/
     background: url("../../images/keychange picture.jpeg");
     background-position: center;
@@ -128,12 +128,12 @@
 #signInBtn{
     position: absolute;
     right: 17vw;
-    top: 302px;
+    top: 86vh;
 }
 #logInBtn{
     position: absolute;
     right: 7vw;
-    top: 302px;
+    top: 86vh;
 }
 #bookNowBtn{
     position: absolute;

@@ -1,8 +1,8 @@
-.container2{
+.service{
     position: absolute;
     width: 100%;
-    height: 68vh;
-    top: 946px;
+    height: 100vh;
+    top: 200vh;
     background: url("../../images/The Twins Almighty.jpeg");
     background-position: center;
     background-size: cover;
@@ -76,7 +76,7 @@
     position: absolute;
     width: 8%;
     height: 14vh;
-   /* left: 62vw;*/
+    left: 78vw;
     background: url("../../images/driver.png");
     background-position: center;
     background-size: cover;
@@ -84,7 +84,14 @@
 #serviceDdetailsAll{
 
     position: absolute;
-    top: 104px;
+    top: 26vh;
     left:3vw;
 
 }
+/*
+#hirecarpara{
+    position:absolute;
+    font-size: 32px;
+    font-family: 'IM FELL DW Pica SC',serif;
+
+}*/
