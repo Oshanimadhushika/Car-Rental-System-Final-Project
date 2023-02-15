@@ -61,23 +61,28 @@
     bottom: 0;
     left: calc(50% - 20px);
 }
-
+/*handshake*/
 #HireCarIcon{
     position: absolute;
     width: 8%;
     height: 18vh;
-    left:5vw;
+    left: 52vw;
     background: url("../../images/handshake.png");
     background-position: center;
     background-size: cover;
 }
 
 #HireDriverIcon{
+    position: absolute;
+    width: 8%;
+    height: 14vh;
+   /* left: 62vw;*/
     background: url("../../images/driver.png");
     background-position: center;
     background-size: cover;
 }
 #serviceDdetailsAll{
+
     position: absolute;
     top: 104px;
     left:3vw;
