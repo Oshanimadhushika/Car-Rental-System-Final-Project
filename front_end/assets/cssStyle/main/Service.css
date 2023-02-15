@@ -1,7 +1,7 @@
 .container2{
     position: absolute;
     width: 100%;
-    height: 70vh;
+    height: 68vh;
     top: 946px;
     background: url("../../images/The Twins Almighty.jpeg");
     background-position: center;
@@ -63,10 +63,10 @@
 }
 
 #HireCarIcon{
-   /* position: absolute;
-    width: 100%;
-    height: 70vh;
-    top: 946px;*/
+    position: absolute;
+    width: 8%;
+    height: 18vh;
+    left:5vw;
     background: url("../../images/handshake.png");
     background-position: center;
     background-size: cover;
@@ -76,4 +76,10 @@
     background: url("../../images/driver.png");
     background-position: center;
     background-size: cover;
+}
+#serviceDdetailsAll{
+    position: absolute;
+    top: 104px;
+    left:3vw;
+
 }
