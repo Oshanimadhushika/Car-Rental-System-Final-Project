@@ -1,5 +1,6 @@
 
 
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -88,7 +89,7 @@
 
 #hero {
     width: 100%;
-    height: 100vh;
+    height: 40vh;
     /* background: #37517e;*/
     background: url("../../images/keychange picture.jpeg");
     background-position: center;
@@ -99,38 +100,14 @@
 #hero .container {
     padding-top: 72px;
 }
-
-#hero h1 {
+#hero h1{
     position: absolute;
-    top: 92px;
+    left:3vw;
     margin: 0 0 10px 0;
     font-size: 57px;
     font-weight: 700;
     line-height: 56px;
     color: #fff;
-}
-
-#hero h2 {
-    position: absolute;
-    top: 159px;
-    color: rgb(255, 255, 255);
-    margin-bottom: 50px;
-    font-size: 24px;
-}
-#signInBtn{
-    position: absolute;
-    right: 17vw;
-    top: 86vh;
-}
-#logInBtn{
-    position: absolute;
-    right: 7vw;
-    top: 86vh;
-}
-#bookNowBtn{
-    position: absolute;
-    left: 15vw;
-    top: 204px;
 }
 
 
