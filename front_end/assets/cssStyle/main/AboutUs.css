@@ -61,8 +61,8 @@ section {
     font-family: 'IM FELL DW Pica SC',serif;
     font-size: 27px;
     line-height: 38px;
-    left: 52vw;
-    top: 126vh;
+    /*left: 52vw;
+    top: 126vh;*/
 }
 
 #whiteCar{
@@ -71,10 +71,10 @@ section {
     margin-bottom: 0;
     top: 510px;*/
     position: absolute;
-    width: 48%;
-    height: 38vh;
-    z-index:5;
-    left:3vw;
+    width: 55%;
+    height: 55vh;
+    z-index: 5;
+    left: 42vw;
     background: url("../../images/white car.png");
     background-position: center;
     background-size: cover;

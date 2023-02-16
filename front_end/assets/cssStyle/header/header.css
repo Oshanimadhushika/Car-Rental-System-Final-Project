@@ -102,7 +102,7 @@
 
 #hero h1 {
     position: absolute;
-    top: 92px;
+    top: -21vh;
     margin: 0 0 10px 0;
     font-size: 57px;
     font-weight: 700;
@@ -112,7 +112,7 @@
 
 #hero h2 {
     position: absolute;
-    top: 159px;
+    /*top: 159px;*/
     color: rgb(255, 255, 255);
     margin-bottom: 50px;
     font-size: 24px;
@@ -129,8 +129,8 @@
 }
 #bookNowBtn{
     position: absolute;
-    left: 15vw;
-    top: 204px;
+    left: 9vw;
+    top: 12vh;
 }
 
 

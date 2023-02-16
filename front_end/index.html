@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/cssStyle/header/header.css">
     <link rel="stylesheet" href="assets/cssStyle/main/AboutUs.css">
@@ -43,6 +44,7 @@
                 <li><a class="nav-link   scrollto" href="#Wehaveeverything">Cars</a></li>
                 <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
                 <li><a class="nav-link scrollto" href="carStore.html">Car Store</a></li>
+                <li><a class="nav-link scrollto" href="carStore.html">Log In</a></li>
 
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
@@ -60,9 +62,8 @@
                 <h1>Car Rental</h1>
                 <h2>THE LOWEST RENT FOR THE CARS</h2>
                 <div class="d-flex justify-content-center justify-content-lg-start">
-                    <button id="bookNowBtn" type="button" class="btn btn-outline-light btn btn-danger" >Book Now</button>
-                    <button id="signInBtn" type="button" class="btn btn-outline-light">Sign In</button>
-                    <button id="logInBtn" type="button" class="btn btn-outline-light">Log In</button>
+                    <button id="bookNowBtn" type="button" class="btn btn-outline-light btn btn-danger" ><a href="carStore.html">Book Now</a></button>
+
                 </div>
             </div>
            <!-- <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
@@ -80,18 +81,20 @@
 
     <!-- ======= About Us Section ======= -->
     <section id="about" class="about">
-        <div class="container" data-aos="zoom-in-up" >
+        <div class="container" data-aos="fade-up" >
 
             <div class="section-title">
                 <h2>About Us</h2>
             </div>
 
             <div id="row" class="row ">
-                <div id="whiteCar" class="col align-self-sm-start">
+                <div id="whiteCar" class="col align-self-sm-start"  data-aos="flip-left"
+                     data-aos-easing="ease-out-cubic"
+                     data-aos-duration="2000">
 
                     <div></div>
                 </div>
-                <div id="AboutParagraph" class="col-sm-5 align-self-end text-black" >
+                <div id="AboutParagraph" class="col-sm-5 align-items-lg-end text-black" >
                     <p>
                         Easy car rental private limited is a car rental service
                         with 5 years of history. This company has about
@@ -152,7 +155,7 @@
         <section id="Wehaveeverything">
             <div class="container" data-aos="fade-up">
 
-                <div class="section-title">
+                <div class="section-title" >
                     <h2>We have Everything You Want</h2>
                 </div>
 
@@ -190,7 +193,7 @@
 
 
                 </div>
-                <button id="Seemore" type="button" class="btn btn-outline-dark"><a href="#">See More Details</a></button>
+                <button id="Seemore" type="button" class="btn btn-outline-dark"><a href="carStore.html">See More Details</a></button>
 
 
             </div>
