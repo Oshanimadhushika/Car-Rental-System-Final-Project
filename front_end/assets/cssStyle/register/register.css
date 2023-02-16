@@ -1,0 +1,132 @@
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+
+#header {
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 15px 0;
+}
+
+
+#header.header-scrolled,
+#header.header-inner-pages {
+    background: rgba(32, 49, 80, 0.9);
+}
+
+#header .logo img {
+    max-height: 60px;
+    padding-left:0 ;
+
+
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+
+.navbar {
+    padding: 0;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.navbar a i,
+.navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+    color: #f3d410;
+}
+
+.navbar .getstarted,
+.navbar .getstarted:focus {
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    border: 2px solid #f3d410;
+    font-weight: 600;
+}
+
+.navbar .getstarted:hover,
+.navbar .getstarted:focus:hover {
+    color: #fff;
+    background:#f3d410;
+}
+
+#hero {
+    width: 100%;
+    height: 40vh;
+    /* background: #37517e;*/
+    background: url("../../images/keychange picture.jpeg");
+    background-position: center;
+    background-size: cover;
+
+}
+
+#hero .container {
+    padding-top: 72px;
+}
+#hero h1{
+    position: absolute;
+    left:3vw;
+    margin: 0 0 10px 0;
+    font-size: 57px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #fff;
+}
+
+
+.logo {
+    line-height: 1;
+}
+@media (min-width: 1200px) {
+    .logo {
+        width: 280px;
+    }
+}
+
+.logo img {
+    max-height: 26px;
+    margin-right: 6px;
+}
+
+.logo span {
+    font-size: 26px;
+    font-weight: 700;
+    color: #012970;
+    font-family: "Nunito", sans-serif;
+}
