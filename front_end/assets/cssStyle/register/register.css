@@ -130,3 +130,19 @@
     color: #012970;
     font-family: "Nunito", sans-serif;
 }
+
+.car-img{
+    position: absolute;
+    margin-top:0 ;
+}
+.card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.card {
+    margin-bottom: 30px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #000000;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 5;
+}
