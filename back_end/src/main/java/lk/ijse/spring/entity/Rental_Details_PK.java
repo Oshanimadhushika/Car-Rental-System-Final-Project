@@ -14,6 +14,7 @@ import java.io.Serializable;
 @Data
 @Embeddable
 @ToString
+public
 class RentalDetails_PK implements Serializable {
 
     private String rentalId;

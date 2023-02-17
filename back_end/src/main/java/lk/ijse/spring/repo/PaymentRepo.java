@@ -1,4 +1,7 @@
 package lk.ijse.spring.repo;
 
-public interface PaymentRepo {
+import lk.ijse.spring.entity.Payment;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PaymentRepo extends JpaRepository<Payment,String> {
 }
