@@ -37,7 +37,7 @@
     font-family: 'IM FELL DW Pica SC',serif;
     padding-bottom: 3px;
     position: relative;
-    color: #ededee;
+    color: white;
 }
 
 .section-title-service h2::before {
@@ -46,7 +46,7 @@
     display: block;
     width: 120px;
     height: 1px;
-    background: #e2dddd;
+    background:white;
     bottom: 1px;
     left: calc(50% - 60px);
 }

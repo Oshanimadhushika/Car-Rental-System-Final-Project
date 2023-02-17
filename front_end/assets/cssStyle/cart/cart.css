@@ -110,8 +110,6 @@
 
 
 
-
-
 /* Top Selling */
 .top-selling {
     font-size: 14px;
@@ -133,3 +131,13 @@
     border-radius: 5px;
     max-width: 60px;
 }
+
+#car-img{
+    position: absolute;
+    top: 74vh;
+    max-width: 480px;
+    max-height: 419px;
+    left: 55vw;
+}
+
+
