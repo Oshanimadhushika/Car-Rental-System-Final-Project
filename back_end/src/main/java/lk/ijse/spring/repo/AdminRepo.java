@@ -1,4 +1,4 @@
 package lk.ijse.spring.repo;
 
-public class AdminRepo {
+public interface AdminRepo {
 }
