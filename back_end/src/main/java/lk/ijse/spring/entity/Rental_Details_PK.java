@@ -1,4 +1,21 @@
 package lk.ijse.spring.entity;
 
-public class Rental_Details_PK {
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import javax.persistence.Embeddable;
+import java.io.Serializable;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Embeddable
+@ToString
+class RentalDetails_PK implements Serializable {
+
+    private String rentalId;
+    private String carId;
 }
