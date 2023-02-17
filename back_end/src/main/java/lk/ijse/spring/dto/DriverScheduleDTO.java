@@ -9,5 +9,5 @@ import lombok.ToString;
 @NoArgsConstructor
 @Data
 @ToString
-public class CarDTO {
+public class DriverScheduleDTO {
 }

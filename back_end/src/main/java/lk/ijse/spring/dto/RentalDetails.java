@@ -17,7 +17,7 @@ import javax.persistence.ManyToOne;
 @Entity
 @Data
 @ToString
-class RentalDetails {
+public class RentalDetails {
 
     @EmbeddedId
     private RentalDetails_PK id;
