@@ -1,0 +1,26 @@
+h1{
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+}
+
+body{
+    position: absolute;
+    /* border:2px solid #686464;*/
+    box-shadow:0px 0px 20px rgba(1, 10, 24, 0.1);
+    left:25vw;
+    top: -3vh;
+    overflow-x: hidden;
+    width: 800px;
+    height: 767px;
+}
+
+#btnAddAdmin{
+    position: absolute;
+    top: 38vh;
+    left:42vw;
+
+}
+#btnAddAdmin a{
+    text-decoration: none;
+    color: white;
+}
