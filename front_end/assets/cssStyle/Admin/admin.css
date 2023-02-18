@@ -3,7 +3,7 @@
     position: absolute;
     border:2px solid black;
     box-shadow: #4f5050;
-    left: 30vw;
+    left:25vw;
     top: -3vh;
     overflow-x: hidden;
     width: 800px;
@@ -16,4 +16,17 @@
 
 .carAdminBody h1{
     display: inline-block;
+}
+
+#btnAddVehicle{
+    position: absolute;
+    top: 4vh;
+    left:33vw;
+}
+
+#btnViewVehicle{
+    position: absolute;
+    top: 4vh;
+    left: 43vw;
+    width: 126px;
 }
