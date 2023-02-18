@@ -10,17 +10,33 @@ body{
     left:25vw;
     top: -3vh;
     overflow-x: hidden;
-    width: 800px;
+    width: 850px;
     height: 767px;
+}
+#ALL_div{
+    position: absolute;
+    height: 250px;
+    width: 750px;
+    box-shadow:0px 0px 20px rgba(57, 11, 90, 0.27);
 }
 
 #btnAddAdmin{
     position: absolute;
-    top: 38vh;
+    top: 30vh;
     left:44vw;
 
 }
 #btnAddAdmin a{
+    text-decoration: none;
+    color: white;
+}
+#btnAddDriver{
+    position: absolute;
+    top: 50vh;
+    left:44vw;
+
+}
+#btnAddDriver a{
     text-decoration: none;
     color: white;
 }

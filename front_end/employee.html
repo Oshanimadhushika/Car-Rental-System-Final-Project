@@ -20,7 +20,7 @@
 <body>
 
 <!--Admin div start-->
-<div id="Admin_div"  class="container-fluid mt-5 ms-5">
+<div id="ALL_div"  class="container-fluid mt-5 ms-5">
     <h1 style="border-bottom:4px solid darkred">Admin</h1>
 <div class="row">
     <div class="col-sm-5">
@@ -59,7 +59,49 @@
     </div>
 
 <button class="btn btn-primary" id="btnAddAdmin" style="border-color:white;background-color:#080f95; border:white;"><a href="" >Add Admin</a></button>
-
 </div><!--End Admin div-->
+
+
+<!--Driver Div Start-->
+<div id="ALL_div"  class="container-fluid mt-5 ms-5">
+    <h1 style="border-bottom:4px solid darkred">Admin</h1>
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="form-groupCF">
+                <!-- <label for="txtFName">B</label>-->
+                <input class="form-control" id="txtCbrnd" placeholder="Driver ID" type="text">
+                <span class="control-error" id="lblcbrnd"></span>
+            </div>
+        </div>
+
+        <div class="col-sm-5">
+            <div class="form-groupTF">
+                <!--<label for="txtUserName">User Name</label>-->
+                <input class="form-control" id="txtTrnsm" placeholder="Driver Name" type="text">
+                <span class="control-error" id="lbltrnsm"></span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="form-groupCF">
+                <!-- <label for="txtFName">B</label>-->
+                <input class="form-control" id="txtCbrnd" placeholder="NIC" type="text">
+                <span class="control-error" id="lblcbrnd"></span>
+            </div>
+        </div>
+
+        <div class="col-sm-5">
+            <div class="form-groupTF">
+                <!--<label for="txtUserName">User Name</label>-->
+                <input class="form-control" id="txtTrnsm" placeholder="Driver Licence No:" type="text">
+                <span class="control-error" id="lbltrnsm"></span>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" id="btnAddDriver" style="border-color:white;background-color:#080f95; border:white;"><a href="" >Add Driver</a></button>
+</div><!--End Driver div-->
 </body>
 </html>
