@@ -15,14 +15,15 @@ body{
 }
 #Admin_div{
     position: absolute;
-    height: 250px;
+    height: 350px;
+    top: 7vh;
     width: 750px;
     box-shadow:0px 0px 20px rgba(57, 11, 90, 0.27);
 }
 
 #btnAddAdmin{
     position: absolute;
-    top: 30vh;
+    top: 40vh;
     left:44vw;
 
 }
@@ -31,6 +32,7 @@ body{
     color: white;
 }
 
+/*
 #Driver_div{
     position: absolute;
     top:50vh;
@@ -48,4 +50,4 @@ body{
 #btnAddDriver a{
     text-decoration: none;
     color: white;
-}
+}*/
