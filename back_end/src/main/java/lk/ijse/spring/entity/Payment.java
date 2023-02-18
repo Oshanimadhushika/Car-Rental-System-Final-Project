@@ -21,7 +21,7 @@ public class Payment {
     private double damaged_cost;
     private String damagedDescription;
     private long extraMileage;
-    private double costPerExtraKm;
+    private long costPerExtraKm;
     private String paymentStatus;
 
     @OneToOne

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CarAdmin</title>
+
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+
+    <link href="assets/cssStyle/Admin/admin.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+<div class="carAdminBody container-fluid mt-5 ms-5">
+
+    <h1>Vehicle</h1>
+    <br>
+    <br>
+    <form id="carAdminForm" >
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-groupCF">
+                    <!-- <label for="txtFName">B</label>-->
+                    <input class="form-control" id="txtCbrnd" placeholder="Brand" type="text">
+                    <span class="control-error" id="lblcbrnd"></span>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-groupTF">
+                    <!--<label for="txtUserName">User Name</label>-->
+                    <input class="form-control" id="txtTrnsm" placeholder="Transmission" type="text">
+                    <span class="control-error" id="lbltrnsm"></span>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-groupTT">
+                    <input class="form-control" id="txtTyp" placeholder="Type" type="text">
+                    <span class="control-error" id="lbltype"></span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-groupNFP">
+                    <input class="form-control" id="txtNoOPass" placeholder="No Of Passengers" type="text">
+                    <span class="control-error" id="lblnoofpass"></span>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-groupFT">
+                    <input class="form-control" id="txtFuel" placeholder="Fuel" type="text">
+                    <span class="control-error" id="lblfuel"></span>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-groupMRT">
+                    <input class="form-control" id="txtMRt" placeholder="Monthly Rate" type="text">
+                    <span class="control-error" id="lblmrt"></span>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-groupDlyT">
+                    <input class="form-control" id="txtMnthlyR" placeholder="Daily Rate" type="text">
+                    <span class="control-error" id="lblmnthlyr"></span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-groupPRET">
+                    <input class="form-control" id="txtPfExk" placeholder="Price For Extra km" type="text">
+                    <span class="control-error" id="lblpfexk"></span>
+                </div>
+            </div>
+        </div>
+        <br>
+
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-groupFMT">
+                    <input class="form-control" id="txtFmlg" placeholder="Free Mileage" type="text">
+                    <span class="control-error" id="lblfmlg"></span>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-groupLSMT">
+                    <input class="form-control" id="txtLSrm" placeholder="Last Service Mileage(km)" type="text">
+                    <span class="control-error" id="lbllsrm"></span>
+                </div>
+            </div>
+
+        </div>
+        <br>
+
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-groupRNT">
+                    <input class="form-control" id="txtRNber" placeholder="Registration Number" type="text">
+                    <span class="control-error" id="lblrnber"></span>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-groupCLRT">
+                    <input class="form-control" id="txtClr" placeholder="Color" type="text">
+                    <span class="control-error" id="lblclr"></span>
+                </div>
+            </div>
+
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-groupMDLT">
+                    <input class="form-control" id="txtMdl" placeholder="Model" type="text">
+                    <span class="control-error" id="lblmdl"></span>
+                </div>
+            </div>
+
+
+            <div class="col-sm-3" id="uploadFWI">
+                <label for="register-form-NIC-image" class="form-label ">Upload Front View</label>
+                <input style="border: 1px solid gray" class="form-control  " type="file" id="uploadFVI">
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3" id="uploadUBFW">
+                <label for="register-form-NIC-image" class="form-label ">Upload Back View</label>
+                <input style="border: 1px solid gray" class="form-control  " type="file" id="uploadBV">
+            </div>
+
+            <div class="col-sm-3" id="uploadUSVT">
+                <label for="register-form-NIC-image" class="form-label ">Upload Side View</label>
+                <input style="border: 1px solid gray" class="form-control  " type="file" id="uploadUSV">
+            </div>
+
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-3" id="uploadUIVT">
+                <label for="register-form-NIC-image" class="form-label ">Upload Interior View</label>
+                <input style="border: 1px solid gray" class="form-control  " type="file" id="uploadUIV">
+            </div>
+
+        </div>
+
+    </form>
+
+    <button class="btn btn-primary" id="btnAddC2">Add Car</button>
+
+</div>
+
+</body>
+</html>

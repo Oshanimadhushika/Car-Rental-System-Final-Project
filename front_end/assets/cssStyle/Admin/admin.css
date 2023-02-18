@@ -1,0 +1,13 @@
+
+.carAdminBody{
+    position: absolute;
+    border-color: black;
+    box-shadow: #4f5050;
+    left: 30vw;
+    top: -3vh;
+}
+
+#carAdminForm{
+    border-color: black;
+    box-shadow: #4f5050;
+}
