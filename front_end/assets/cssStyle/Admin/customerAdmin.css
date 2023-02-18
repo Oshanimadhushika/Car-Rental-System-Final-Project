@@ -1,0 +1,21 @@
+#CustomerAdminBody{
+    position: absolute;
+    box-shadow:0px 0px 20px rgba(1, 10, 24, 0.1);
+    left:19vw;
+    top: -3vh;
+    overflow-x: hidden;
+    width:1050px;
+    height: 580px;
+}
+
+#CustomerTable{
+    position:absolute;
+    width:1000px ;
+    height: 400px;
+
+}
+
+#CustomerAdminBody h1{
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+}
