@@ -10,13 +10,13 @@ body{
     left:25vw;
     top: 2vh;
     overflow-x: hidden;
-    width: 850px;
+    width: 870px;
     height: 600px;
 }
 #Admin_div{
     position: absolute;
     height: 350px;
-    top: 7vh;
+    top: -4vh;
     width: 750px;
     box-shadow:0px 0px 20px rgba(57, 11, 90, 0.27);
 }

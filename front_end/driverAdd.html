@@ -22,89 +22,129 @@
 <!--Admin div start-->
 
 <div id="Admin_div"  class="container-fluid mt-5 ms-5">
-    <h1 style="border-bottom:4px solid darkred">Driver</h1>
-<div class="row">
-    <div class="col-sm-5">
-        <div class="form-groupCF">
-             <label for="txtFName">Driver ID:</label>
-            <input class="form-control" id="txtCbrnd" placeholder="Driver ID" type="text">
-            <span class="control-error" id="lblcbrnd"></span>
-        </div>
-    </div>
+    <h1 style="border-bottom:4px solid darkred">View Driver</h1>
+    <form id="carAdminForm" style="margin-left: 5px; margin-top: 44px;" >
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-groupCF">
 
-    <div class="col-sm-5">
-        <div class="form-groupTF">
-            <label for="txtUserName">Driver Name:</label>
-            <input class="form-control" id="txtTrnsm" placeholder="Driver Name" type="text">
-            <span class="control-error" id="lbltrnsm"></span>
-        </div>
-    </div>
-</div>
-    <br>
- <div class="row">
-        <div class="col-sm-5">
-            <div class="form-groupCF">
-                 <label for="txtFName">NIC:</label>
-                <input class="form-control" id="txtCbrnd" placeholder="NIC" type="text">
-                <span class="control-error" id="lblcbrnd"></span>
+                    <input class="form-control" id="txtCbrnd" placeholder="Driver Id" type="text">
+                    <span class="control-error" id="lblcbrnd"></span>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-groupTF">
+
+                    <input class="form-control" id="txtTrnsm" placeholder="Name" type="text">
+                    <span class="control-error" id="lbltrnsm"></span>
+                </div>
             </div>
         </div>
 
-        <div class="col-sm-5">
-            <div class="form-groupTF">
-                <label for="txtUserName">Driving License Number:</label>
-                <input class="form-control" id="txtTrnsm" placeholder="Driving License NO:" type="text">
-                <span class="control-error" id="lbltrnsm"></span>
+        <br>
+
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-groupTT">
+                    <input class="form-control" id="txtTyp" placeholder="Address" type="text">
+                    <span class="control-error" id="lbltype"></span>
+                </div>
             </div>
+            <div class="col-sm-6">
+                <div class="form-groupNFP">
+                    <input class="form-control" id="txtNoOPass" placeholder="DOB" type="text">
+                    <span class="control-error" id="lblnoofpass"></span>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-groupFT">
+                    <input class="form-control" id="txtFuel" placeholder="NIC" type="text">
+                    <span class="control-error" id="lblfuel"></span>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-groupMRT">
+                    <input class="form-control" id="txtMRt" placeholder="License Number" type="text">
+                    <span class="control-error" id="lblmrt"></span>
+                </div>
+            </div>
+        </div>
+        <br>
+
+    </form>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <button class="btn btn-primary" id="btnAddDriver" style="background-color: #14131C;color: white; border: none">Add Driver</button>
+        </div>
+
+        <div class="col-sm-3" style="margin-left: -72px">
+            <button class="btn btn-primary" id="btnUpdateDriver" style="background-color: #3abb2c;color: #090808; border: none">Update</button>
+        </div>
+
+        <div class="col-sm-3" style="margin-left: -111px">
+            <button class="btn btn-primary" id="btnDeleteDriver" style="background-color: #18dbcb;color: #0c0b0b; border: none">Delete</button>
         </div>
     </div>
 
-<button class="btn btn-primary" id="btnAddAdmin" style="border-color:white;background-color:#080f95; border:white;"><a href="" >Add Driver</a></button>
+    <div class="col-sm-9 mt-lg-3">
+
+        <table style="width: 798px;margin-left: -10px; margin-top: 46px;" class="table table-borderless">
+            <thead class="bg-dark shadow-lg" style="background-color:white; color: black;">
+            <tr>
+                <th scope="col" class="text-light">Driver Id</th>
+                <th scope="col" class="text-light">Name</th>
+                <th scope="col" class="text-light">Address</th>
+                <th scope="col" class="text-light">DOB</th>
+                <th scope="col" class="text-light">NIC</th>
+                <th scope="col" class="text-light">License No</th>
+                <th scope="col" class="text-light">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="bg-light shadow-sm">
+                <td>DR-001</td>
+                <td>Oshani Madhushika</td>
+                <td>No:78,Perera Mawatha,Panadura</td>
+                <td>05/02/1999</td>
+                <td>199925365v</td>
+                <td>25632125333</td>
+                <td>Available</td>
+            </tr>
+
+            <tr class="bg-light shadow-sm">
+                <td>DR-001</td>
+                <td>Oshani Madhushika</td>
+                <td>No:78,Perera Mawatha,Panadura</td>
+                <td>05/02/1999</td>
+                <td>199925365v</td>
+                <td>25632125333</td>
+                <td>Non-Available</td>
+            </tr>
+
+            <tr class="bg-light shadow-sm">
+                <td>DR-001</td>
+                <td>Oshani Madhushika</td>
+                <td>No:78,Perera Mawatha,Panadura</td>
+                <td>05/02/1999</td>
+                <td>199925365v</td>
+                <td>25632125333</td>
+                <td>Non-Available</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
 </div><!--End Admin div-->
 
 
-<!--Driver Div Start
 
-<div id="Driver_div"  class="container-fluid ms-5">
-    <h1 style="border-bottom:4px solid darkred">Driver</h1>
-    <div class="row">
-        <div class="col-sm-5">
-            <div class="form-groupCF">
-                 <label for="txtFName">B</label>
-                <input class="form-control" id="txtCbrnd" placeholder="Driver ID" type="text">
-                <span class="control-error" id="lblcbrnd"></span>
-            </div>
-        </div>
-
-        <div class="col-sm-5">
-            <div class="form-groupTF">
-                <label for="txtUserName">User Name</label>
-                <input class="form-control" id="txtTrnsm" placeholder="Driver Name" type="text">
-                <span class="control-error" id="lbltrnsm"></span>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-5">
-            <div class="form-groupCF">
-                 <label for="txtFName">B</label>
-                <input class="form-control" id="txtCbrnd" placeholder="NIC" type="text">
-                <span class="control-error" id="lblcbrnd"></span>
-            </div>
-        </div>
-
-        <div class="col-sm-5">
-            <div class="form-groupTF">
-                <label for="txtUserName">User Name</label>
-                <input class="form-control" id="txtTrnsm" placeholder="Driver Licence No:" type="text">
-                <span class="control-error" id="lbltrnsm"></span>
-            </div>
-        </div>
-    </div>
-
-    <button class="btn btn-primary" id="btnAddDriver" style="border-color:white;background-color:#080f95; border:white;"><a href="" >Add Driver</a></button>
-</div>
-End Driver div-->
 </body>
 </html>
