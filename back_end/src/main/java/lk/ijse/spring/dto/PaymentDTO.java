@@ -5,9 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@NoArgsConstructor
+/*@NoArgsConstructor
 @AllArgsConstructor
 @Data
-@ToString
+@ToString*/
 public class PaymentDTO {
 }
