@@ -15,7 +15,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 
-    <link href="assets/cssStyle/Admin/customerAdmin.css" rel="stylesheet">
+    <link href="assets/cssStyle/Admin/dashboard.css" rel="stylesheet">
+    <link href="assets/cssStyle/Admin/driverAdd.css" rel="stylesheet">
 
 
 </head>
@@ -23,68 +24,133 @@
 
 <div id="CustomerAdminBody" class="container-fluid ms-5 mt-5">
 <h1 style="border-bottom:4px solid darkred">Customer Verification</h1>
-<div class="col-sm-9 mt-lg-3">
-    <div id="CustomerTable" class="card top-selling overflow-auto">
+    <br>
+    <section class="section dashboard" style="margin-left: -12px; width: 1217px;">
+        <div class="row">
 
-        <div  class="card-body pb-0" >
+            <!-- Left side columns -->
+            <div class="col-lg-8">
+                <div class="row">
 
-            <table  class="table table-borderless">
-                <thead class="bg-dark shadow-lg" style="background-color:black; color: white;">
-                <tr>
-                    <th scope="col" class="text-light">Name</th>
-                    <th scope="col" class="text-light">Address</th>
-                    <th scope="col" class="text-light">NIC</th>
-                    <th scope="col" class="text-light">Email</th>
-                    <th scope="col" class="text-light">Contact NO</th>
-                    <th scope="col" class="text-light">Driving Licence NO</th>
-                    <th scope="col" class="text-light">Images</th>
-                    <th scope="col" class="text-light">Status</th>
-                    <th scope="col" class="text-light"></th>
+                    <!-- Revenue Card -->
+                    <div class="col-xxl-10 col-md-12">
+                        <div class="card info-card revenue-card">
 
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="bg-light shadow-sm">
-                    <th scope="row">Oshani Madhushika</th>
-                    <td>Rathnapura</td>
-                    <td>200056503164</td>
-                    <td>oshanimadhushika12@gmail.com</td>
-                    <td>0771239840</td>
-                    <td>B2345678</td>
-                    <td>View</td>
-                    <td class="fw-bold">Approved</td>
-                    <td><i class="bi bi-x-circle-fill"></i></td>
-                </tr>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center" style="margin-top: 5px">
+                                    <div class="col-sm-3">
+                                        <h6 style="color: black; font-size: 15px">Oshani Madhushika</h6>
+                                        <p style="font-size: 15px">name</p>
+                                    </div>
 
-                <tr class="bg-light shadow-sm">
-                    <th scope="row">Oshani Madhushika</th>
-                    <td>Rathnapura</td>
-                    <td>200056503164</td>
-                    <td>oshanimadhushika12@gmail.com</td>
-                    <td>0771239840</td>
-                    <td>B2345678</td>
-                    <td>View</td>
-                    <td class="fw-bold">Pending</td>
-                    <td><i class="bi bi-x-circle-fill"></i></td>
-                </tr>
+                                    <div class="col-sm-3">
+                                        <h6 style="color: black; font-size: 15px">0771239850</h6>
+                                        <p style="font-size: 15px">Contact Number</p>
+                                    </div>
 
-                <tr class="bg-light shadow-sm">
-                    <th scope="row">Oshani Madhushika</th>
-                    <td>Rathnapura</td>
-                    <td>200056503164</td>
-                    <td>oshanimadhushika12@gmail.com</td>
-                    <td>0771239840</td>
-                    <td>B2345678</td>
-                    <td>View</td>
-                    <td class="fw-bold">Approved</td>
-                    <td><i class="bi bi-x-circle-fill"></i></td>
-                </tr>
+                                    <div class="col-sm-3">
+                                        <h6 style="color: black; font-size: 15px">Danedeniya,Opanayake</h6>
+                                        <p style="font-size: 15px">Address</p>
+                                    </div>
 
-                </tbody>
-            </table>
+                                    <div class="col-sm-3">
+                                        <i style="color: #2e7b2e; font-size: 20px" class="bi bi-check-circle"></i>
+                                        <p style="color: #2e7b2e; font-size: 15px">Accept</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center">
+                                    <div class="col-sm-3">
+                                        <h6 style="color: black; font-size: 15px">200056503164</h6>
+                                        <p style="font-size: 15px">NIC</p>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <h6 style="color: black; font-size: 15px">oshi12@gmail.com</h6>
+                                        <p style="font-size: 15px">Email</p>
+                                    </div>
+
+
+                                    <div class="col-sm-3">
+                                        <p style="color: blue; font-size: 15px"><a href="">View Image</a></p>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <i style="color: #bd0b0b; font-size: 20px" class="bi bi-x-circle"></i>
+                                        <p style="color: #bd0b0b; font-size: 15px">Deny</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div><!-- End Revenue Card -->
+                </div>
+                <div class="row">
+                    <!-- Revenue Card -->
+                    <div class="col-xxl-10 col-md-12">
+                        <div class="card info-card revenue-card">
+
+                            <div class="card-body">
+                                <div class="d-flex align-items-center" style="margin-top: 5px">
+                                    <div class="col-sm-3">
+                                        <h6 style="color: black; font-size: 15px">Oshani Madhushika</h6>
+                                        <p style="font-size: 15px">name</p>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <h6 style="color: black; font-size: 15px">0771239850</h6>
+                                        <p style="font-size: 15px">Contact Number</p>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <h6 style="color: black; font-size: 15px">Danedeniya,Opanayake</h6>
+                                        <p style="font-size: 15px">Address</p>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <i style="color: #2e7b2e; font-size: 20px" class="bi bi-check-circle"></i>
+                                        <p style="color: #2e7b2e; font-size: 15px">Accept</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center">
+                                    <div class="col-sm-3">
+                                        <h6 style="color: black; font-size: 15px">200056503164</h6>
+                                        <p style="font-size: 15px">NIC</p>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <h6 style="color: black; font-size: 15px">oshi12@gmail.com</h6>
+                                        <p style="font-size: 15px">Email</p>
+                                    </div>
+
+
+                                    <div class="col-sm-3">
+                                        <p style="color: blue; font-size: 15px"><a href="">View Image</a></p>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <i style="color: #bd0b0b; font-size: 20px" class="bi bi-x-circle"></i>
+                                        <p style="color: #bd0b0b; font-size: 15px">Deny</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div><!-- End Revenue Card -->
+
+                </div>
+
+
+
+
+
+            </div><!-- End Left side columns -->
+
+
+
         </div>
-    </div>
-</div>
+    </section>
 </div>
 </body>
 </html>
