@@ -19,60 +19,114 @@
 <body>
 <div id="DriverScheduleBody" class="container-fluid ms-5 mt-5">
     <h1 style="border-bottom:4px solid #30b812">Driver Schedule</h1>
-    <div class="col-sm-9 mt-lg-3">
-        <div id="DriverTable" class="card top-selling overflow-auto" style="margin-left: 60px;width: 798px">
-
-            <div  class="card-body pb-0" >
-
-                <table  class="table table-borderless">
-                    <thead class="bg-dark shadow-lg" style="background-color:black; color: white;">
-                    <tr>
-                        <th scope="col" class="text-light">Driver ID</th>
-                        <th scope="col" class="text-light">Customer ID</th>
-                        <th scope="col" class="text-light">Vehicle ID</th>
-                        <th scope="col" class="text-light">Pickup Date</th>
-                        <th scope="col" class="text-light">Pickup Time</th>
-                        <th scope="col" class="text-light">Pickup Location</th>
 
 
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr class="bg-light shadow-sm">
-                        <th scope="row">D00-001</th>
-                        <td>C00-001</td>
-                        <td>V00-001</td>
-                        <td>05/03/2023</td>
-                        <td>10.00 PM</td>
-                        <td>Rathnapura</td>
+    <section class="section dashboard mt-5" style="margin-left: 80px; width: 447px">
+        <div class="row">
+            <div class="row">
+                <!-- Sales Card -->
+                <div class="col-xxl-4 col-md-12">
+                    <div class="d-flex align-items-center" style="margin-top: 22px; width: 911px">
+                        <div class="col-lg-3">
+                            <div class="dropdown-center" style="margin-left: -13px">
+                                <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Driver ID
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">DR-001</a></li>
+                                    <li><a class="dropdown-item" href="#">DR-002</a></li>
+                                    <li><a class="dropdown-item" href="#">DR-003</a></li>
+                                </ul>
+                            </div>
+                        </div>
 
-                    </tr>
+                        <div class="col-lg-3" style="margin-left: -52px">
+                            <p style="font-size: 15px">Name</p>
+                            <h6 class="fw-bold" style="color: black; font-size: 15px">Oshani Madhushika</h6>
+                        </div>
 
-                    <tr class="bg-light shadow-sm">
-                        <th scope="row">D00-001</th>
-                        <td>C00-001</td>
-                        <td>V00-001</td>
-                        <td>05/03/2023</td>
-                        <td>10.00 PM</td>
-                        <td>Bibila</td>
-                    </tr>
+                        <div class="col-lg-3">
+                            <p style="font-size: 15px">Address</p>
+                            <h6 class="fw-bold" style="color: black; font-size: 15px">No:78,Wadduwa,Panadura</h6>
+                        </div>
 
-                    <tr class="bg-light shadow-sm">
-                        <th scope="row">D00-001</th>
-                        <td>C00-001</td>
-                        <td>V00-001</td>
-                        <td>05/03/2023</td>
-                        <td>10.00 PM</td>
-                        <td>Panadura</td>
-                    </tr>
+                    </div>
 
-                    </tbody>
-                </table>
+                </div><!-- End Sales Card -->
+            </div>
+
+            <div class="row">
+                <!-- Sales Card -->
+                <div class="col-xxl-4 col-md-12">
+                    <div class="d-flex align-items-center" style="margin-top: 22px; width: 717px">
+                        <div class="col-lg-3">
+                            <p style="font-size: 15px">DOB</p>
+                            <h6 class="fw-bold" style="color: black; font-size: 15px">03/03/1999</h6>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <p style="font-size: 15px">NIC</p>
+                            <h6 class="fw-bold" style="color: black; font-size: 15px">199952653412</h6>
+                        </div>
+
+                        <div class="col-lg-3" style="margin-left: 46px">
+                            <p style="font-size: 15px">License No</p>
+                            <h6 class="fw-bold" style="color: black; font-size: 15px">20002536652</h6>
+                        </div>
+
+                    </div>
+
+                </div><!-- End Sales Card -->
             </div>
         </div>
-    </div>
+
+        <div class="col-sm-9 mt-5">
+
+            <table style="width: 795px; margin-left: -42px; margin-top: 99px;" class="table table-borderless">
+                <thead class="bg-dark shadow-lg text-white" >
+                <tr>
+                    <th scope="col" >Customer ID</th>
+                    <th scope="col" >Driver ID</th>
+                    <th scope="col" >Pickup Date</th>
+                    <th scope="col" >Return Date</th>
+                    <th scope="col" >Pickup Location</th>
+                    <th scope="col" >Return Location</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="bg-light shadow-sm">
+                    <th scope="row">CU-001</th>
+                    <td>DR-001</td>
+                    <td>02/03/2023</td>
+                    <td>03/03/2023</td>
+                    <td>Kaluthara</td>
+                    <td>Panadura</td>
+                </tr>
+
+                <tr class="bg-light shadow-sm">
+                    <th scope="row">CU-002</th>
+                    <td>DR-001</td>
+                    <td>03/03/2023</td>
+                    <td>03/03/2023</td>
+                    <td>Kaluthara</td>
+                    <td>Panadura</td>
+                </tr>
+
+                <tr class="bg-light shadow-sm">
+                    <th scope="row">CU-002</th>
+                    <td>DR-001</td>
+                    <td>04/03/2023</td>
+                    <td>05/03/2023</td>
+                    <td>Kaluthara</td>
+                    <td>Panadura</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
 </div>
 
-<img src="assets/images/white%20car.png" class="rounded float-end" style="margin-top: 280px" alt="...">
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
