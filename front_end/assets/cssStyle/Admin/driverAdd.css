@@ -2,7 +2,6 @@ h1{
     display: inline-block;
     font-family: 'Space Mono', monospace;
 }
-
 body{
     position: absolute;
     /* border:2px solid #686464;*/
@@ -11,7 +10,7 @@ body{
     top: 2vh;
     overflow-x: hidden;
     width: 870px;
-    height: 600px;
+   /* height: 600px;*/
 }
 #Admin_div{
     position: absolute;
