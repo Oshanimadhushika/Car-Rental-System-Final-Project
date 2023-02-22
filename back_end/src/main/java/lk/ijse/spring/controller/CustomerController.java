@@ -55,8 +55,8 @@ public class CustomerController {
     }
 
     @GetMapping(params = {"customerId"},produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getCustomerDetail(@RequestParam String customerId){
-        CustomerDTO customerDTO = customerService.getCustomerDetail(customerId);
-        return new ResponseUtil("200","Getting Sucess!",customerDTO);
+    public ResponseUtil searchCustomer(@RequestParam String customerId){
+        CustomerDTO customerDTO = customerService.searchCustomer(customerId);
+        return new ResponseUtil("200","Getting Success!",customerDTO);
     }
 }

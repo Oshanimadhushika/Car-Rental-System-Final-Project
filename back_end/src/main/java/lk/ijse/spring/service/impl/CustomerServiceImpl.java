@@ -47,7 +47,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
 
-    public CustomerDTO getCustomerDetail(String id) {
+    public CustomerDTO searchCustomer(String id) {
         Customer customer = customerRepo.findById(id).get();
         CustomerDTO customerDTO = modelMapper.map(customer, CustomerDTO.class);
         return customerDTO;

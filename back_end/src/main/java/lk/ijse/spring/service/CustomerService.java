@@ -12,7 +12,7 @@ public interface CustomerService {
 
     void deleteCustomer (String id);
 
-    CustomerDTO getCustomerDetail(String id);
+    CustomerDTO searchCustomer(String id);
 
     List<CustomerDTO> getAllCustomerDetail();
 

@@ -14,7 +14,7 @@ public interface DriverService {
 
     void deleteDriver(String id);
 
-    DriverDTO getDriverDetail(String id);
+    DriverDTO searchDriver(String id);
 
     List<DriverDTO> getAllDriverDetail();
 

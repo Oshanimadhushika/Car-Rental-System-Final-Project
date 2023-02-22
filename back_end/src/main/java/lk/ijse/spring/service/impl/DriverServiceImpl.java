@@ -1,16 +1,32 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.DriverDTO;
+import lk.ijse.spring.entity.Customer;
+import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.service.DriverService;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class DriverServiceImpl implements DriverService {
-    public DriverDTO checkDriverLogIn(String name, String password) {
+    @Autowired
+    DriverRepo driverRepo;
+
+    @Autowired
+    ModelMapper mapper;
+
+    public DriverDTO checkDriverLogIn(String name, String password)
+    {
         return null;
     }
 
-    public void saveDriver(DriverDTO driverDTO) {
+    public void saveDriver(DriverDTO entity) {
+
+        if (driverRepo.existsById(entity.ge)){
+            throw new RuntimeException("Customer" +customerDTO.getCustomerId()+"Already Exist..!");
+        }
+        customerRepo.save(modelMapper.map(customerDTO, Customer.class));
 
     }
 
@@ -22,7 +38,7 @@ public class DriverServiceImpl implements DriverService {
 
     }
 
-    public DriverDTO getDriverDetail(String id) {
+    public DriverDTO searchDriver(String id) {
         return null;
     }
 
