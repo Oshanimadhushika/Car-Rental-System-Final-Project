@@ -14,6 +14,9 @@
     <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+<!--
+    <link href="assets/css/main.css" rel="stylesheet">
+-->
 
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -26,7 +29,7 @@
     <link rel="stylesheet" href="assets/cssStyle/main/ContactUs.css">
     <link rel="stylesheet" href="assets/cssStyle/Footer/footer.css">
 
-    >
+
     <link id="CartCss" rel="stylesheet" href="assets/cssStyle/cart/cart.css">
     <link id="CarDetailCss" href="assets/cssStyle/carDetail/carDetail.css" rel="stylesheet">
     <link id="CarStoreCss" rel="stylesheet" href="assets/cssStyle/CarStore/carStore.css">
@@ -52,7 +55,7 @@
 <main id="spaMainIndex">
 <!-- ======= Header ======= -->
 
-<header id="header" class="fixed-top ">
+<header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
         <!-- <img src="assets/images/ezicar.png" alt="">-->
@@ -762,7 +765,7 @@
                                 <!--Button-->
                                 <div class="row mt-5">
                                     <div class="d-flex align-items-sm-stretch justify-content-around">
-                                        <button class="btn_RentIt p-2 goToCartButton" id="goToCartButton3" >Go to Cart</button>
+                                        <button class="btn_RentIt p-2 goToCartButton" id="goToCartButton1" >Go to Cart</button>
                                     </div>
                                 </div>
 
@@ -1681,12 +1684,12 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" >Home</a></li>
-                    <li><a class="nav-link scrollto" >About Us</a></li>
+                    <li id="navHomeCart"><a class="nav-link scrollto active" >Home</a></li>
+                    <!--<li><a class="nav-link scrollto" >About Us</a></li>
                     <li><a class="nav-link scrollto" >Services</a></li>
                     <li><a class="nav-link scrollto" >Car Store</a></li>
                     <li><a class="nav-link scrollto" >Overview</a></li>
-                    <li><a class="nav-link scrollto" >Log In</a></li>
+                    <li><a class="nav-link scrollto" >Log In</a></li>-->
                 </ul>
                 <!--
                             <i class="bi bi-list mobile-nav-toggle"></i>
@@ -1896,7 +1899,7 @@
                 <!--Button-->
                 <div class="row mb-5">
                     <div class="d-flex align-items-sm-stretch col-xl-12 justify-content-start">
-                        <button  class="btn_RentIt" style=" text-decoration: none; width: 200px;height: 40px;background: #100f0e;"><a style="text-decoration: none; color: white" href="overview.html">Send Rental Request</a></button>
+                        <button id="BtnSendRentalRequest"  class="btn_RentIt" style=" text-decoration: none; width: 200px;height: 40px;background: #100f0e;"><a style="text-decoration: none; color: white" >Send Rental Request</a></button>
                     </div>
                 </div>
 
@@ -1922,14 +1925,14 @@
 
                 <nav id="navbar" class="navbar">
                     <ul>
-                        <li><a class="nav-link scrollto active" >Home</a></li>
+                        <li id="navHomeOverview"><a class="nav-link scrollto active" >Home</a></li>
                         <li><a class="nav-link scrollto" >About Us</a></li>
                         <li><a class="nav-link scrollto" >Services</a></li>
                         <!--
                                             <li><a class="nav-link   scrollto" href="#">Cars</a></li>
                         -->
-                        <li><a class="nav-link scrollto" >Car Store</a></li>
-                        <li><a class="nav-link scrollto" >Log In</a></li>
+                        <li id="navCarStoreview"><a class="nav-link scrollto" >Car Store</a></li>
+                        <li id="navLogInOverview"><a class="nav-link scrollto" >Log In</a></li>
                     </ul>
                     <!--
                                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -2049,14 +2052,14 @@
 
                 <nav id="navbar" class="navbar">
                     <ul>
-                        <li><a class="nav-link scrollto active">Home</a></li>
+                        <li id="navHomeCarDetail"><a class="nav-link scrollto active">Home</a></li>
                         <li><a class="nav-link scrollto" >About Us</a></li>
                         <li><a class="nav-link scrollto" >Services</a></li>
                         <!--
                                             <li><a class="nav-link   scrollto" href="#">Cars</a></li>
                         -->
-                        <li><a class="nav-link scrollto" >Car Store</a></li>
-                        <li><a class="nav-link scrollto" >Log In</a></li>
+                        <li id="navCarStoreCarDetail"><a class="nav-link scrollto" >Car Store</a></li>
+                        <li id="navLogInCarDetail"><a class="nav-link scrollto" >Log In</a></li>
                     </ul>
                     <!--
                                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -2232,9 +2235,9 @@
 
 <!--login-->
 <main id="spaLogin">
-    <header>
+
         <!-- !&#45;&#45; ======= Header ======= &ndash;&gt;-->
-        <header id="header" class="fixed-top ">
+        <header id="header" class="fixed-top  ">
             <div class="container d-flex align-items-center">
 
                 <!-- <img src="assets/images/ezicar.png" alt="">-->
@@ -2259,7 +2262,7 @@
 
             </div>
         </header><!-- End Header -->
-    </header>
+
 
     <!-- ======= HeadSlid ======= -->
     <!-- ======= top key change picture Section ======= -->
@@ -2364,12 +2367,11 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-                    <li><a class="nav-link scrollto" href="">About Us</a></li>
-                    <li><a class="nav-link scrollto" href="#">Services</a></li>
-                    <li><a class="nav-link   scrollto" href="#">Cars</a></li>
-                    <li><a class="nav-link scrollto" href="carStore.html">Car Store</a></li>
-                    <li><a class="nav-link scrollto" href="login.html">Log In</a></li>
+                    <li id="navHomeRegi"><a class="nav-link scrollto active" >Home</a></li>
+                    <li><a class="nav-link scrollto" >About Us</a></li>
+                    <li><a class="nav-link scrollto" >Services</a></li>
+                    <li id="navCarStoreRegi"><a class="nav-link scrollto" >Car Store</a></li>
+                    <li id="navLogInRegi"><a class="nav-link scrollto" >Log In</a></li>
                 </ul>
                 <!--
                             <i class="bi bi-list mobile-nav-toggle"></i>
@@ -2490,7 +2492,7 @@
 
                                             <!--submit btn-->
                                             <div class="col-12">
-                                                <button class="btn btn-primary w-100" type="submit">Sign In</button>
+                                                <button id="BtnSignIn" class="btn btn-primary w-100" type="button">Sign In</button>
                                             </div>
 
                                             <!--OR-->
@@ -2500,7 +2502,7 @@
 
                                             <!--Sign in with google-->
                                             <div class="col-12">
-                                                <button class="btn btn-primary w-100" type="submit">Sign in with Google
+                                                <button class="btn btn-primary w-100" type="button">Sign in with Google
                                                 </button>
                                             </div>
                                         </form>
