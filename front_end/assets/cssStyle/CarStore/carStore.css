@@ -236,12 +236,12 @@
     margin-left: 95px;
 }
 
-#goToCartButton{
+.goToCartButton{
     background: #333333;
     color: white;
 }
 
-#goToCartButton:hover{
+.goToCartButton:hover{
     background: #444444;
     color: white;
     border: 2px solid #444444;
