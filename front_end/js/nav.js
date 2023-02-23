@@ -134,7 +134,14 @@ $('#goToCartButton3').click(function () {
 })
 
 /*DetailViewIcon*/
-$('#iconDetailView').click(function () {
+$('.iconDetailView').click(function () {
+    alert("hellooooooooooo");
+    $("#CarDetailCss").removeAttr("disabled");
+    $("#RegisterFormCss").attr("disabled","disabled");
+    $("#HeaderFormCss").attr("disabled","disabled");
+    $("#CarStoreCss").attr("disabled","disabled");
+    $("#LoginFormCss").attr("disabled","disabled");
+    $("#CartCss").attr("disabled","disabled");
     $('#spaMainIndex').css('display','none');
     $('#spaCarStore').css('display','none');
     $('#spaCart').css('display','none');
