@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 @RequestMapping("/driver")
 public class DriverController {
-    @Autowired
+   /* @Autowired
     private DriverService driverService;
 
     @PostMapping
     public ResponseUtil saveCustomer(@ModelAttribute DriverDTO dto){
         driverService.saveDriver(dto);
         return new ResponseUtil("200",dto.getDriverId()+ " Added.!",null);
-    }
+    }*/
 }

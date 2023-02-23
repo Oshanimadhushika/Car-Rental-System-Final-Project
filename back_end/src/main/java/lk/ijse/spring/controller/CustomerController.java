@@ -24,9 +24,9 @@ public class CustomerController {
     }*/
 
     @PostMapping
-    public ResponseUtil saveCustomer(@ModelAttribute CustomerDTO dto){
+    public ResponseUtil saveCustomer(@RequestBody CustomerDTO dto){
         customerService.saveCustomer(dto);
-        return new ResponseUtil("200",dto.getCustomerId()+ " Added.!",null);
+        return new ResponseUtil("200",dto.getCustomerId()+ " Added.!",dto);
     }
 
    /* @PutMapping
