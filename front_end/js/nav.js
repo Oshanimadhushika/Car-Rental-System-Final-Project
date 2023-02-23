@@ -11,6 +11,10 @@ $('#navindexHome').click(function () {
 
 /*See More Car Home */
 $('#Seemore').click(function () {
+    $("#CarStoreCss").removeAttr("disabled");
+    $("#RegisterFormCss").attr("disabled","disabled");
+    $("#HeaderFormCss").attr("disabled","disabled");
+    $("#LoginFormCss").attr("disabled","disabled");
     $('#spaMainIndex').css('display','none');
     $('#spaCarStore').css('display','block');
     $('#spaCart').css('display','none');
