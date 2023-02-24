@@ -81,6 +81,7 @@ $('#bookNowBtn').click(function () {
 
 $('#navHomeCarStore').click(function () {
 
+    $("#HeaderFormCss").removeAttr("disabled");
     $("#LoginFormCss").attr("disabled","disabled");
     $("#RegisterFormCss").attr("disabled","disabled");
     $("#CarStoreCss").attr("disabled","disabled");
@@ -140,7 +141,9 @@ $('#goToCartButton3').click(function () {
 })
 
 /*DetailViewIcon*/
+
 $('.iconDetailView').click(function () {
+    alert("heyyyy");
     $("#CarDetailCss").removeAttr("disabled");
     $("#RegisterFormCss").attr("disabled","disabled");
     $("#HeaderFormCss").attr("disabled","disabled");
@@ -178,6 +181,11 @@ $('#navHomeLogin').click(function () {
 
 
 $('#navCarstoreLogin').click(function () {
+    $("#CartCss").attr("disabled","disabled");
+    $("#CarDetailCss").attr("disabled","disabled");
+    $("#CarStoreCss").attr("disabled","disabled");
+    $("#HeaderFormCss").attr("disabled","disabled");
+    $("#LoginFormCss").removeAttr("disabled");
     $('#spaMainIndex').css('display','none');
     $('#spaCarStore').css('display','block');
     $('#spaCart').css('display','none');
@@ -219,6 +227,7 @@ $('#BtnSendRentalRequest').click(function () {
 })
 
 $('#navHomeCart').click(function () {
+    $("#HeaderFormCss").removeAttr("disabled");
     $("#LoginFormCss").attr("disabled","disabled");
     $("#RegisterFormCss").attr("disabled","disabled");
     $("#CarStoreCss").attr("disabled","disabled");
@@ -236,6 +245,7 @@ $('#navHomeCart').click(function () {
 
 /*===========================OverView===========================*/
 $('#navHomeOverview').click(function () {
+    $("#HeaderFormCss").removeAttr("disabled");
     $("#LoginFormCss").attr("disabled","disabled");
     $("#RegisterFormCss").attr("disabled","disabled");
     $("#CarStoreCss").attr("disabled","disabled");
@@ -260,6 +270,11 @@ $('#navCarStoreview').click(function () {
     $('#spaRegister').css('display','none');
 })
 $('#navLogInOverview').click(function () {
+    $("#CartCss").attr("disabled","disabled");
+    $("#CarDetailCss").attr("disabled","disabled");
+    $("#CarStoreCss").attr("disabled","disabled");
+    $("#HeaderFormCss").attr("disabled","disabled");
+    $("#LoginFormCss").removeAttr("disabled");
     $('#spaMainIndex').css('display','none');
     $('#spaCarStore').css('display','none');
     $('#spaCart').css('display','none');
@@ -270,6 +285,7 @@ $('#navLogInOverview').click(function () {
 })
 /*===========================Register==============================*/
 $('#navHomeRegi').click(function () {
+    $("#HeaderFormCss").removeAttr("disabled");
     $("#LoginFormCss").attr("disabled","disabled");
     $("#RegisterFormCss").attr("disabled","disabled");
     $("#CarStoreCss").attr("disabled","disabled");
@@ -294,6 +310,11 @@ $('#navCarStoreRegi').click(function () {
     $('#spaRegister').css('display','none');
 })
 $('#navLogInRegi').click(function () {
+    $("#CartCss").attr("disabled","disabled");
+    $("#CarDetailCss").attr("disabled","disabled");
+    $("#CarStoreCss").attr("disabled","disabled");
+    $("#HeaderFormCss").attr("disabled","disabled");
+    $("#LoginFormCss").removeAttr("disabled");
     $('#spaMainIndex').css('display','none');
     $('#spaCarStore').css('display','none');
     $('#spaCart').css('display','none');
@@ -305,6 +326,7 @@ $('#navLogInRegi').click(function () {
 
 /*===========================CarDetail==============================*/
 $('#navHomeCarDetail').click(function () {
+    $("#HeaderFormCss").removeAttr("disabled");
     $("#LoginFormCss").attr("disabled","disabled");
     $("#RegisterFormCss").attr("disabled","disabled");
     $("#CarStoreCss").attr("disabled","disabled");
