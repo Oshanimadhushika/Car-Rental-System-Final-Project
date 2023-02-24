@@ -8,49 +8,35 @@ $('#btnAddDriver').click(function () {
     saveDriver();
 })
 
-function saveDriver() {
-    alert("saveeee")
-   /* let nicFileName = $("#nicOrDrivingImg")[0].files[0].name;*/
+function saveDriver(){
+    var driverDTO = {
+        driverId: $("#DriverId").val(),
+        name: $("#DriverName").val(),
+        address: $("#DriverAddress").val(),
+        dob: $("#DriverDob").val(),
+        drivingLicenseNumber: $("#DriverLicenseNumber").val(),
+        nic: $("#DriverNic").val(),
+        status:""
 
-    let driverId=$("#DriverId").val();
-    let name= $("#DriverName").val();
-    let address=$("#DriverAddress")
-    let dob =  $("#DriverDob").val();
-    let drivingLicenseNumber = $("#DriverLicenseNumber").val();
-    let nic =$("#DriverNic").val();
-
-   /* let status= $("#drivingLicenseSignIn").val();*/
-
-
-
-    var newDetails = {
-        driverId:driverId,
-        name: name,
-        address:address,
-        dob: dob,
-        drivingLicenseNumber: drivingLicenseNumber,
-        nic: nic,
-        status:"Available"
     }
 
     $.ajax({
-        url: baseUrl+"driver",
-        method :"post",
-        data : JSON.stringify(newDetails),
-        contentType:"application/json",
-        success: function (resp) {
-            console.log(resp);
-            alert(resp.message);
-            loadAllDrivers();
-           /* navToLogIn(resp.data);*/
-            /* loadImage();*/
-
+        url: baseUrl + "driver",
+        method: "post",
+        contentType: "application/json",
+        data: JSON.stringify(driverDTO),
+        success: function (res){
+            if (res.status==200){
+                alert(res.message);
+                loadAllDrivers();
+            }
         },
 
+        error: function(ob){
+            alert(ob.responseJSON.message);
+            console.log(ob.responseJSON.message)
+        }
     });
-
-
-    /* cleanRegisterForm();*/
 }
 function loadAllDrivers(){
     $("#tableViewDriver").empty();
