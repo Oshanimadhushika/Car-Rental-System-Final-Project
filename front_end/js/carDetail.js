@@ -1,7 +1,7 @@
 /**
  * Testimonials slider
  */
-new Swiper('.carDetails-slider swiper', {
+new Swiper('#swiper', {
     speed: 600,
     loop: true,
     autoplay: {

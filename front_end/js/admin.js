@@ -69,7 +69,7 @@ $('#navViewSchedule').click(function (){
     $('#adminFooterSpa').css('display', 'none');
 });
 
-$('#navCustomers').click(function (){
+$('#navCustomerVerification').click(function (){
     $('#adminMainSpa').css('display', 'none');
     $('#adminReservationSpa').css('display', 'none');
     $('#adminAddVehicleSpa').css('display', 'none');

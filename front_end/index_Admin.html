@@ -21,15 +21,15 @@
     <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="assets/cssStyle/Admin/dashboard.css" rel="stylesheet">
     <link href="assets/cssStyle/Admin/carsAdmin.css" rel="stylesheet">
-    <link href="assets/css/normalize.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/normalize.css" rel="stylesheet">
     <!--<link href="../assets/css/main.css" rel="stylesheet">-->
 
 </head>
@@ -61,7 +61,7 @@
 
             <li id="navCars" class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#tablescars-nav" data-bs-toggle="collapse">
-                    <i style="color:#000000;" class="bi bi-car-front-fill"></i><span>Cars</span>
+                    <i style="color:#000000;" class="bi bi-car-front-fill"></i><span>Vehicles</span>
                     <i class="bi bi-chevron-down ms-auto"></i>
                 </a>
 
@@ -89,17 +89,30 @@
                 </ul>
             </li><!-- End Forms Nav -->
 
-            <li id="navCustomers" class="nav-item">
-                <a class="nav-link " style="color:#000000;">
-                    <i style="color: black" class="bi bi-person-fill"></i>
-                    <span>Customers</span>
+            <li  class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#tablesCustomer-nav" data-bs-toggle="collapse">
+                    <i style="color: black" class="bi bi-people"></i>
+                    <span>Customer</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
+
+                <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="tablesCustomer-nav">
+                    <li id="navCustomerVerification">
+                        <a>
+                            <i class="bi bi-circle"></i><span>Customer Verification</span>
+                        </a>
+                    </li>
+                    <li id="navViewAllCustomer">
+                        <a>
+                            <i class="bi bi-circle"></i><span>View All</span>
+                        </a>
+                    </li>
+                </ul>
             </li><!-- End Tables Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#tablesdriver-nav" data-bs-toggle="collapse">
-                    <i style="color: black" class="bi bi-people"></i><span>Driver</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
+                    <i style="color: black" class="bi bi-people"></i>
+                    <span>Driver</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="tablesdriver-nav">
                     <li id="navViewDriver">
@@ -852,7 +865,7 @@
                     </thead>
                     <tbody>
                     <tr class="bg-light shadow-sm">
-                        <th scope="row"><a href="#"><img class="top-selling" src="assets/images/premium3.jpeg" style="  border-radius: 5px; max-width: 100px;" alt="" ></a></th>
+                        <th scope="row"><a href="#"><img class="top-selling" src="assets/images/premium3.png" style="  border-radius: 5px; max-width: 100px;" alt="" ></a></th>
                         <th scope="row">Suzuki Alto</th>
                         <td>CU-001</td>
                         <td>DR-001</td>
@@ -863,7 +876,7 @@
                     </tr>
 
                     <tr class="bg-light shadow-sm">
-                        <th scope="row"><a href="#"><img class="top-selling" src="assets/images/premium3.jpeg" style="  border-radius: 5px; max-width: 100px;" alt="" ></a></th>
+                        <th scope="row"><a href="#"><img class="top-selling" src="assets/images/premium3.png" style="  border-radius: 5px; max-width: 100px;" alt="" ></a></th>
                         <th scope="row">Suzuki Alto</th>
                         <td>CU-002</td>
                         <td>DR-004</td>
@@ -874,7 +887,7 @@
                     </tr>
 
                     <tr class="bg-light shadow-sm">
-                        <th scope="row"><a href="#"><img class="top-selling" src="assets/images/premium3.jpeg" style="  border-radius: 5px; max-width: 100px;" alt="" ></a></th>
+                        <th scope="row"><a href="#"><img class="top-selling" src="assets/images/premium3.png" style="  border-radius: 5px; max-width: 100px;" alt="" ></a></th>
                         <th scope="row">Suzuki Alto</th>
                         <td>CU-002</td>
                         <td>DR-002</td>
@@ -1029,6 +1042,79 @@
             </div>
         </section>
     </main><!-- End #main -->
+</main>
+
+<main id="spaAdminViewAllCustomer">
+    <main class="main" style="margin-left: 380px; width: 900px; height:800px; margin-top: 70px;">
+        <div class="pagetitle">
+            <h1 style="border-bottom:4px solid darkred; display: inline-block">All Customer</h1>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard" style="margin-left: 6px; width: 960px">
+            <!-- All Customers -->
+            <div class="container-fluid col-12">
+                <div class="card top-selling overflow-auto">
+
+                    <div class="card-body pb-0">
+
+                        <table class="table table-borderless" style="width: 883px; margin-left: 8px; margin-top: 80px;" class="table table-borderless">
+                            <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Contact Number</th>
+                                <th scope="col">NIC</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">NIC/License</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr style="border-bottom: 1px solid #d9d9d9">
+                                <th scope="row">C001</th>
+                                <td>Oshani Madhushika</td>
+                                <td>panadura</td>
+                                <td>0776845184</td>
+                                <td>5151515475</td>
+                                <td>oshi15@gmail.com</td>
+                                <td><a class="text-primary fw-bold">View Image</a></td>
+
+
+                            </tr>
+
+
+                            <tr style="border-bottom: 1px solid #d9d9d9">
+                                <th scope="row">C001</th>
+                                <td>Oshani Madhushika</td>
+                                <td>panadura</td>
+                                <td>0776845184</td>
+                                <td>5151515475</td>
+                                <td>oshi15@gmail.com</td>
+                                <td><a class="text-primary fw-bold">View Image</a></td>
+
+                            </tr>
+
+
+                            <tr style="border-bottom: 1px solid #d9d9d9">
+                                <th scope="row">C001</th>
+                                <td>Oshani Madhushika</td>
+                                <td>panadura</td>
+                                <td>0776845184</td>
+                                <td>5151515475</td>
+                                <td>oshi15@gmail.com</td>
+                                <td><a class="text-primary fw-bold">View Image</a></td>
+
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!-- End Customer Verification -->
+        </section>
+    </main>
 </main>
 
 <!--Admin View Driver-->

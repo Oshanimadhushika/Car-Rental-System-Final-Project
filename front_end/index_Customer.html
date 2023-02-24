@@ -8,21 +8,21 @@
 
     <!-- Vendor CSS Files -->
 
-
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 <!--
     <link href="assets/css/main.css" rel="stylesheet">
 -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/normalize.css">
+
+    <link id="CarDetailCss" href="assets/cssStyle/carDetail/carDetail.css" rel="stylesheet">
 
 
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
     <link id="HeaderFormCss" rel="stylesheet" href="assets/cssStyle/header/header.css">
     <link rel="stylesheet" href="assets/cssStyle/main/AboutUs.css">
     <link rel="stylesheet" href="assets/cssStyle/body/body.css">
@@ -31,11 +31,10 @@
     <link rel="stylesheet" href="assets/cssStyle/main/WeHave.css">
     <link rel="stylesheet" href="assets/cssStyle/main/ContactUs.css">
     <link rel="stylesheet" href="assets/cssStyle/Footer/footer.css">
-
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 
     <link id="CartCss" rel="stylesheet" href="assets/cssStyle/cart/cart.css">
-    <link id="CarDetailCss" href="assets/cssStyle/carDetail/carDetail.css" rel="stylesheet">
     <link id="CarStoreCss" rel="stylesheet" href="assets/cssStyle/CarStore/carStore.css">
     <link id="LoginFormCss" rel="stylesheet" href="assets/cssStyle/login/loginForm.css">
 
@@ -2076,6 +2075,7 @@
         </header><!-- End Header -->
     </header>
 
+
     <!-- ======= HeadSlid ======= -->
     <!-- ======= top key change picture Section ======= -->
     <section  id="hero" class="d-flex align-items-center text-white">
@@ -2087,22 +2087,22 @@
 
 
 
-<h1>Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</h1>
+
    <!--  ======= CarDetail Section =======-->
-    <section id="carDetails" class="carDetails section-bg">
-        <h1>Helooooooooooo</h1>
-        <div class="container" data-aos="fade-up">
+    <section id="carDetails" class="carDetails section-bg" style="display:block">
+
+        <div class="container" >
 
             <div class="section-title">
                 <h2>Car Detail</h2>
             </div>
-<h1>qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqS</h1>
-            <div class="carDetails-slider swiper" data-aos="fade-up" data-aos-delay="0">
+
+            <div class="carDetails-slider swiper" data-aos="fade-up" data-aos-delay="100" >
                 <div class="swiper-wrapper">
 
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" style="background-color:rosybrown">
                         <div class="carDetail-item">
-                            <img src="assets/images/premium1.png" class="carDetail-img" alt="">
+                            <img src="assets/images/lux1.png" class="carDetail-img" alt="">
                             <h3>AUDI</h3>
                             <h4>Luxury - Auto - Hybrid</h4>
                             <p>
@@ -2130,11 +2130,11 @@
 
 
                         </div>
-                    </div> <!--End carDetail item-->
+                    </div><!-- End carDetail item -->
 
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" style="background-color: rosybrown">
                         <div class="carDetail-item">
-                            <img src="assets/images/premium2.png" class="carDetail-img" alt="">
+                            <img src="assets/images/lux2.png" class="carDetail-img" alt="">
                             <h3>Mercedes Benz</h3>
                             <h4>Luxury - Auto - Hybrid</h4>
                             <p>
@@ -2162,11 +2162,11 @@
                             </div>
 
                         </div>
-                    </div> <!--End carDetail item-->
+                    </div><!-- End carDetail item -->
 
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" style="background-color: rosybrown" >
                         <div class="carDetail-item">
-                            <img src="assets/images/premium3.png" class="carDetail-img" alt="">
+                            <img src="assets/images/lux3.png" class="carDetail-img" alt="">
                             <h3>BMW</h3>
                             <h4>Luxury - Manual - Hybrid</h4>
                             <p>
@@ -2193,9 +2193,9 @@
 
                             </div>
                         </div>
-                    </div> <!--End carDetail item-->
+                    </div><!-- End carDetail item -->
 
-                    <div class="swiper-slide">
+                   <div class="swiper-slide" style="background-color: rosybrown">
                         <div class="carDetail-item">
                             <img src="assets/images/luxury.png" class="carDetail-img" alt="">
                             <h3>Toyota Premio</h3>
@@ -2227,17 +2227,14 @@
 
 
                         </div>
-                    </div><!-- End carDetail item-->
-
-
-                </div>
+                    </div> <!--End carDetail item -->
+             </div>
                 <div class="swiper-pagination"></div>
             </div>
 
         </div>
-    </section><!-- End CarDetail Section-->
+    </section><!--&lt;!&ndash; End CarDetail Section -->
 
-<h1>oshiiiiiiiiiiiii</h1>
   <!-- <h1>hiiiiiiiiiiiiiiiiiiii</h1>
     &lt;!&ndash; ======= Testimonials Section ======= &ndash;&gt;
     <section id="testimonials" class="testimonials section-bg">
@@ -3028,26 +3025,38 @@
 </main>
 
 
-<!-- Vendor JS Files -->
-<script src="js/carDetail.js"></script>
+
+
+
 <script src="assets/js/jquery-3.6.1.min.js"></script>
-
-
 <!-- Vendor JS Files -->
-<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+
+
+
 <script src="assets/vendor/typed.js/typed.min.js"></script>
 <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+
+<script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="assets/vendor/chart.js/chart.umd.js"></script>
+<script src="assets/vendor/echarts/echarts.min.js"></script>
+<script src="assets/vendor/quill/quill.min.js"></script>
+<script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+
+
 
 
 
 <!-- Template Main JS File -->
 <script src="js/main.js"></script>
-
+<script src="js/carDetail.js"></script>
 <script src="js/nav.js"></script>
 <script src="js/jsController/customerController.js"></script>
 

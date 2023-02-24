@@ -143,7 +143,7 @@ $('#goToCartButton3').click(function () {
 /*DetailViewIcon*/
 
 $('.iconDetailView').click(function () {
-    alert("heyyyy");
+
     $("#CarDetailCss").removeAttr("disabled");
     $("#RegisterFormCss").attr("disabled","disabled");
     $("#HeaderFormCss").attr("disabled","disabled");
