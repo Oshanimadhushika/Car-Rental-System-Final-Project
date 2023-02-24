@@ -48,15 +48,11 @@ function registerCustomer() {
             alert(prase.message);
         }
     });
+
+
    /* cleanRegisterForm();*/
 }
-/*function cleanRegisterForm() {
-    $('#register-form-name,#register-form-nic,#register-form-email,#register-form-mobile, #register-form-address,#register-form-user-name ,#register-form-password,#register-form-drivingNo').css({
-        border: '1px solid gray',
-    })
-    $('#register-form-name,#register-form-nic,#register-form-email,#register-form-mobile, #register-form-address,#register-form-user-name ,#register-form-password,#register-form-drivingNo').val("")
 
-}*/
 function navToLogIn(data) {
 
         $('#spaMainIndex').css('display','none');
@@ -68,6 +64,53 @@ function navToLogIn(data) {
         $('#spaRegister').css('display','none');
 
 }
+
+$("#btnUpdateSpa").click(function (){
+    updateCustomer();
+})
+
+function updateCustomer(){
+
+    var newDetails = {
+        customerId:"C005",
+        name: $("#update-name").val(),
+        address: $("#update-address").val(),
+        nic: $("#update-nic").val(),
+        drivingLicenseNumber: $("#update-drivingLicense").val(),
+        contactNumber: $("#update-contact").val(),
+        email: $("#update-email").val(),
+        password: customer.password,
+        imageLocation: customer.imageLocation,
+        userName: customer.userName,
+    }
+
+ $.ajax({
+     url: baseUrl + "customer",
+     method: "PUT",
+     contentType: "application/json",
+     data: JSON.stringify(newDetails),
+     success: function (res) {
+         if (res.status === 200) {
+             alert(res.message)
+         } else {
+             alert("Cant update your Details in this moment")
+         }
+     },
+     error: function (ob) {
+         console.log(ob.responseJSON.message);
+     }
+ });
+}
+
+/*function cleanRegisterForm() {
+    $('#register-form-name,#register-form-nic,#register-form-email,#register-form-mobile, #register-form-address,#register-form-user-name ,#register-form-password,#register-form-drivingNo').css({
+        border: '1px solid gray',
+    })
+    $('#register-form-name,#register-form-nic,#register-form-email,#register-form-mobile, #register-form-address,#register-form-user-name ,#register-form-password,#register-form-drivingNo').val("")
+
+}*/
+
+
 /*function openCustomerHome(data){
     $("#registerForm").css("display", "none")
 
@@ -129,44 +172,7 @@ function navToLogIn(data) {
     })
 }*/
 
-/*
-$("#customer-updateBtn").click(function (){
-    updateCustomer();
-})
-*/
 
-/*
-function updateCustomer(){
-
-    var newDetails = {
-        nic: $("#customer-profile-nic").val(),
-        address: $("#customer-profile-address").val(),
-        contactNumber: $("#customer-profile-mobile").val(),
-        name: $("#customer-profile-name").val(),
-        email: $("#customer-profile-email").val(),
-        password: customer.password,
-        user_name: customer.user_name,
-        imageLocation: customer.imageLocation,
-    }
-*/
-
-   /* $.ajax({
-        url: baseUrl + "customer/updateCustomer",
-        method: "PUT",
-        contentType: "application/json",
-        data: JSON.stringify(newDetails),
-        success: function (res) {
-            if (res.status === 200) {
-                alert(res.message)
-            } else {
-                alert("Cant update your Details in this moment")
-            }
-        },
-        error: function (ob) {
-            console.log(ob.responseJSON.message);
-        }
-    });
-}*/
 /*
 
 $("#admin-customer-viewBtn").click(function () {    // me mona button eke action ekada? ethakota e button eka click karamada values tike enna ona? ara table eke tynwane sir data eke ekk click klama ara view detail ekn e customerge full dettails blnn teynne..image ekaema

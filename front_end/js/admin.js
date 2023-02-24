@@ -13,6 +13,8 @@ $('#navReservation').click(function (){
     $('#adminDriverScheduleSpa').css('display', 'none');
     $('#adminPaymentsSpa').css('display', 'none');
     $('#adminFooterSpa').css('display', 'none');
+    $('#spaAdminViewAllCustomer').css('display', 'none');
+
 
 });
 
@@ -27,6 +29,8 @@ $('#navDashboard').click(function (){
     $('#adminDriverScheduleSpa').css('display', 'none');
     $('#adminPaymentsSpa').css('display', 'none');
     $('#adminFooterSpa').css('display', 'block');
+    $('#spaAdminViewAllCustomer').css('display', 'none');
+
 
 });
 
@@ -41,6 +45,8 @@ $('#navAddVehicle').click(function (){
     $('#adminDriverScheduleSpa').css('display', 'none');
     $('#adminPaymentsSpa').css('display', 'none');
     $('#adminFooterSpa').css('display', 'none');
+    $('#spaAdminViewAllCustomer').css('display', 'none');
+
 });
 
 $('#navViewVehicle').click(function (){
@@ -54,6 +60,8 @@ $('#navViewVehicle').click(function (){
     $('#adminDriverScheduleSpa').css('display', 'none');
     $('#adminPaymentsSpa').css('display', 'none');
     $('#adminFooterSpa').css('display', 'none');
+    $('#spaAdminViewAllCustomer').css('display', 'none');
+
 });
 
 $('#navViewSchedule').click(function (){
@@ -67,6 +75,8 @@ $('#navViewSchedule').click(function (){
     $('#adminDriverScheduleSpa').css('display', 'none');
     $('#adminPaymentsSpa').css('display', 'none');
     $('#adminFooterSpa').css('display', 'none');
+    $('#spaAdminViewAllCustomer').css('display', 'none');
+
 });
 
 $('#navCustomerVerification').click(function (){
@@ -80,7 +90,23 @@ $('#navCustomerVerification').click(function (){
     $('#adminDriverScheduleSpa').css('display', 'none');
     $('#adminPaymentsSpa').css('display', 'none');
     $('#adminFooterSpa').css('display', 'none');
+    $('#spaAdminViewAllCustomer').css('display', 'none');
 });
+
+$('#navViewAllCustomer').click(function (){
+    $('#adminMainSpa').css('display', 'none');
+    $('#adminReservationSpa').css('display', 'none');
+    $('#adminAddVehicleSpa').css('display', 'none');
+    $('#adminViewVehicleSpa').css('display', 'none');
+    $('#adminVehicleScheduleSpa').css('display', 'none');
+    $('#adminCustomerReservationSpa').css('display', 'none');
+    $('#adminViewDriverSpa').css('display', 'none');
+    $('#adminDriverScheduleSpa').css('display', 'none');
+    $('#adminPaymentsSpa').css('display', 'none');
+    $('#adminFooterSpa').css('display', 'none');
+    $('#spaAdminViewAllCustomer').css('display', 'block');
+});
+
 
 
 $('#navDriverSchedule').click(function (){
@@ -94,6 +120,8 @@ $('#navDriverSchedule').click(function (){
     $('#adminDriverScheduleSpa').css('display', 'block');
     $('#adminPaymentsSpa').css('display', 'none');
     $('#adminFooterSpa').css('display', 'none');
+    $('#spaAdminViewAllCustomer').css('display', 'none');
+
 });
 
 $('#navViewDriver').click(function (){
@@ -107,6 +135,8 @@ $('#navViewDriver').click(function (){
     $('#adminDriverScheduleSpa').css('display', 'none');
     $('#adminPaymentsSpa').css('display', 'none');
     $('#adminFooterSpa').css('display', 'none');
+    $('#spaAdminViewAllCustomer').css('display', 'none');
+
 });
 
 $('#navPayments').click(function (){
@@ -120,6 +150,8 @@ $('#navPayments').click(function (){
     $('#adminDriverScheduleSpa').css('display', 'none');
     $('#adminPaymentsSpa').css('display', 'block');
     $('#adminFooterSpa').css('display', 'none');
+    $('#spaAdminViewAllCustomer').css('display', 'none');
+
 });
 
 
@@ -134,4 +166,6 @@ $(window).on('load',function () {
     $('#adminViewDriverSpa').css('display', 'none');
     $('#adminDriverScheduleSpa').css('display', 'none');
     $('#adminPaymentsSpa').css('display', 'none');
+    $('#spaAdminViewAllCustomer').css('display', 'none');
+
 });
