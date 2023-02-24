@@ -173,7 +173,7 @@ function updateCustomer(){
 
 /*
 
-$("#admin-customer-viewBtn").click(function () {    // me mona button eke action ekada? ethakota e button eka click karamada values tike enna ona? ara table eke tynwane sir data eke ekk click klama ara view detail ekn e customerge full dettails blnn teynne..image ekaema
+$("#admin-customer-viewBtn").click(function () {
     if (customer_nic == null) {
         return
     }
