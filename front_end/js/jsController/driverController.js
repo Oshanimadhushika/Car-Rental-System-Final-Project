@@ -4,8 +4,11 @@ var customer;
 var customer_nic;
 
 $('#btnAddDriver').click(function () {
-    alert("hellooooo")
     saveDriver();
+})
+
+$('#btnUpdateDriver').click(function () {
+    updateDriver();
 })
 
 function saveDriver(){
@@ -54,7 +57,52 @@ function loadAllDrivers(){
                     driver_nic = $(this).children(":eq(0)").text();
                     $("#navViewDriver").prop('disabled', false);
                 });
+            }bindRowClickEvents();
+        }
+    });
+}
+
+function updateDriver(){
+    var newDetails = {
+        driverId: $("#DriverId").val(),
+        name: $("#DriverName").val(),
+        address: $("#DriverAddress").val(),
+        dob: $("#DriverDob").val(),
+        nic: $("#DriverNic").val(),
+        drivingLicenseNumber: $("#DriverLicenseNumber").val()
+
+    }
+
+    $.ajax({
+        url: baseUrl + "driver",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(newDetails),
+        success: function (res) {
+            if (res.status === 200) {
+                alert(res.message)
+            } else {
+                alert("Cant update your Details in this moment")
             }
         }
+    });
+}
+
+function bindRowClickEvents() {
+    $("#tableViewDriver>tr").click(function () {
+        let id = $(this).children(":eq(0)").text();
+        let name = $(this).children(":eq(1)").text();
+        let address = $(this).children(":eq(2)").text();
+        let dob = $(this).children(":eq(3)").text();
+        let nic = $(this).children(":eq(4)").text();
+        let license = $(this).children(":eq(5)").text();
+
+        $('#DriverId').val(id);
+        $('#DriverName').val(name);
+        $('#DriverAddress').val(address);
+        $('#DriverDob').val(dob);
+        $('#DriverNic').val(nic);
+        $('#DriverLicenseNumber').val(license);
+
     });
 }

@@ -24,8 +24,8 @@ public class DriverController {
         return new ResponseUtil("200",dto.getDriverId()+ " Added.!",dto);
     }
 
-    @PutMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil UpdateDriver(DriverDTO dto){
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil UpdateDriver(@RequestBody DriverDTO dto){
         driverService.UpdateDriver(dto);
         return new ResponseUtil("200",dto.getDriverId()+": Updated.!",null);
     }
