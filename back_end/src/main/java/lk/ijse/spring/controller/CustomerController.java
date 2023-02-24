@@ -35,8 +35,8 @@ public class CustomerController {
         return new ResponseUtil("200",dto.getCustomerId()+ " Updated.!",null);
     }*/
 
-    @PutMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil updateCustomer(CustomerDTO dto){
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateCustomer(@RequestBody CustomerDTO dto){
         customerService.updateCustomer(dto);
         return new ResponseUtil("200",dto.getCustomerId()+": Updated.!",null);
     }

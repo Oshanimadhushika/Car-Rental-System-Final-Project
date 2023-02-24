@@ -79,9 +79,9 @@ function updateCustomer(){
         drivingLicenseNumber: $("#update-drivingLicense").val(),
         contactNumber: $("#update-contact").val(),
         email: $("#update-email").val(),
-        password: customer.password,
-        imageLocation: customer.imageLocation,
-        userName: customer.userName,
+        password: $("#update-password").val(),
+        imageLocation: $("#update-register-form-NIC-image").val(),
+        userName:  $("#update-user-name").val(),
     }
 
  $.ajax({
@@ -96,9 +96,7 @@ function updateCustomer(){
              alert("Cant update your Details in this moment")
          }
      },
-     error: function (ob) {
-         console.log(ob.responseJSON.message);
-     }
+
  });
 }
 
