@@ -351,6 +351,11 @@ $('#navCarStoreCarDetail').click(function () {
     $('#spaRegister').css('display','none');
 })
 $('#navLogInCarDetail').click(function () {
+    $("#CartCss").attr("disabled","disabled");
+    $("#CarDetailCss").attr("disabled","disabled");
+    $("#CarStoreCss").attr("disabled","disabled");
+    $("#HeaderFormCss").attr("disabled","disabled");
+    $("#LoginFormCss").removeAttr("disabled");
     $('#spaMainIndex').css('display','none');
     $('#spaCarStore').css('display','none');
     $('#spaCart').css('display','none');
