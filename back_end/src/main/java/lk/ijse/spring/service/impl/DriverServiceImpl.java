@@ -7,9 +7,13 @@ import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.service.DriverService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Service
+@Transactional
 public class DriverServiceImpl implements DriverService {
     @Autowired
     DriverRepo driverRepo;
@@ -19,9 +23,12 @@ public class DriverServiceImpl implements DriverService {
 
     public DriverDTO checkDriverLogIn(String name, String password)
     {
+
         return null;
     }
 
+
+    @Override
     public void saveDriver(DriverDTO driverDTO) {
         if(!driverRepo.existsById(driverDTO.getDriverId())){
             Driver driver = modelMapper.map(driverDTO, Driver.class);
@@ -31,23 +38,37 @@ public class DriverServiceImpl implements DriverService {
         }
 
     }
-
+    @Override
     public void UpdateDriver(DriverDTO driverDTO) {
+        if (driverRepo.existsById(driverDTO.getDriverId())){
+            driverRepo.save( modelMapper.map(driverDTO, Driver.class));
+        }else {
+            throw new RuntimeException("Driver " + driverDTO.getDriverId() + " Not Available to Update..!");
+        }
 
     }
 
+    @Override
     public void deleteDriver(String id) {
 
+        if (driverRepo.existsById(id)){
+            driverRepo.deleteById(id);
+        }else {
+            throw new RuntimeException("Driver " + id + " Not Available To Delete.");
+        }
     }
 
+    @Override
     public DriverDTO searchDriver(String id) {
         return null;
     }
 
+    @Override
     public List<DriverDTO> getAllDriverDetail() {
         return null;
     }
 
+    @Override
     public List<DriverDTO> getTodayAvailableAndOccupiedDrivers(String status) {
         return null;
     }
