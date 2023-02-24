@@ -105,6 +105,7 @@ $('#navViewAllCustomer').click(function (){
     $('#adminPaymentsSpa').css('display', 'none');
     $('#adminFooterSpa').css('display', 'none');
     $('#spaAdminViewAllCustomer').css('display', 'block');
+    loadAllCustomers();
 });
 
 

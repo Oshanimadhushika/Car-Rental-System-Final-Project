@@ -1,5 +1,8 @@
 var baseUrl="http://localhost:8080/car-rental/";
 
+var customer;
+var customer_nic;
+
 $('#BtnSignIn').click(function () {
     registerCustomer();
 })
@@ -100,6 +103,34 @@ function updateCustomer(){
  });
 }
 
+
+function loadAllCustomers(){
+    $("#tableViewAllCustomer").empty();
+
+    $.ajax({
+        url: baseUrl + "customer",
+        method: "GET",
+        success: function (resp){
+            for (const customer of resp.data){
+/*
+                let viewImage = customer.imageLocation;
+*/
+                let row =`<tr><th scope="row">${customer.customerId}</th><td>${customer.name}</td><td>${customer.address}</td><td>${customer.contactNumber}</td><td>${customer.nic}</td><td>${customer.email}</td><td><a style="cursor: pointer" class="text-info">${customer.imageLocation}</a></td></tr>`;
+                $("#tableViewAllCustomer").append(row);
+
+                $("#tableViewAllCustomer>tr").off("click");
+                $("#tableViewAllCustomer>tr").click(function (){
+                    customer_nic = $(this).children(":eq(1)").text();
+                    console.log(customer_nic)
+                    $("#navViewAllCustomer").prop('disabled',false);
+                });
+            }
+        }
+    });
+}
+
+
+
 /*function cleanRegisterForm() {
     $('#register-form-name,#register-form-nic,#register-form-email,#register-form-mobile, #register-form-address,#register-form-user-name ,#register-form-password,#register-form-drivingNo').css({
         border: '1px solid gray',
@@ -145,29 +176,6 @@ function updateCustomer(){
             console.log(err);
         }
     });
-}*/
-
-
-/*function loadAllCustomers(){
-    $("#admin-customer-table").empty();
-
-    $.ajax({
-        url: baseUrl + "customer",
-        method: "GET",
-        success: function (resp){
-            for (const customer of resp.data){
-                let row = `<tr><td>${customer.name}</td><td>${customer.nic}</td><td>${customer.address}</td><td>${customer.contactNumber}</td><td>${customer.email}</td><td>${customer.imageLocation}</td></tr>`;
-                $("#admin-customer-table").append(row);
-
-                $("#admin-customer-table>tr").off("click");
-                $("#admin-customer-table>tr").click(function (){
-                    customer_nic = $(this).children(":eq(1)").text();
-                    console.log(customer_nic)
-                    $("#admin-customer-viewBtn").prop('disabled',false);
-                });
-            }
-        }
-    })
 }*/
 
 
