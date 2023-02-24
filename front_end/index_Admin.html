@@ -548,8 +548,8 @@
                 <div class="col-sm-6">
                     <div class="form-groupCF">
 
-                        <input class="form-control" id="txtCbrnd" placeholder="Brand" type="text">
-                        <span class="control-error" id="lblcbrnd"></span>
+                        <input class="form-control" id="txtBrand" placeholder="Brand" type="text">
+                        <span class="control-error" id="lblBrand"></span>
                     </div>
                 </div>
 
@@ -1156,16 +1156,16 @@
                     <div class="col-sm-6">
                         <div class="form-groupCF">
 
-                            <input class="form-control" id="txtCbrnd" placeholder="Driver Id" type="text">
-                            <span class="control-error" id="lblcbrnd"></span>
+                            <input class="form-control" id="DriverId" placeholder="Driver Id" type="text">
+                            <span class="control-error" id="lblDriverId"></span>
                         </div>
                     </div>
 
                     <div class="col-sm-6">
                         <div class="form-groupTF">
 
-                            <input class="form-control" id="txtTrnsm" placeholder="Name" type="text">
-                            <span class="control-error" id="lbltrnsm"></span>
+                            <input class="form-control" id="DriverName" placeholder="Name" type="text">
+                            <span class="control-error" id="lblDriverName"></span>
                         </div>
                     </div>
                 </div>
@@ -1176,14 +1176,14 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-groupTT">
-                            <input class="form-control" id="txtTyp" placeholder="Address" type="text">
-                            <span class="control-error" id="lbltype"></span>
+                            <input class="form-control" id="DriverAddress" placeholder="Address" type="text">
+                            <span class="control-error" id="lblDriverAddress"></span>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-groupNFP">
-                            <input class="form-control" id="txtNoOPass" placeholder="DOB" type="text">
-                            <span class="control-error" id="lblnoofpass"></span>
+                            <input class="form-control" id="DriverDob" placeholder="DOB" type="date">
+                            <span class="control-error" id="lblDriverDob"></span>
                         </div>
                     </div>
                 </div>
@@ -1192,15 +1192,15 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-groupFT">
-                            <input class="form-control" id="txtFuel" placeholder="NIC" type="text">
-                            <span class="control-error" id="lblfuel"></span>
+                            <input class="form-control" id="DriverNic" placeholder="NIC" type="text">
+                            <span class="control-error" id="lblDriverNic"></span>
                         </div>
                     </div>
 
                     <div class="col-sm-6">
                         <div class="form-groupMRT">
-                            <input class="form-control" id="txtMRt" placeholder="License Number" type="text">
-                            <span class="control-error" id="lblmrt"></span>
+                            <input class="form-control" id="DriverLicenseNumber" placeholder="License Number" type="text">
+                            <span class="control-error" id="lblDriverLicenceNumber"></span>
                         </div>
                     </div>
                 </div>
@@ -1236,8 +1236,8 @@
                         <th scope="col" class="text-light">Status</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr class="bg-light shadow-sm">
+                    <tbody id="tableViewDriver">
+                   <!-- <tr class="bg-light shadow-sm">
                         <td>DR-001</td>
                         <td>Oshani Madhushika</td>
                         <td>No:78,Perera Mawatha,Panadura</td>
@@ -1265,7 +1265,7 @@
                         <td>199925365v</td>
                         <td>25632125333</td>
                         <td>Non-Available</td>
-                    </tr>
+                    </tr>-->
 
                     </tbody>
                 </table>
@@ -1567,5 +1567,6 @@
 
 <script src="js/admin.js"></script>
 <script src="js/jsController/customerController.js"></script>
+<script src="js/jsController/driverController.js"></script>
 </body>
 </html>

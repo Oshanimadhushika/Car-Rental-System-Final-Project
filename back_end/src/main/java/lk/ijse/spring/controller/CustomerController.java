@@ -17,11 +17,6 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-   /* @GetMapping
-    public String get(){
-        System.out.println("Yeeeee");
-        return "oshiiiii";
-    }*/
 
     @PostMapping
     public ResponseUtil saveCustomer(@RequestBody CustomerDTO dto){
@@ -29,11 +24,7 @@ public class CustomerController {
         return new ResponseUtil("200",dto.getCustomerId()+ " Added.!",dto);
     }
 
-   /* @PutMapping
-    public ResponseUtil updateCustomer(@ModelAttribute CustomerDTO dto){
-        customerService.updateCustomer(dto);
-        return new ResponseUtil("200",dto.getCustomerId()+ " Updated.!",null);
-    }*/
+
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateCustomer(@RequestBody CustomerDTO dto){

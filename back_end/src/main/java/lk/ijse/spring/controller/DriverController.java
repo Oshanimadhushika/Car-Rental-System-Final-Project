@@ -21,7 +21,7 @@ public class DriverController {
     @PostMapping
     public ResponseUtil saveDriver(@RequestBody DriverDTO dto){
         driverService.saveDriver(dto);
-        return new ResponseUtil("200",dto.getDriverId()+ " Added.!",null);
+        return new ResponseUtil("200",dto.getDriverId()+ " Added.!",dto);
     }
 
     @PutMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)

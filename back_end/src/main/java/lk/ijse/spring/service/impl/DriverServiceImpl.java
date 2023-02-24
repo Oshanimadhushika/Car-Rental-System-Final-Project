@@ -6,6 +6,7 @@ import lk.ijse.spring.entity.Driver;
 import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.service.DriverService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,11 +31,11 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void saveDriver(DriverDTO driverDTO) {
-        if(!driverRepo.existsById(driverDTO.getDriverId())){
-            Driver driver = modelMapper.map(driverDTO, Driver.class);
-            driverRepo.save(driver);
-        }else {
+        if(driverRepo.existsById(driverDTO.getDriverId())){
             throw new RuntimeException("This NIC Number Already Exist..!");
+        }else {
+            driverRepo.save(modelMapper.map(driverDTO, Driver.class));
+
         }
 
     }
@@ -65,7 +66,7 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public List<DriverDTO> getAllDriverDetail() {
-        return null;
+        return modelMapper.map(driverRepo.findAll(),new TypeToken<List<DriverDTO>>(){}.getType());
     }
 
     @Override
