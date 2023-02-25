@@ -745,7 +745,7 @@
             <h1 style="border-bottom:4px solid darkred; display: inline-block">VIEW VEHICLE</h1>
         </div><!-- End Page Title -->
 
-        <div class="dropdown-center" style="margin-left: 86px; margin-top: 30px">
+        <div class="dropdown-center" style="margin-left: 30px; margin-top: 30px">
             <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Short By
             </button>
@@ -756,7 +756,7 @@
             </ul>
         </div>
 
-        <section class="section dashboard" style="margin-left: 68px; width: 1217px;">
+        <section class="section dashboard" style="margin-left: 30px; width: 1340px;">
             <div class="row">
 
                 <!-- Left side columns -->
@@ -767,41 +767,46 @@
                         <div class="col-xxl-4 col-md-12">
                             <div class="card info-card sales-card mt-5">
 
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center" style="margin-top: 5px; width: 655px">
-                                        <div class="col-sm-3">
+                                <div class="card-body" id="ViewVehicleMainDiv">
+                                    <div class="d-flex align-items-center" style="margin-top: 5px; width:580px">
+                                        <div class="col-sm-3" id="ImageVehicle">
                                             <img style="width: 152px;" src="assets/images/premium4.png" alt="">
                                         </div>
 
-                                        <div class="col-sm-3">
-                                            <h6 style="color: black; font-size: 15px">Suzuki</h6>
-                                            <p style="font-size: 15px">Alto</p>
+                                        <div class="col-sm-3" id="DivModel" ">
+                                            <h6 id="ModelTopic" style="color: black; font-size: 15px; ">Model</h6>
+                                            <p id="ModelName" style="font-size: 15px">Alto</p>
                                         </div>
 
-                                        <div class="col-sm-3">
-                                            <h6 style="color: black; font-size: 15px">Daily</h6>
-                                            <p style="font-size: 15px">2,500</p>
+                                        <div class="col-sm-3" id="DivDaily">
+                                            <h6 id="DailyTopic" style="color: black; font-size: 15px">Daily</h6>
+                                            <p id="DailyPrice" style="font-size: 15px">2,500</p>
                                         </div>
 
-                                        <div class="col-sm-3">
-                                            <h6 style="color: black; font-size: 15px">Monthly</h6>
-                                            <p style="font-size: 15px">64,350</p>
+                                        <div class="col-sm-3" id="DivMonthly">
+                                            <h6 id="MonthlyTopic" style="color: black; font-size: 15px">Monthly</h6>
+                                            <p id="MonthlyPrice" style="font-size: 15px">64,350</p>
                                         </div>
 
-                                        <div class="col-sm-3">
-                                            <h6 style="color: black; font-size: 15px">Damage Cost</h6>
-                                            <p style="font-size: 15px">10,000</p>
+                                        <div class="col-sm-3" id="DivDamgeCost">
+                                            <h6 id="DamageCostTopic" style="color: black; font-size: 15px">Damage Cost</h6>
+                                            <p id="DamageCostPrice" style="font-size: 15px">10,000</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivStatus">
+                                            <h6 id="StatusTopic" style="color: black; font-size: 15px">Status</h6>
+                                            <p id="TxtStatus" style="font-size: 15px">Available</p>
                                         </div>
 
                                     </div>
 
                                     <div class="d-flex align-items-center" style="margin-left: 60px">
                                         <div class="col-sm-3">
-                                            <button class="btn btn-primary gap-5" id="btnAddMain" style="background-color: #7b2407;color: white; border: none; width: 203px; margin-left: 353px">Add To Maintenance</button>
+                                            <button class="btn btn-primary gap-5" id="btnAddMaintenance" style="background-color: #7b2407;color: white; border: none; width: 203px; margin-left: 353px">Add To Maintenance</button>
                                         </div>
 
                                         <div class="col-sm-3">
-                                            <button class="btn btn-primary" id="btnupdate" style="background-color: #06065f;color: white; border: none; width: 100px; margin-left: 398px">Update</button>
+                                            <button class="btn btn-primary" id="btnupdateCar" style="background-color: #06065f;color: white; border: none; width: 100px; margin-left: 398px">Update</button>
                                         </div>
                                     </div>
                                 </div>
