@@ -165,8 +165,18 @@ function loadAllCars(path) {
 
                         </div>
                     </div>`;
-                $("#cusLuxCarContainer").append(div);
 
+               if (car.type==="Luxury") {
+
+                   $("#cusLuxCarContainer").append(div);
+
+               }else  if(car.type==="Premium"){
+
+                   $("#cusPreCarContainer").append(div);
+               }else if(car.type==="General"){
+
+                   $("#cusGenCarContainer").append(div);
+               }
 
 
             }
@@ -233,6 +243,7 @@ function viewVehicle(path) {
 
                             </div>
                         </div>`;
+
                 $("#ViewVehicleDiv").append(div);
 
 
