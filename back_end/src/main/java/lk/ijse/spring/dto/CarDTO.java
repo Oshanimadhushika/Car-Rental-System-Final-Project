@@ -5,9 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-/*@AllArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
 @Data
-@ToString*/
+@ToString
 public class CarDTO {
+    private String image3;
+    private String Brand;
+    private double dailyRate;
+    private double monthlyRate;
+    private double DamageCost;
 }

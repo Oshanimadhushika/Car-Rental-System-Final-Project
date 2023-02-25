@@ -31,4 +31,5 @@ public class Car {
     private double monthlyRate;
     private double priceForExtraKm;
     private String availability;
+    private double DamageCost;
 }
