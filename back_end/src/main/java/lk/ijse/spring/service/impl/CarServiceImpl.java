@@ -43,7 +43,11 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public CarDTO getCarDetail(String id) {
-        return null;
+        if (carRepo.existsById(id)) {
+            return mapper.map(carRepo.findById(id).get(), CarDTO.class);
+        } else {
+            throw new RuntimeException("Can't Get Details.!");
+        }
     }
 
     @Override
