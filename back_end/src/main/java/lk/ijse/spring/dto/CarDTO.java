@@ -10,6 +10,7 @@ import lombok.ToString;
 @Data
 @ToString
 public class CarDTO {
+    private String registrationId;
     private String image3;
     private String Brand;
     private double dailyRate;
