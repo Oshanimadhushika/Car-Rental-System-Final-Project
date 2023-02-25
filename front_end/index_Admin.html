@@ -560,6 +560,8 @@
 
                         <input class="form-control" id="txtBrand" placeholder="Brand" type="text">
                         <span class="control-error" id="lblBrand"></span>
+
+
                     </div>
                 </div>
             </div>
@@ -570,8 +572,18 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-groupTT">
-                        <input class="form-control" id="txtType" placeholder="Type" type="text">
-                        <span class="control-error" id="lblType"></span>
+                       <!-- <input class="form-control" id="txtType" placeholder="Type" type="text">
+                        <span class="control-error" id="lblType"></span>-->
+
+
+                        <!-- <label class="col-form-label fw-bold">Type:</label>-->
+                        <select  aria-label="Default select example" class="form-select mb-3"
+                                 id="txtType" >
+                            <option>Select Type</option>
+                            <option value="General">General</option>
+                            <option value="Premium">Premium</option>
+                            <option value="Luxury">Luxury</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -586,8 +598,16 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-groupFT">
-                        <input class="form-control" id="txtFuel" placeholder="Fuel" type="text">
+                        <!--<input class="form-control" id="txtFuel" placeholder="Fuel" type="text">
                         <span class="control-error" id="lblfuel"></span>
+-->
+                        <select  aria-label="Default select example" class="form-select mb-3"
+                                 id="txtFuel" >
+                            <option>Fuel Type</option>
+                            <option value="General">Diesel</option>
+                            <option value="Premium">Petrol</option>
+
+                        </select>
                     </div>
                 </div>
 
@@ -639,8 +659,17 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-groupRNT">
-                        <input class="form-control" id="txtTransmission" placeholder="Transmission" type="text">
-                        <span class="control-error" id="lblTransmission"></span>
+                      <!--  <input class="form-control" id="txtTransmission" placeholder="Transmission" type="text">
+                        <span class="control-error" id="lblTransmission"></span>-->
+
+
+                        <select  aria-label="Default select example" class="form-select mb-3"
+                                 id="txtTransmission" >
+                            <option>Transmission</option>
+                            <option value="General">Manual</option>
+                            <option value="Premium">Auto</option>
+
+                        </select>
                     </div>
                 </div>
 
@@ -702,7 +731,7 @@
 
         <div class="row">
             <div class="col-sm-6">
-                <button class="btn btn-primary" id="btnAddVehicle" style="background-color: #14131C;color: white; border: none">Add Vehicle</button>
+                <button class="btn btn-primary" id="btnAddVehicle" style="background-color: #14131C;color: white; border: none; top: 121vh; left: 52vw;">Add Vehicle</button>
             </div>
         </div>
     </div>
@@ -1054,6 +1083,7 @@
     </main><!-- End #main -->
 </main>
 
+<!--View All Customer-->
 <main id="spaAdminViewAllCustomer">
     <main class="main" style="margin-left: 380px; width: 1217px; margin-top: 70px;">
         <div class="pagetitle">

@@ -12,7 +12,7 @@ function saveCar() {
 
 
     let registrationId = $("#txtRegiNumberCar").val();
-    let Brand = $("#txtBrand").val();
+    let brand = $("#txtBrand").val();
     let type = $("#txtType").val();
     let model = $("#txtModel").val();
     let transmissionType = $("#txtTransmission").val();
@@ -33,7 +33,7 @@ function saveCar() {
 
     var CarDTO = {
         registrationId: registrationId,
-        Brand: Brand,
+        brand: brand,
         type: type,
         model: model,
         transmissionType: transmissionType,

@@ -14,7 +14,7 @@ import javax.persistence.Id;
 public class Car {
     @Id
     private String registrationId;
-    private String Brand;
+    private String brand;
     private String type;
     private String model;
     private String fuelType;
