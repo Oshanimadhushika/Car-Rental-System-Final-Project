@@ -2,6 +2,7 @@ package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.CarDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface CarService {
@@ -14,7 +15,7 @@ public interface CarService {
 
     CarDTO getCarDetail(String id);
 
-    List<CarDTO> getAllCarDetail();
+    ArrayList<CarDTO> getAllCarDetail();
 
     List<CarDTO> getCarsUnderMaintain();
 

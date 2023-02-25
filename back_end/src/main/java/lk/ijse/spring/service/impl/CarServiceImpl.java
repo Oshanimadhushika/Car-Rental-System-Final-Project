@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Transactional
@@ -43,15 +44,16 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public CarDTO getCarDetail(String id) {
-        if (carRepo.existsById(id)) {
+      /*  if (carRepo.existsById(id)) {
             return mapper.map(carRepo.findById(id).get(), CarDTO.class);
         } else {
             throw new RuntimeException("Can't Get Details.!");
-        }
+        }*/
+        return null;
     }
 
     @Override
-    public List<CarDTO> getAllCarDetail() {
+    public ArrayList<CarDTO> getAllCarDetail() {
             return mapper.map(carRepo.findAll(), new TypeToken<List<CarDTO>>() {
             }.getType());
         }

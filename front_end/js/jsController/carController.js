@@ -81,7 +81,7 @@ function loadAllCars(path) {
     $("#cusLuxCarContainer").empty();
 
     $.ajax({
-        url: baseurl + "car/" + path,
+        url: baseUrl + "car/" + path,
         method: "GET",
         success: function (resp) {
             for (const car of resp.data) {
@@ -94,8 +94,8 @@ function loadAllCars(path) {
                             <!--Title/V Name-->
                             <div class="row">
                                 <div class="d-flex justify-content-center">
-                                    <div class="icon"><img alt="" src="file:///F://image.jpg"
-                                                           style="width: 250px;height: 175px"></i></div>
+                                    <div class="icon">
+                                    <img alt="" src=${car.image3}  style="width: 250px;height: 175px"></i></div>
                                 </div>
                             </div>
 

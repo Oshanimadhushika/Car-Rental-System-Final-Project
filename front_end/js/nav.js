@@ -14,6 +14,7 @@ $(window).on('load',function () {
     $('#spaRegister').css('display','none');
     $('#spaUpdateIndex').css('display','none');
 
+    loadAllCars("allCarDetail");
 
 })
 

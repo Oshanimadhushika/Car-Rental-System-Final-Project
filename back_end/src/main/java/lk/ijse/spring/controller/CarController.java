@@ -22,12 +22,12 @@ public class CarController {
     }
 
 
-    @GetMapping(path = "carDetail/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+  /*  @GetMapping(path = "carDetail/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getCarDetail(@PathVariable String id) {
         CarDTO carDTO = carService.getCarDetail(id);
         return new ResponseUtil("200", "Done", carDTO);
     }
-
+*/
     @GetMapping(path = "allCarDetail", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllCarDetail() {
 
