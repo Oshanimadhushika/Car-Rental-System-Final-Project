@@ -75,3 +75,24 @@ function saveCar() {
     });
     //clearSaveCarForm();
 }
+
+function loadAllCars(path) {
+    $("#admin-cars-table").empty();
+
+    $.ajax({
+        url: baseUrl + "car/" + path,
+        method: "GET",
+        success: function (resp) {
+            for (const car of resp.data) {
+                let row = `<tr><td>${car.registrationId}</td><td>${car.Brand}</td><td>${car.type}</td><td>${car.transmissionType}</td><td>${car.fuelType}</td></tr>`;
+                $("#admin-cars-table").append(row);
+
+                $("#admin-cars-table>tr").off("click");
+                $("#admin-cars-table>tr").click(function () {
+                    vehicle_no = $(this).children(":eq(0)").text();
+                    $("#viewButton").prop('disabled', false);
+                });
+            }
+        }
+    });
+}
