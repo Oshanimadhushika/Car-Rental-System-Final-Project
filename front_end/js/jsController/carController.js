@@ -24,7 +24,7 @@ function saveCar() {
     let dailyRate = $("#txtDailyRate").val();
     let monthlyRate = $("#txtMonthlyRate").val();
     let priceForExtraKm = $("#txtPriceForExKm").val();
-    let availability =" ";
+    let availability =$("#txtAvailabilty").val();
     let image1 = frontFileName;
     let image2 = backFileName;
     let image3 = sideFileName;
@@ -76,6 +76,7 @@ function saveCar() {
     //clearSaveCarForm();
 }
 
+/*
 function loadAllCars(path) {
     $("#admin-cars-table").empty();
 
@@ -95,4 +96,4 @@ function loadAllCars(path) {
             }
         }
     });
-}
+}*/
