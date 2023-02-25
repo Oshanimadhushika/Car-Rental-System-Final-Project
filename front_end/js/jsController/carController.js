@@ -119,7 +119,7 @@ function loadAllCars(path) {
 
                             <div class="row">
                                 <div class="d-flex ">
-                                    <p class="mt-5 mb-3 ps-4 justify-content-center">${car.modal}</p>
+                                    <p style="color: black; font-size: 30px;align-items: center;" class="mt-5 mb-3 ps-4 justify-content-center">${car.model}</p>
                                 </div>
                             </div>
 
@@ -204,7 +204,7 @@ function viewVehicle(path) {
 
                                         <div class="col-sm-3" id="DivModel" >
                                             <h6 id="ModelTopic" style="color: black; font-size: 15px; ">Model</h6>
-                                            <p id="ModelName" style="font-size: 15px">${car.Modal}</p>
+                                            <p id="ModelName" style="font-size: 15px">${car.model}</p>
                                         </div>
 
                                         <div class="col-sm-3" id="DivDaily">
