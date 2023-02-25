@@ -119,10 +119,7 @@ function loadAllCars(path) {
 
                             <div class="row">
                                 <div class="d-flex ">
-                                    <p class="mt-5 mb-3 ps-4 justify-content-center">The Toyota Premio is a
-                                        compact
-                                        sedan known for comfort,
-                                        technology, and efficiency</p>
+                                    <p class="mt-5 mb-3 ps-4 justify-content-center">${car.modal}</p>
                                 </div>
                             </div>
 
@@ -130,21 +127,21 @@ function loadAllCars(path) {
                             <!--Price-->
                             <div class="row">
                                 <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"
-                                     style="font-weight: 900">10,000
+                                     style="font-weight: 900">${car.monthlyRate}
                                 </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"
-                                     style="font-weight: 900">227,000
+                                     style="font-weight: 900">${car.dailyRate}
                                 </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"
-                                     style="font-weight: 900">20,000
+                                     style="font-weight: 900">${car.damageCost}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"
-                                     style="font-size: 13px">Per Day
+                                     style="font-size: 13px">Monthly Rate
                                 </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"
-                                     style="font-size: 13px">Per Month
+                                     style="font-size: 13px">Daily Rate
                                 </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"
                                      style="font-size: 13px">On Hold
@@ -158,7 +155,9 @@ function loadAllCars(path) {
                                     <button class="btn_RentIt">RENT IT</button>
                                 </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
+<!--
                                     <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">
+-->
                                 </div>
                             </div>
 
