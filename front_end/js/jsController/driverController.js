@@ -19,7 +19,7 @@ function saveDriver(){
         dob: $("#DriverDob").val(),
         drivingLicenseNumber: $("#DriverLicenseNumber").val(),
         nic: $("#DriverNic").val(),
-        status:""
+
 
     }
 
@@ -106,3 +106,15 @@ function bindRowClickEvents() {
 
     });
 }
+
+
+$("#btnDeleteDriver").click(function (){
+    $.ajax({
+        url:"http://localhost:8080/car-rental/driver?driverId="+$("#DriverId").val(),
+        method:"delete",
+        success(resp){
+            alert(resp.message);
+            loadAllDrivers();
+        }
+    });
+});

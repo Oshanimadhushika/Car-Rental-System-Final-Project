@@ -155,6 +155,23 @@ $('#navPayments').click(function (){
     $('#spaAdminViewAllCustomer').css('display', 'none');
 
 });
+$('#navLogoutAdmin').click(function (){
+    $("#HeaderFormCss").removeAttr("disabled");
+    $("#LoginFormCss").attr("disabled","disabled");
+    $("#RegisterFormCss").attr("disabled","disabled");
+    $("#CarStoreCss").attr("disabled","disabled");
+    $("#CartCss").attr("disabled","disabled");
+    $("#CarDetailCss").attr("disabled","disabled");
+    $('#spaMainIndex').css('display','block');
+    $('#spaCarStore').css('display','none');
+    $('#spaCart').css('display','none');
+    $('#spaOverview').css('display','none');
+    $('#spaCarDetail').css('display','none');
+    $('#spaLogin').css('display','none');
+    $('#spaRegister').css('display','none');
+    $('#spaUpdateIndex').css('display','none');
+
+});
 
 
 //for the Loading Window

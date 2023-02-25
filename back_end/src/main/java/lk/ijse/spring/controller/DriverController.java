@@ -21,19 +21,19 @@ public class DriverController {
     @PostMapping
     public ResponseUtil saveDriver(@RequestBody DriverDTO dto){
         driverService.saveDriver(dto);
-        return new ResponseUtil("200",dto.getDriverId()+ " Added.!",dto);
+        return new ResponseUtil("200",dto.getDriverId()+ "Driver Added.!",dto);
     }
 
-    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping()
     public ResponseUtil UpdateDriver(@RequestBody DriverDTO dto){
         driverService.UpdateDriver(dto);
-        return new ResponseUtil("200",dto.getDriverId()+": Updated.!",null);
+        return new ResponseUtil("200",dto.getDriverId()+":Driver Updated.!",null);
     }
 
     @DeleteMapping(params = {"driverId"},produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil deleteCustomer(@RequestParam String driverId){
         driverService.deleteDriver(driverId);
-        return new ResponseUtil("200",driverId+" : Deleted.!",null);
+        return new ResponseUtil("200",driverId+" :Driver Deleted.!",null);
     }
 
     @GetMapping
