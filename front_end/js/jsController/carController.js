@@ -76,24 +76,104 @@ function saveCar() {
     //clearSaveCarForm();
 }
 
-/*
+
 function loadAllCars(path) {
-    $("#admin-cars-table").empty();
+    $("#cusLuxCarContainer").empty();
 
     $.ajax({
-        url: baseUrl + "car/" + path,
+        url: baseurl + "car/" + path,
         method: "GET",
         success: function (resp) {
             for (const car of resp.data) {
-                let row = `<tr><td>${car.registrationId}</td><td>${car.Brand}</td><td>${car.type}</td><td>${car.transmissionType}</td><td>${car.fuelType}</td></tr>`;
-                $("#admin-cars-table").append(row);
+                // let row = <tr><td>${car.registrationId}</td><td>${car.brand}</td><td>${car.type}</td><td>${car.transmissionType}</td><td>${car.fuelType}</td></tr>;
 
-                $("#admin-cars-table>tr").off("click");
-                $("#admin-cars-table>tr").click(function () {
-                    vehicle_no = $(this).children(":eq(0)").text();
-                    $("#viewButton").prop('disabled', false);
-                });
+                let div=`<div class="col-xl-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
+                         data-aos-delay="100">
+                        <div class="icon-box">
+
+                            <!--Title/V Name-->
+                            <div class="row">
+                                <div class="d-flex justify-content-center">
+                                    <div class="icon"><img alt="" src="file:///F://image.jpg"
+                                                           style="width: 250px;height: 175px"></i></div>
+                                </div>
+                            </div>
+
+                            <!--Title/V Name-->
+                            <div class="row">
+                                <div class="d-flex justify-content-center">
+                                    <h4><a href="">${car.brand}</a></h4>
+                                </div>
+                            </div>
+
+
+                            <!--Type-->
+                            <div class="row">
+                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">
+                                    Hybrid</h6>
+                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">
+                                    Manual</h6>
+                            </div>
+
+                            <!--Line-->
+                            <div id="lineHome"></div>
+
+                            <div class="row">
+                                <div class="d-flex ">
+                                    <p class="mt-5 mb-3 ps-4 justify-content-center">The Toyota Premio is a
+                                        compact
+                                        sedan known for comfort,
+                                        technology, and efficiency</p>
+                                </div>
+                            </div>
+
+
+                            <!--Price-->
+                            <div class="row">
+                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"
+                                     style="font-weight: 900">10,000
+                                </div>
+                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"
+                                     style="font-weight: 900">227,000
+                                </div>
+                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"
+                                     style="font-weight: 900">20,000
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"
+                                     style="font-size: 13px">Per Day
+                                </div>
+                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"
+                                     style="font-size: 13px">Per Month
+                                </div>
+                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"
+                                     style="font-size: 13px">On Hold
+                                </div>
+                            </div>
+
+
+<!--Button-->
+                            <div class="row mt-3">
+                                <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
+                                    <button class="btn_RentIt">RENT IT</button>
+                                </div>
+                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
+                                    <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>`;
+                $("#cusLuxCarContainer").append(div);
+
+                // $("#admin-cars-table>tr").off("click");
+                // $("#admin-cars-table>tr").click(function () {
+                //     vehicle_no = $(this).children(":eq(0)").text();
+                //     $("#viewButton").prop('disabled', false);
+
             }
         }
     });
-}*/
+}
