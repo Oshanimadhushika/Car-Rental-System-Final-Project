@@ -62,6 +62,8 @@ $('#navViewVehicle').click(function (){
     $('#adminFooterSpa').css('display', 'none');
     $('#spaAdminViewAllCustomer').css('display', 'none');
 
+    viewVehicle("allCarDetail");
+
 });
 
 $('#navViewSchedule').click(function (){

@@ -85,7 +85,6 @@ function loadAllCars(path) {
         method: "GET",
         success: function (resp) {
             for (const car of resp.data) {
-                // let row = <tr><td>${car.registrationId}</td><td>${car.brand}</td><td>${car.type}</td><td>${car.transmissionType}</td><td>${car.fuelType}</td></tr>;
 
                 let div=`<div class="col-xl-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
                          data-aos-delay="100">
@@ -168,10 +167,75 @@ function loadAllCars(path) {
                     </div>`;
                 $("#cusLuxCarContainer").append(div);
 
-                // $("#admin-cars-table>tr").off("click");
-                // $("#admin-cars-table>tr").click(function () {
-                //     vehicle_no = $(this).children(":eq(0)").text();
-                //     $("#viewButton").prop('disabled', false);
+
+
+            }
+        }
+    });
+
+}
+function viewVehicle(path) {
+
+    $("#ViewVehicleDiv").empty();
+
+    $.ajax({
+        url: baseUrl + "car/" + path,
+        method: "GET",
+        success: function (resp) {
+            for (const car of resp.data) {
+
+                let div=` <div class="col-xxl-4 col-md-12">
+                            <div class="card info-card sales-card mt-5">
+
+                                <div class="card-body" id="ViewVehicleMainDiv">
+                                    <div class="d-flex align-items-center" style="margin-top: 5px; width:600px">
+                                        <div class="col-sm-3" id="ImageVehicle">
+                                            <img style="width: 152px;" src=${car.image3} alt="">
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivModel" >
+                                            <h6 id="ModelTopic" style="color: black; font-size: 15px; ">Model</h6>
+                                            <p id="ModelName" style="font-size: 15px">${car.Modal}</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivDaily">
+                                            <h6 id="DailyTopic" style="color: black; font-size: 15px">Daily</h6>
+                                            <p id="DailyPrice" style="font-size: 15px">${car.dailyRate}</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivMonthly">
+                                            <h6 id="MonthlyTopic" style="color: black; font-size: 15px">Monthly</h6>
+                                            <p id="MonthlyPrice" style="font-size: 15px">${car.monthlyRate}</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivDamgeCost">
+                                            <h6 id="DamageCostTopic" style="color: black; font-size: 15px">Damage Cost</h6>
+                                            <p id="DamageCostPrice" style="font-size: 15px">${car.damageCost}</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivStatus">
+                                            <h6 id="StatusTopic" style="color: black; font-size: 15px">Status</h6>
+                                            <p id="TxtStatus" style="font-size: 15px">${car.availability}</p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="d-flex align-items-center" style="margin-left: 60px">
+                                        <div class="col-sm-3">
+                                            <button class="btn btn-primary gap-5" id="btnAddMaintenance" style="background-color: #7b2407;color: white; border: none; width: 203px; margin-left: 353px">Add To Maintenance</button>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <button class="btn btn-primary" id="btnupdateCar" style="background-color: #06065f;color: white; border: none; width: 100px; margin-left: 398px">Update</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>`;
+                $("#ViewVehicleDiv").append(div);
+
+
 
             }
         }
