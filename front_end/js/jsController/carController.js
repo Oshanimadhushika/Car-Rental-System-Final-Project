@@ -226,7 +226,7 @@ function loadAllCars(path) {
 <!--Button-->
                             <div class="row mt-3">
                                 <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
-                                    <button class="btn_RentIt">RENT IT</button>
+                                    <button class="btn_RentIt" >RENT IT</button>
                                 </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
 <!--
@@ -253,10 +253,54 @@ function loadAllCars(path) {
 
 
             }
+            rentItClick()
+
         }
     });
 
+    function rentItClick() {
+        $(".btn_RentIt").click(function () {
+            var bgColor = $(this).css("background-color");
+
+            if(colorsAreEqual(bgColor, "rgb(68, 68, 68)")){
+                $(this).text("Added");
+                $(this).css({
+                    "background":"#D50137",
+                    "color":"#ffffff"
+                });
+            }else if(colorsAreEqual(bgColor, "rgb(213, 1, 55)")){
+                $(this).text("Rent It");
+                $(this).css({
+                    "background":"#F7F7F7",
+                    "color":"#444444",
+                });
+            }else if(colorsAreEqual(bgColor, "rgb(247, 247, 247)")){
+                $(this).text("Added");
+                $(this).css({
+                    "background":"#D50137",
+                    "color":"#ffffff"
+                });
+            }
+        })
+    }
+
+    function colorsAreEqual(color1, color2) {
+        var rgb1 = color1.match(/\d+/g);  // Get the RGB values of color1
+        var rgb2 = color2.match(/\d+/g);  // Get the RGB values of color2
+        if (rgb1.length !== 3 || rgb2.length !== 3) {
+            return false;  // Invalid input - not a valid color
+        }
+        for (var i = 0; i < 3; i++) {
+            if (parseInt(rgb1[i]) !== parseInt(rgb2[i])) {
+                return false;  // The colors are not equal
+            }
+        }
+        return true;  // The colors are equal
+    }
+
 }
+
+
 
 function viewVehicle(path) {
 
