@@ -65,6 +65,7 @@ function saveCar() {
                 alert(resp.message);
                 // loadAllCars("allCarDetail");
                 loadImage();
+                uploadCarImages();
 
             }
         },
@@ -85,10 +86,10 @@ function uploadCarImages(registrationId) {
     let sideViewFile = $("#ImgSideView")[0].files[0];
     let interiorViewFile = $("#ImgInteriorView")[0].files[0];
 
-    let frontFileName = registrationId + "-image_1-" + $("#ImgFrontView")[0].files[0].name;
-    let backFileName = registrationId + "-image_2-" + $("#ImgBackView")[0].files[0].name;
-    let sideFileName = registrationId + "-image_3-" + $("#ImgSideView")[0].files[0].name;
-    let interiorFileName = registrationId + "-image_4-" + $("#ImgInteriorView")[0].files[0].name;
+    let frontFileName = registrationId + "-image1-" + $("#ImgFrontView")[0].files[0].name;
+    let backFileName = registrationId + "-image2-" + $("#ImgBackView")[0].files[0].name;
+    let sideFileName = registrationId + "-image3-" + $("#ImgSideView")[0].files[0].name;
+    let interiorFileName = registrationId + "-image4-" + $("#ImgInteriorView")[0].files[0].name;
 
 
     var data = new FormData();
@@ -108,23 +109,23 @@ function uploadCarImages(registrationId) {
         data: data,
         success: function (res) {
             console.log("Uploaded");
-            Swal.fire({
+           /* Swal.fire({
                 position: 'top-end',
                 icon: 'success',
                 title: "Images Upload Successfully",
                 showConfirmButton: false,
                 timer: 1500
-            });
+            });*/
         },
         error: function (error) {
             let errorReason = JSON.parse(error.responseText);
-            Swal.fire({
+         /*   Swal.fire({
                 position: 'top-end',
                 icon: 'error',
                 title: "Images Not Upload Successfully",
                 showConfirmButton: false,
                 timer: 1500
-            });
+            });*/
         }
     });
 }

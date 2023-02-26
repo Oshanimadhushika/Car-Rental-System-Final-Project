@@ -109,6 +109,6 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public CarDTO searchCarByRegistrationId(String registrationId) {
-        return null;
+        return mapper.map( carRepo.getCarByRegistrationId(registrationId),CarDTO.class);
     }
 }
