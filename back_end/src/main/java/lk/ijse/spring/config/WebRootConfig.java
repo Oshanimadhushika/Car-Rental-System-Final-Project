@@ -9,10 +9,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @Import({JPAConfig.class})
-@ComponentScan(basePackageClasses = {CustomerServiceImpl.class})
+
 public class WebRootConfig {
-    @Bean
-    public ModelMapper modelMapper(){
-        return new ModelMapper();
-    }
+
 }

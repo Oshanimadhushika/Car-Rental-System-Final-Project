@@ -1,14 +1,22 @@
-var baseUrl="http://localhost:8080/car-rental/";
+var baseUrl="http://localhost:8080/back_end_war_exploded/";
 $("#btnAddVehicle").click(function () {
-    saveCar();
+    let registrationId1 = $("#txtRegiNumberCar").val();
+
+    saveCar()
 })
 
 function saveCar() {
+    var Vdata = new FormData();
 
-   /* let frontFileName = $("#ImgFrontView")[0].files[0].name;
+    let frontFileName =$("#ImgFrontView")[0].files[0].name;
     let backFileName = $("#ImgBackView")[0].files[0].name;
     let sideFileName = $("#ImgSideView")[0].files[0].name;
-    let interiorFileName = $("#ImgInteriorView")[0].files[0].name;*/
+    let interiorFileName =$("#ImgInteriorView")[0].files[0].name;
+
+    let vFrontImg =$("#ImgFrontView")[0].files[0]
+    let vBackImg =$("#ImgBackView")[0].files[0]
+    let vSideImg =$("#ImgSideView")[0].files[0]
+    let vInteriorImg =$("#ImgInteriorView")[0].files[0]
 
 
     let registrationId = $("#txtRegiNumberCar").val();
@@ -25,11 +33,13 @@ function saveCar() {
     let monthlyRate = $("#txtMonthlyRate").val();
     let priceForExtraKm = $("#txtPriceForExKm").val();
     let availability =$("#txtAvailabilty").val();
-    /*let image1 = frontFileName;
+    let image1 = frontFileName;
     let image2 = backFileName;
     let image3 = sideFileName;
-    let image4 = interiorFileName;*/
+    let image4 = interiorFileName;
     let damageCost=$("#txtDamageCost").val();
+
+
 
     var CarDTO = {
         registrationId: registrationId,
@@ -46,26 +56,33 @@ function saveCar() {
         monthlyRate: monthlyRate,
         priceForExtraKm: priceForExtraKm,
         availability: availability,
-       /* image1: image1,
-        image2: image2,
-        image3: image3,
-        image4: image4,*/
+        image1:"uploads/"+ image1,
+        image2:"uploads/"+ image2,
+        image3:"uploads/"+ image3,
+        image4:"uploads/"+ image4,
         damageCost:damageCost
     }
 
+    Vdata.append("vImageFile" , vFrontImg)
+    Vdata.append("vImageFile" , vBackImg)
+    Vdata.append("vImageFile" , vSideImg)
+    Vdata.append("vImageFile" , vInteriorImg)
+    Vdata.append("vehicle", new Blob([JSON.stringify(CarDTO)], {type: "application/json"}))
+
+
     $.ajax({
         url: baseUrl + "car",
-        method: 'post',
-        //async: true,
-        contentType: "application/json",
-        //processData: false,
-        data: JSON.stringify(CarDTO),
+        method: "post",
+        async: true,
+        contentType: false,
+        processData: false,
+        data: Vdata,
         success: function (resp) {
             if (resp.status === 200) {
                 alert(resp.message);
                 // loadAllCars("allCarDetail");
-                loadImage();
-                uploadCarImages();
+
+                uploadCarImages(registrationId);
 
             }
         },
@@ -101,8 +118,8 @@ function uploadCarImages(registrationId) {
 
 
     $.ajax({
-        url: baseURL + "car/uploadImg/" + registrationId,
-        method: "PUT",
+        url: baseUrl + "car/uploadImg/" + registrationId,
+        method: "Post",
         async: true,
         contentType: false,
         processData: false,
@@ -140,6 +157,8 @@ function loadAllCars(path) {
         success: function (resp) {
             for (const car of resp.data) {
 
+                console.log((car.image3))
+
                 let div=`<div class="col-xl-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
                          data-aos-delay="100">
                         <div class="icon-box">
@@ -148,9 +167,10 @@ function loadAllCars(path) {
                             <div class="row">
                                 <div class="d-flex justify-content-center">
                                     <div class="icon">
-                                    <img alt="" src=${car.image3}  style="width: 250px;height: 175px"></i></div>
+                                    <img alt="" src=${"http://localhost:8080/back_end_war_exploded/"+car.image3}  style="width: 250px;height: 175px"></i></div>
                                 </div>
                             </div>
+
 
                             <!--Title/V Name-->
                             <div class="row">
@@ -254,7 +274,7 @@ function viewVehicle(path) {
                                 <div class="card-body" id="ViewVehicleMainDiv">
                                     <div class="d-flex align-items-center" style="margin-top: 5px; width:550px">
                                         <div class="col-sm-3" id="ImageVehicle">
-                                            <img style="width: 152px;" src=${car.image3} alt="">
+                                            <img style="width: 152px;" src=${"http://localhost:8080/back_end_war_exploded/"+car.image3} alt="">
                                         </div>
                                         
                                          <div class="col-sm-3" id="DivModel" >
@@ -313,27 +333,27 @@ function viewVehicle(path) {
                                 <form>
                                     <div>
                                         <label for="vhId" class="col-form-label">Vehicle Id : </label>
-                                        <input id="txtVehicleId-update" type="text" class="form-control" id="vhId" disabled>
+                                        <input  type="text" class="form-control txtVehicleId-update" id="vhId" disabled>
                                     </div>
                                     <div >
                                         <label for="vhBrand" class="col-form-label">Vehicle Brand : </label>
-                                        <input id="txtVehicleBrand-update" type="text" class="form-control" id="vhName">
+                                        <input  type="text" class="form-control txtVehicleBrand-update" id="vhName">
                                     </div>
                                     <div >
                                         <label for="vhModel" class="col-form-label">Vehicle Model : </label>
-                                        <input id="txtVehicleModel-update" type="text" class="form-control" id="vhModel">
+                                        <input  type="text" class="form-control txtVehicleModel-update" id="vhModel">
                                     </div>
                                     <div >
                                         <label for="vhDaily" class="col-form-label">Daily Rate:</label>
-                                        <input id="txtVehicleDaily-update" type="text" class="form-control" id="vhDaily">
+                                        <input  type="text" class="form-control txtVehicleDaily-update" id="vhDaily">
                                     </div>
                                     <div >
                                         <label for="vhMonthly" class="col-form-label">Monthly Rate:</label>
-                                        <input id="txtVehicleMonthly-update" type="text" class="form-control" id="vhMonthly">
+                                        <input  type="text" class="form-control txtVehicleMonthly-update" id="vhMonthly">
                                     </div>
                                     <div >
                                         <label for="vhDamage" class="col-form-label">Damage Cost:</label>
-                                        <input id="txtVehicleDamage-update" type="text" class="form-control" id="vhDamage">
+                                        <input  type="text" class="form-control txtVehicleDamage-update" id="vhDamage">
                                     </div>
                                 </form>
                             </div>
@@ -357,6 +377,36 @@ function viewVehicle(path) {
 
                 $("#ViewVehicleDiv").append(div);
 
+
+                function viewUpdateCar() {
+                    var newDetails = {
+                        registrationId: $('.txtVehicleId-update').val(car.registrationId),
+                        brand: $('.txtVehicleBrand-update').val(car.brand),
+                        model: $('.txtVehicleModel-update').val(car.model),
+                        dailyRate: $('.txtVehicleDaily-update').val(car.dailyRate),
+                        monthlyRate: $('.txtVehicleMonthly-update').val(car.monthlyRate),
+                        damageCost: $('.txtVehicleDamage-update').val(car.damageCost)
+
+                    }
+
+                    $.ajax({
+                        url: baseUrl + "car",
+                        method: "put",
+                        contentType: "application/json",
+                        data: JSON.stringify(newDetails),
+                        success: function (res) {
+                            if (res.status === 200) {
+                                alert(res.message)
+                            } else {
+
+                            }
+                        }
+                    });
+                }
+
+                $('.btnViewUpdate').click(function () {
+                    viewUpdateCar();
+                });
 
 
             }

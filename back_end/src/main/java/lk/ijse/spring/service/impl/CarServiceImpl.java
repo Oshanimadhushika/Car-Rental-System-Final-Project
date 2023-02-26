@@ -35,6 +35,11 @@ public class CarServiceImpl implements CarService {
     @Override
     public void updateCar(CarDTO carDTO) {
 
+        if (carRepo.existsById(carDTO.getRegistrationId())){
+            carRepo.save(mapper.map(carDTO, Car.class));
+        }else {
+            throw new RuntimeException("Car " + carDTO.getRegistrationId() + " Not Available to Update..!");
+        }
     }
 
     @Override
@@ -100,7 +105,9 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void uploadCarImage(String frontPath, String BackPath, String sidePath, String InteriorPath, String registrationNumber) {
+
         if (carRepo.existsById(registrationNumber)) {
+            System.out.println("Car Impl-if");
             carRepo.updateCarFilePaths(frontPath, BackPath, sidePath,InteriorPath, registrationNumber);
         } else {
             throw new RuntimeException("User Not Found");
