@@ -1,4 +1,4 @@
-var baseUrl="http://localhost:8080/car-rental/";
+var baseUrl="http://localhost:8080/back_end_war_exploded/";
 
 var customer;
 var customer_nic;
