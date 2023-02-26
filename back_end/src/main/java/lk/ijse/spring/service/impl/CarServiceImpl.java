@@ -58,6 +58,15 @@ public class CarServiceImpl implements CarService {
             }.getType());
         }
 
+   /* @Override
+    public void uploadCarImages(String frontPath, String backPath, String sidePath, String interiorPath, String registrationNum) {
+        if (repo.existsById(registrationNum)) {
+            repo.updateCarFilePaths(frontPath, backPath, sidePath,interiorPath, registrationNum);
+        } else {
+            throw new RuntimeException("User Not Found");
+        }
+    }*/
+
 
     @Override
     public List<CarDTO> getCarsUnderMaintain() {

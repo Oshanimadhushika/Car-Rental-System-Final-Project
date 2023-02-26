@@ -197,9 +197,14 @@ function viewVehicle(path) {
                             <div class="card info-card sales-card mt-5">
 
                                 <div class="card-body" id="ViewVehicleMainDiv">
-                                    <div class="d-flex align-items-center" style="margin-top: 5px; width:600px">
+                                    <div class="d-flex align-items-center" style="margin-top: 5px; width:550px">
                                         <div class="col-sm-3" id="ImageVehicle">
                                             <img style="width: 152px;" src=${car.image3} alt="">
+                                        </div>
+                                        
+                                         <div class="col-sm-3" id="DivModel" >
+                                            <h6 id="VehicleId" style="color: black; font-size: 15px; ">Vehicle ID</h6>
+                                            <p id="VehicleId" style="font-size: 15px">${car.registrationId}</p>
                                         </div>
 
                                         <div class="col-sm-3" id="DivModel" >
@@ -235,13 +240,65 @@ function viewVehicle(path) {
                                         </div>
 
                                         <div class="col-sm-3">
-                                            <button class="btn btn-primary" id="btnupdateCar" style="background-color: #06065f;color: white; border: none; width: 100px; margin-left: 398px">Update</button>
+                                            <button class="btn btn-primary" data-bs-toggle="modal" 
+                                            data-bs-target="#addItemModal" id="btnupdateCar" style="background-color: #06065f;color: white; border: none; width: 100px; margin-left: 398px">Update</button>
                                         </div>
+                                        
+                                      <!--pop up update-->  
+                                        
+                                        
+                                        <div class="modal fade" id="addItemModal" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
+                    <div class="modal-dialog-centered modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header text-light" style="background-color:#1F1D2E ">
+                                <h5 class="modal-title " id="addItemModalLabel">Update & Delete Car</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div>
+                                        <label for="vhId" class="col-form-label">Vehicle Id : </label>
+                                        <input id="txtVehicleId-update" type="text" class="form-control" id="vhId" disabled>
+                                    </div>
+                                    <div >
+                                        <label for="vhBrand" class="col-form-label">Vehicle Brand : </label>
+                                        <input id="txtVehicleBrand-update" type="text" class="form-control" id="vhName">
+                                    </div>
+                                    <div >
+                                        <label for="vhModel" class="col-form-label">Vehicle Model : </label>
+                                        <input id="txtVehicleModel-update" type="text" class="form-control" id="vhModel">
+                                    </div>
+                                    <div >
+                                        <label for="vhDaily" class="col-form-label">Daily Rate:</label>
+                                        <input id="txtVehicleDaily-update" type="text" class="form-control" id="vhDaily">
+                                    </div>
+                                    <div >
+                                        <label for="vhMonthly" class="col-form-label">Monthly Rate:</label>
+                                        <input id="txtVehicleMonthly-update" type="text" class="form-control" id="vhMonthly">
+                                    </div>
+                                    <div >
+                                        <label for="vhDamage" class="col-form-label">Damage Cost:</label>
+                                        <input id="txtVehicleDamage-update" type="text" class="form-control" id="vhDamage">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btnUpdateCar btn btn-primary data-bs-dismiss="modal">Update</button>
+                                <button id="btnDeleteCar" type="button" class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+         </div>
+    </div>
+ </div><!-- End Sales Card -->
                                     </div>
                                 </div>
 
                             </div>
-                        </div>`;
+                        </div>
+            `;
 
                 $("#ViewVehicleDiv").append(div);
 

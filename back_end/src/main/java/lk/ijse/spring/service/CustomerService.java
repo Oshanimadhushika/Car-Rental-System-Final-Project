@@ -16,5 +16,7 @@ public interface CustomerService {
 
     List<CustomerDTO> getAllCustomerDetail();
 
+    void uploadCarImages();
+
     List<CustomerDTO> getTodayRegisteredCustomers();
 }
