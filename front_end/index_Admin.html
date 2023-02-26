@@ -764,7 +764,19 @@
             <h1 style="border-bottom:4px solid darkred; display: inline-block">VIEW VEHICLE</h1>
         </div><!-- End Page Title -->
 
-        <div class="dropdown-center" style="margin-left: 30px; margin-top: 30px">
+
+        <div class="form-group col-md-6 mb-3" style="margin-left: 30px; margin-top: 30px; border-color:2px solid black">
+            <select aria-label="Default select example" class="form-select mb-3"
+                    id="save-car-type">
+                <option value="" selected disabled>Sort By</option>
+                <option value="available">Available</option>
+                <option value="NonAvailable">Non-Available</option>
+                <option value="Maintenance">Maintenance</option>
+                <option value="underMaintence">Under-Maintenance</option>
+            </select>
+        </div>
+
+       <!-- <div class="dropdown-center" style="margin-left: 30px; margin-top: 30px">
             <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Short By
             </button>
@@ -775,6 +787,8 @@
                 <li><a class="dropdown-item" href="#">Under-Maintenance</a></li>
             </ul>
         </div>
+-->
+
 
         <section class="section dashboard" style="margin-left:-37px; width: 1500px;">
             <div class="row">
