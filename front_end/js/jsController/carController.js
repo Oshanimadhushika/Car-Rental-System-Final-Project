@@ -274,7 +274,7 @@ function viewVehicle(path) {
                                 <div class="card-body" id="ViewVehicleMainDiv">
                                     <div class="d-flex align-items-center" style="margin-top: 5px; width:550px">
                                         <div class="col-sm-3" id="ImageVehicle">
-                                            <img style="width: 152px;" src=${"http://localhost:8080/back_end_war_exploded/"+car.image3} alt="">
+                                            <img style="    width: 129px;height: 146px;" src=${"http://localhost:8080/back_end_war_exploded/"+car.image3} alt="">
                                         </div>
                                         
                                          <div class="col-sm-3" id="DivModel" >
