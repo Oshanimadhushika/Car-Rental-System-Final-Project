@@ -28,4 +28,8 @@ public interface CarService {
     void setCarStatusUnavailableOrAvailable(String id, String status);
 
     List<CarDTO> sortCarsByAttributes(CarDTO carDTO);
+
+    void uploadCarImage(String frontPath,String BackPath,String sidePath,String InteriorPath,String registrationNumber);
+
+    CarDTO searchCarByRegistrationId(String registrationId);
 }

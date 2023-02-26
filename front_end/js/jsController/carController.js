@@ -252,7 +252,7 @@ function viewVehicle(path) {
                         <div class="modal-content">
                             <div class="modal-header text-light" style="background-color:#1F1D2E ">
                                 <h5 class="modal-title " id="addItemModalLabel">Update & Delete Car</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" style="background-color: white;" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <form>

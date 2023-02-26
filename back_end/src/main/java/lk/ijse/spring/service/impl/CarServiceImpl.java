@@ -97,4 +97,18 @@ public class CarServiceImpl implements CarService {
     public List<CarDTO> sortCarsByAttributes(CarDTO carDTO) {
         return null;
     }
+
+    @Override
+    public void uploadCarImage(String frontPath, String BackPath, String sidePath, String InteriorPath, String registrationNumber) {
+        if (carRepo.existsById(registrationNumber)) {
+            carRepo.updateCarFilePaths(frontPath, BackPath, sidePath,InteriorPath, registrationNumber);
+        } else {
+            throw new RuntimeException("User Not Found");
+        }
+    }
+
+    @Override
+    public CarDTO searchCarByRegistrationId(String registrationId) {
+        return null;
+    }
 }
