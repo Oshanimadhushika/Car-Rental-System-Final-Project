@@ -5,10 +5,10 @@ $("#btnAddVehicle").click(function () {
 
 function saveCar() {
 
-    let frontFileName = $("#ImgFrontView")[0].files[0].name;
+   /* let frontFileName = $("#ImgFrontView")[0].files[0].name;
     let backFileName = $("#ImgBackView")[0].files[0].name;
     let sideFileName = $("#ImgSideView")[0].files[0].name;
-    let interiorFileName = $("#ImgInteriorView")[0].files[0].name;
+    let interiorFileName = $("#ImgInteriorView")[0].files[0].name;*/
 
 
     let registrationId = $("#txtRegiNumberCar").val();
@@ -25,10 +25,10 @@ function saveCar() {
     let monthlyRate = $("#txtMonthlyRate").val();
     let priceForExtraKm = $("#txtPriceForExKm").val();
     let availability =$("#txtAvailabilty").val();
-    let image1 = frontFileName;
+    /*let image1 = frontFileName;
     let image2 = backFileName;
     let image3 = sideFileName;
-    let image4 = interiorFileName;
+    let image4 = interiorFileName;*/
     let damageCost=$("#txtDamageCost").val();
 
     var CarDTO = {
@@ -46,10 +46,10 @@ function saveCar() {
         monthlyRate: monthlyRate,
         priceForExtraKm: priceForExtraKm,
         availability: availability,
-        image1: image1,
+       /* image1: image1,
         image2: image2,
         image3: image3,
-        image4: image4,
+        image4: image4,*/
         damageCost:damageCost
     }
 
@@ -74,6 +74,59 @@ function saveCar() {
         }
     });
     //clearSaveCarForm();
+}
+
+
+
+function uploadCarImages(registrationId) {
+
+    let frontViewFile = $("#ImgFrontView")[0].files[0];
+    let backViewFile = $("#ImgBackView")[0].files[0];
+    let sideViewFile = $("#ImgSideView")[0].files[0];
+    let interiorViewFile = $("#ImgInteriorView")[0].files[0];
+
+    let frontFileName = registrationId + "-image_1-" + $("#ImgFrontView")[0].files[0].name;
+    let backFileName = registrationId + "-image_2-" + $("#ImgBackView")[0].files[0].name;
+    let sideFileName = registrationId + "-image_3-" + $("#ImgSideView")[0].files[0].name;
+    let interiorFileName = registrationId + "-image_4-" + $("#ImgInteriorView")[0].files[0].name;
+
+
+    var data = new FormData();
+
+    data.append("image1", frontViewFile, frontFileName);
+    data.append("image2", backViewFile, backFileName);
+    data.append("image3", sideViewFile, sideFileName);
+    data.append("image4", interiorViewFile, interiorFileName);
+
+
+    $.ajax({
+        url: baseURL + "car/uploadImg/" + registrationId,
+        method: "PUT",
+        async: true,
+        contentType: false,
+        processData: false,
+        data: data,
+        success: function (res) {
+            console.log("Uploaded");
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: "Images Upload Successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        },
+        error: function (error) {
+            let errorReason = JSON.parse(error.responseText);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: "Images Not Upload Successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+    });
 }
 
 
@@ -183,6 +236,7 @@ function loadAllCars(path) {
     });
 
 }
+
 function viewVehicle(path) {
 
     $("#ViewVehicleDiv").empty();
