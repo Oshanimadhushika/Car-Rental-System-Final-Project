@@ -1,4 +1,5 @@
 var baseUrl="http://localhost:8080/back_end_war_exploded/";
+
 $("#btnAddVehicle").click(function () {
     let registrationId1 = $("#txtRegiNumberCar").val();
 
