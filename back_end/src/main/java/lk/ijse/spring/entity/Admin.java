@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Data
 public class Admin {
     @Id
-    private String adminId;
+    private String nic;
     private String userName;
     private String password;
 }
