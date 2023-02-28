@@ -1,6 +1,8 @@
 package lk.ijse.spring.service;
 
+import lk.ijse.spring.dto.AdminDTO;
 import lk.ijse.spring.dto.DriverDTO;
+import lk.ijse.spring.dto.DriverLoginDTO;
 
 import java.util.List;
 
@@ -17,6 +19,9 @@ public interface DriverService {
     DriverDTO searchDriver(String id);
 
     List<DriverDTO> getAllDriverDetail();
+
+    DriverLoginDTO checkAdminLogIn(String userName);
+
 
     List<DriverDTO> getTodayAvailableAndOccupiedDrivers(String status);
 }

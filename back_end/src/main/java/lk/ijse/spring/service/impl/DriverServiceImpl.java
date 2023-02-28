@@ -1,6 +1,8 @@
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.AdminDTO;
 import lk.ijse.spring.dto.DriverDTO;
+import lk.ijse.spring.dto.DriverLoginDTO;
 import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Driver;
 import lk.ijse.spring.repo.DriverRepo;
@@ -66,6 +68,12 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public List<DriverDTO> getAllDriverDetail() {
         return modelMapper.map(driverRepo.findAll(),new TypeToken<List<DriverDTO>>(){}.getType());
+    }
+
+    @Override
+    public DriverLoginDTO checkAdminLogIn(String userName) {
+        return modelMapper.map(driverRepo.searchDriverByUserName(userName), DriverLoginDTO.class);
+
     }
 
     @Override

@@ -55,7 +55,7 @@ function registerCustomer() {
 
 
     var newDetails = {
-        customerId:"C005",
+        customerId:"C006",
         name: name,
         address: address,
         nic: nic,

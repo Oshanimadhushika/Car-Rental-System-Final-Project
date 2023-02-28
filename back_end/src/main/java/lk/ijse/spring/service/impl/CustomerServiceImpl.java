@@ -25,7 +25,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     public void saveCustomer(CustomerDTO customerDTO) {
         if (customerRepo.existsById(customerDTO.getCustomerId())){
-            throw new RuntimeException("Customer" +customerDTO.getCustomerId()+"Already Exist..!");
+            throw new RuntimeException("Customer" +customerDTO.getCustomerId()+"Added..!");
         }
         customerRepo.save(modelMapper.map(customerDTO, Customer.class));
 
