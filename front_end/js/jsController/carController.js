@@ -507,7 +507,8 @@ function viewVehicle(path) {
             for (const car of resp.data) {
 
                 let div = ` <!-- Sales Card -->
-                       <div class="col-xxl-4 col-md-12">
+ 
+                        <div class="col-xxl-4 col-md-12">
                             <div class="card info-card sales-card mt-5">
 
                                 <div class="card-body" id="ViewVehicleMainDiv">
@@ -553,11 +554,11 @@ function viewVehicle(path) {
                                             <button class="btn btn-primary gap-5" id="btnAddMaintenance" style="background-color: #7b2407;color: white; border: none; width: 203px; margin-left: 353px">Add To Maintenance</button>
                                         </div>
 
-                                        <div class="col-sm-3">
+                                       <!-- <div class="col-sm-3">
                                             <button class="btn btn-primary btnupdateCar" data-bs-toggle="modal" 
                                             data-bs-target=".addItemModal"  style="background-color: #06065f;color: white; border: none; width: 100px; margin-left: 398px">Update</button>
                                         </div>
-                                        
+                                        -->
                                         
                                         <!--pop up-->
                                         
@@ -644,7 +645,7 @@ function viewVehicle(path) {
                 }
 
                 $('.btnupdateCar').click(function () {
-                    viewUpdateCar();
+                    console.log($(".btnupdateCar"))
                 });
 
             }
