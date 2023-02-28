@@ -571,10 +571,18 @@ function viewVehicle(path) {
                             </div>
                             <div class="modal-body">
                                 <form>
+                                
                                     <div>
-                                        <label for="vhId" class="col-form-label">Vehicle Id : </label>
-                                        <input type="text" class="txtVehicleId-update form-control" id="vhId" disabled>
+                                        <!--<label for="vhId" class="col-form-label">Vehicle Id : </label>
+                                        <input type="text" class="txtVehicleId-update form-control" id="vhId" disabled>-->
+                                        
+                                         <select aria-label="Default select example" class="form-select mb-3 txtVehicleId-update"   id="save-car-type">
+                                                   <option value="" selected disabled>Vehicle Id:</option>
+                                                   <option value="vehiId">${car.registrationId}</option>
+                                                    
+                                                </select>
                                     </div>
+                                    
                                     <div >
                                         <label for="vhBrand" class="col-form-label">Vehicle Brand : </label>
                                         <input type="text" class="txtVehicleBrand-update form-control vhBrand">
