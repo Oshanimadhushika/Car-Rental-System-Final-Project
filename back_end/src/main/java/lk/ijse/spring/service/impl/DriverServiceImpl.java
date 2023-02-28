@@ -70,12 +70,17 @@ public class DriverServiceImpl implements DriverService {
         return modelMapper.map(driverRepo.findAll(),new TypeToken<List<DriverDTO>>(){}.getType());
     }
 
-    @Override
+   /* @Override
+    public DriverLoginDTO checkDriverLogIn(String userName) {
+        return modelMapper.map(driverRepo.searchDriverByUserName(userName), DriverLoginDTO.class);
+    }*/
+
+    /*@Override
     public DriverLoginDTO checkAdminLogIn(String userName) {
         return modelMapper.map(driverRepo.searchDriverByUserName(userName), DriverLoginDTO.class);
 
     }
-
+*/
     @Override
     public List<DriverDTO> getTodayAvailableAndOccupiedDrivers(String status) {
         return null;

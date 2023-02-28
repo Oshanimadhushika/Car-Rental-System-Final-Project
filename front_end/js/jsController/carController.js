@@ -227,7 +227,7 @@ function loadAllCars(path) {
 <!--Button-->
                             <div class="row mt-3">
                                 <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
-                                    <button class="btn_RentIt" >RENT IT</button>
+                                    <button data-btnRentIt="${car.brand}" class="btn_RentIt" >RENT IT</button>
                                 </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
 <!--
@@ -262,6 +262,7 @@ function loadAllCars(path) {
     function rentItClick() {
         $(".btn_RentIt").click(function () {
             var bgColor = $(this).css("background-color");
+            console.log($(this).attr("data-btnRentIt"));
 
             if(colorsAreEqual(bgColor, "rgb(68, 68, 68)")){
                 $(this).text("Added");

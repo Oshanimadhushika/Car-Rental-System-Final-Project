@@ -44,9 +44,5 @@ public class DriverController {
         return new ResponseUtil("200"," Success.!",allDrivers);
     }
 
-    @GetMapping(params = {"userName"})
-    public ResponseUtil loginDriver(@RequestParam String userName){
-        DriverLoginDTO driverLoginDTO = driverService.checkDriverLogIn(userName);
-        return new ResponseUtil("200","Login Success!",driverLoginDTO);
-    }
+
 }
