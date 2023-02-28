@@ -20,8 +20,5 @@ public interface DriverService {
 
     List<DriverDTO> getAllDriverDetail();
 
-
-
-
     List<DriverDTO> getTodayAvailableAndOccupiedDrivers(String status);
 }
