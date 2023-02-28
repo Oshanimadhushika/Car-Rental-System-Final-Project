@@ -20,7 +20,7 @@ public interface DriverService {
 
     List<DriverDTO> getAllDriverDetail();
 
-    DriverLoginDTO checkAdminLogIn(String userName);
+    DriverLoginDTO checkDriverLogIn(String userName);
 
 
     List<DriverDTO> getTodayAvailableAndOccupiedDrivers(String status);

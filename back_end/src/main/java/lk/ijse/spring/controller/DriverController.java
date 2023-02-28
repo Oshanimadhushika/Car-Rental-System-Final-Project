@@ -1,7 +1,9 @@
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.AdminDTO;
 import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.DriverDTO;
+import lk.ijse.spring.dto.DriverLoginDTO;
 import lk.ijse.spring.service.CustomerService;
 import lk.ijse.spring.service.DriverService;
 import lk.ijse.spring.util.ResponseUtil;
@@ -40,5 +42,11 @@ public class DriverController {
     public ResponseUtil getAllCustomer(){
         List<DriverDTO> allDrivers = driverService.getAllDriverDetail();
         return new ResponseUtil("200"," Success.!",allDrivers);
+    }
+
+    @GetMapping(params = {"userName"})
+    public ResponseUtil loginDriver(@RequestParam String userName){
+        DriverLoginDTO driverLoginDTO = driverService.checkDriverLogIn(userName);
+        return new ResponseUtil("200","Login Success!",driverLoginDTO);
     }
 }

@@ -22,7 +22,7 @@ public class CustomerController {
     @PostMapping
     public ResponseUtil saveCustomer(@RequestBody CustomerDTO dto){
         customerService.saveCustomer(dto);
-        return new ResponseUtil("200",dto.getCustomerId()+ " is Already Exists.!",dto);
+        return new ResponseUtil("200",dto.getCustomerId()+ " is Added!",dto);
     }
 
 
@@ -53,7 +53,7 @@ public class CustomerController {
     }
 
     @GetMapping(params = {"userName"})
-    public ResponseUtil loginAdmin(@RequestParam String userName){
+    public ResponseUtil loginCustomer(@RequestParam String userName){
         CustomerDTO customerDTO = customerService.checkCustomerLogIn(userName);
         return new ResponseUtil("200","Login Success!",customerDTO);
     }
