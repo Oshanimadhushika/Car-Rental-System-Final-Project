@@ -333,7 +333,7 @@ function setBrandToArray(param) {
 
 
 
-function viewVehicle(path) {
+/*function viewVehicle(path) {
 
     $("#ViewVehicleDiv").empty();
 
@@ -397,7 +397,7 @@ function viewVehicle(path) {
                                       <!--pop up update-->  
                                         
                                         
-                                        <div class="modal fade" id="addItemModal" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="addItemModal" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
                     <div class="modal-dialog-centered modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header text-light" style="background-color:#1F1D2E ">
@@ -430,6 +430,11 @@ function viewVehicle(path) {
                                         <label for="vhDamage" class="col-form-label">Damage Cost:</label>
                                         <input  type="text" class="form-control txtVehicleDamage-update" id="vhDamage">
                                     </div>
+                                    
+                                     <div >
+                                        <label for="vhColour" class="col-form-label">Colour:</label>
+                                        <input  type="text" class="form-control txtVehicleColour-update" id="vhColour">
+                                    </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
@@ -443,12 +448,170 @@ function viewVehicle(path) {
          </div>
     </div>
  </div><!-- End Sales Card -->
-                                    </div>
-                                </div>
+                                  
+            `;
 
+                $("#ViewVehicleDiv").append(div);
+
+
+
+                function viewUpdateCar() {
+                    var newDetails = {
+                        registrationId: $('.txtVehicleId-update').val(car.registrationId),
+                        Brand: $('.txtVehicleBrand-update').val(car.Brand),
+                        model: $('.txtVehicleModel-update').val(car.model),
+                        dailyRate: $('.txtVehicleDaily-update').val(car.dailyRate),
+                        monthlyRate: $('.txtVehicleMonthly-update').val(car.monthlyRate),
+                        DamageCost: $('.txtVehicleDamage-update').val(car.DamageCost),
+                        color: $('.txtVehicleColour-update').val(car.color)
+                    }
+
+                    $.ajax({
+                        url: baseUrl + "car",
+                        method: "put",
+                        contentType: "application/json",
+                        data: JSON.stringify(newDetails),
+                        success: function (res) {
+                            if (res.status === 200) {
+                                alert(res.message)
+                            } else {
+
+                            }
+                        }
+                    });
+
+                }
+
+                $('.btnupdateCar').click(function () {
+                    viewUpdateCar();
+                });
+
+
+            }
+        }
+    });
+}*/
+
+
+
+
+
+function viewVehicle(path) {
+    /*$("#view-car-main-div").empty();*/
+    $("#view-car-container").empty();
+
+    $.ajax({
+        url: baseUrl + "car/" + path,
+        method: "GET",
+        success: function (resp) {
+            for (const car of resp.data) {
+
+                let div = ` <!-- Sales Card -->
+                       <div class="col-xxl-4 col-md-12">
+                            <div class="card info-card sales-card mt-5">
+
+                                <div class="card-body" id="ViewVehicleMainDiv">
+                                    <div class="d-flex align-items-center" style="margin-top: 5px; width:550px">
+                                        <div class="col-sm-3" id="ImageVehicle">
+                                            <img style="    width: 129px;height: 146px;" src=${"http://localhost:8080/back_end_war_exploded/"+car.image3} alt="">
+                                        </div>
+                                        
+                                         <div class="col-sm-3" id="DivModel" >
+                                            <h6 id="VehicleId" style="color: black; font-size: 15px; ">Vehicle ID</h6>
+                                            <p id="VehicleId" style="font-size: 15px">${car.registrationId}</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivModel" >
+                                            <h6 id="ModelTopic" style="color: black; font-size: 15px; ">Model</h6>
+                                            <p id="ModelName" style="font-size: 15px">${car.model}</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivDaily">
+                                            <h6 id="DailyTopic" style="color: black; font-size: 15px">Daily</h6>
+                                            <p id="DailyPrice" style="font-size: 15px">${car.dailyRate}</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivMonthly">
+                                            <h6 id="MonthlyTopic" style="color: black; font-size: 15px">Monthly</h6>
+                                            <p id="MonthlyPrice" style="font-size: 15px">${car.monthlyRate}</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivDamgeCost">
+                                            <h6 id="DamageCostTopic" style="color: black; font-size: 15px">Damage Cost</h6>
+                                            <p id="DamageCostPrice" style="font-size: 15px">${car.damageCost}</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivStatus">
+                                            <h6 id="StatusTopic" style="color: black; font-size: 15px">Status</h6>
+                                            <p id="TxtStatus" style="font-size: 15px">${car.availability}</p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="d-flex align-items-center" style="margin-left: 60px">
+                                        <div class="col-sm-3">
+                                            <button class="btn btn-primary gap-5" id="btnAddMaintenance" style="background-color: #7b2407;color: white; border: none; width: 203px; margin-left: 353px">Add To Maintenance</button>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <button class="btn btn-primary btnupdateCar" data-bs-toggle="modal" 
+                                            data-bs-target=".addItemModal"  style="background-color: #06065f;color: white; border: none; width: 100px; margin-left: 398px">Update</button>
+                                        </div>
+                                        
+                                        
+                                        <!--pop up-->
+                                        
+                 <div class="modal fade addItemModal" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
+                    <div class="modal-dialog-centered modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header text-light" style="background-color:#1F1D2E ">
+                                <h5 class="modal-title " id="addItemModalLabel">Update & Delete Car</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: white"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div>
+                                        <label for="vhId" class="col-form-label">Vehicle Id : </label>
+                                        <input type="text" class="txtVehicleId-update form-control" id="vhId" disabled>
+                                    </div>
+                                    <div >
+                                        <label for="vhBrand" class="col-form-label">Vehicle Brand : </label>
+                                        <input type="text" class="txtVehicleBrand-update form-control vhBrand">
+                                    </div>
+                                    <div >
+                                        <label for="vhModel" class="col-form-label">Vehicle Model : </label>
+                                        <input type="text" class="txtVehicleModel-update form-control vhModel">
+                                    </div>
+                                    <div >
+                                        <label for="vhDaily" class="col-form-label">Daily Rate:</label>
+                                        <input type="text" class="txtVehicleDaily-update form-control vhDaily">
+                                    </div>
+                                    <div >
+                                        <label for="vhMonthly" class="col-form-label">Monthly Rate:</label>
+                                        <input type="text" class="txtVehicleMonthly-update form-control vhMonthly">
+                                    </div>
+                                    <div >
+                                        <label for="vhDamage" class="col-form-label">Damage Cost:</label>
+                                        <input type="text" class="txtVehicleDamage-update form-control vhDamage">
+                                    </div>
+                                    
+                                     <div >
+                                        <label for="vhColour" class="col-form-label">Colour:</label>
+                                        <input type="text" class="txtVehicleColour-update form-control vhColour">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btnUpdateCar btn btn-primary data-bs-dismiss="modal">Update</button>
+                                <button id="btnDeleteCar" type="button" class="btn btn-danger">Delete</button>
                             </div>
                         </div>
-            `;
+                    </div>
+                </div>
+             </div>
+         </div>
+    </div>
+ </div><!-- End Sales Card -->`;
 
                 $("#ViewVehicleDiv").append(div);
 
@@ -460,7 +623,8 @@ function viewVehicle(path) {
                         model: $('.txtVehicleModel-update').val(car.model),
                         dailyRate: $('.txtVehicleDaily-update').val(car.dailyRate),
                         monthlyRate: $('.txtVehicleMonthly-update').val(car.monthlyRate),
-                        damageCost: $('.txtVehicleDamage-update').val(car.damageCost)
+                        damageCost: $('.txtVehicleDamage-update').val(car.damageCost),
+                        color: $('.txtVehicleColour-update').val(car.color),
 
                     }
 
@@ -479,12 +643,12 @@ function viewVehicle(path) {
                     });
                 }
 
-                $('.btnViewUpdate').click(function () {
+                $('.btnupdateCar').click(function () {
                     viewUpdateCar();
                 });
 
-
             }
+
         }
     });
 }

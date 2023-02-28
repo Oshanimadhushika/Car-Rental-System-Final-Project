@@ -126,52 +126,54 @@ $('#navLogInCarStore').click(function () {
 })
 
 $('#goToCartButton1').click(function () {
-    $("#CartCss").removeAttr("disabled");
+    $("#LoginFormCss").removeAttr("disabled");
     $("#RegisterFormCss").attr("disabled","disabled");
     $("#HeaderFormCss").attr("disabled","disabled");
     $("#CarStoreCss").attr("disabled","disabled");
-    $("#LoginFormCss").attr("disabled","disabled");
+    $("#CartCss").attr("disabled","disabled");
     $('#spaMainIndex').css('display','none');
     $('#spaCarStore').css('display','none');
-    $('#spaCart').css('display','block');
+    $('#spaCart').css('display','none');
     $('#spaOverview').css('display','none');
     $('#spaCarDetail').css('display','none');
-    $('#spaLogin').css('display','none');
+    $('#spaLogin').css('display','block');
     $('#spaRegister').css('display','none');
     $('#spaUpdateIndex').css('display','none');
 
 })
 $('#goToCartButton2').click(function () {
-    $("#CartCss").removeAttr("disabled");
+    $("#LoginFormCss").removeAttr("disabled");
     $("#RegisterFormCss").attr("disabled","disabled");
     $("#HeaderFormCss").attr("disabled","disabled");
     $("#CarStoreCss").attr("disabled","disabled");
-    $("#LoginFormCss").attr("disabled","disabled");
+    $("#CartCss").attr("disabled","disabled");
     $('#spaMainIndex').css('display','none');
     $('#spaCarStore').css('display','none');
-    $('#spaCart').css('display','block');
+    $('#spaCart').css('display','none');
     $('#spaOverview').css('display','none');
     $('#spaCarDetail').css('display','none');
-    $('#spaLogin').css('display','none');
+    $('#spaLogin').css('display','block');
     $('#spaRegister').css('display','none');
     $('#spaUpdateIndex').css('display','none');
+
 
 })
 
 $('#goToCartButton3').click(function () {
-    $("#CartCss").removeAttr("disabled");
+    $("#LoginFormCss").removeAttr("disabled");
     $("#RegisterFormCss").attr("disabled","disabled");
     $("#HeaderFormCss").attr("disabled","disabled");
     $("#CarStoreCss").attr("disabled","disabled");
-    $("#LoginFormCss").attr("disabled","disabled");
+    $("#CartCss").attr("disabled","disabled");
     $('#spaMainIndex').css('display','none');
     $('#spaCarStore').css('display','none');
-    $('#spaCart').css('display','block');
+    $('#spaCart').css('display','none');
     $('#spaOverview').css('display','none');
     $('#spaCarDetail').css('display','none');
-    $('#spaLogin').css('display','none');
+    $('#spaLogin').css('display','block');
     $('#spaRegister').css('display','none');
     $('#spaUpdateIndex').css('display','none');
+
 
 })
 
