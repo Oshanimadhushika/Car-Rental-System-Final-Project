@@ -1,6 +1,6 @@
 var baseUrl="http://localhost:8080/back_end_war_exploded/";
 
-
+var vNameAr=[];
 $("#btnAddVehicle").click(function () {
     let registrationId1 = $("#txtRegiNumberCar").val();
 
@@ -228,7 +228,7 @@ function loadAllCars(path) {
 <!--Button-->
                             <div class="row mt-3">
                                 <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
-                                    <button data-btnRentIt="${car.modal}" class="btn_RentIt" >RENT IT</button>
+                                    <button data-btnRentIt="${car.model}" class="btn_RentIt" >RENT IT</button>
                                 </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
 <!--
@@ -285,7 +285,7 @@ function loadAllCars(path) {
                     "color":"#ffffff"
                 });
             }
-            setBrandToArray();
+            setBrandToArray(this);
         })
     }
 
@@ -305,7 +305,7 @@ function loadAllCars(path) {
 
 }
 
-var vNameAr=[];
+
 function setBrandToArray(param) {
     let bool=true;
 
