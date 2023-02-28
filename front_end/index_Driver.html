@@ -34,123 +34,89 @@
 
 <!--Driver Login-->
 <main id="spaDriverLogin">
-    <header>
-        <!-- !&#45;&#45; ======= Header ======= &ndash;&gt;-->
-        <header id="header" class="fixed-top ">
-            <div class="container d-flex align-items-center">
 
-                <!-- <img src="assets/images/ezicar.png" alt="">-->
+    <div class="container">
 
-                <a  href="index.html" class="logo me-auto"><img src="assets/images/ezicarWhite.png"  alt="" class="img-fluid"></a>
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
+                        <div class="d-flex justify-content-center py-4">
+                            <a  class="logo d-flex align-items-center w-auto">
+                                <img src="assets/images/ezicar.png" style="width:100px; height: 100px;" alt="">
 
-                <nav id="navbar" class="navbar">
-                    <ul>
-                        <li id="navDriverLoginHome"><a class="nav-link scrollto active" href="index_Customer.html">Home</a></li>
-                      <!--  <li><a class="nav-link scrollto" href="">About Us</a></li>
-                        <li><a class="nav-link scrollto" href="#">Services</a></li>
-                        <li><a class="nav-link   scrollto" href="#">Cars</a></li>
-                        <li><a class="nav-link scrollto" href="carStore.html">Car Store</a></li>-->
-                        <li><a class="nav-link scrollto" >Contact Us</a></li>
-                    </ul>
-                    <!--
-                                <i class="bi bi-list mobile-nav-toggle"></i>
-                    -->
-                </nav><!-- .navbar -->
+                            </a>
+                        </div><!-- End Logo -->
 
-            </div>
-        </header><!-- End Header -->
-    </header>
+                        <div class="card mb-3">
 
-    <!-- ======= HeadSlid ======= -->
-    <!-- ======= top key change picture Section ======= -->
-    <section  id="hero" class="d-flex align-items-center text-white">
-        <h1>Car Rental</h1>
-        <br>
+                            <div class="card-body">
 
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Driver Login</h5>
+                                    <p class="text-center small">Enter your username & password to login</p>
+                                </div>
 
-    </section><!-- End top key change picture section --><!-- End HeadSlid -->
+                                <form class="row g-3 needs-validation" novalidate>
 
-    <main>
-        <div class="container">
-
-            <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
-                            <div class="d-flex justify-content-center py-4">
-                                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                                    <img src="assets/images/ezicar.png" style="width:100px; height: 100px;" alt="">
-
-                                </a>
-                            </div><!-- End Logo -->
-
-                            <div class="card mb-3">
-
-                                <div class="card-body">
-
-                                    <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                                        <p class="text-center small">Enter your username & password to login</p>
+                                    <div class="col-12">
+                                        <label for="driver-user-name" class="form-label">Username</label>
+                                        <div class="input-group has-validation">
+                                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                            <input type="text" name="username" class="form-control" id="driver-user-name" required>
+                                            <div class="invalid-feedback">Please enter your username.</div>
+                                        </div>
                                     </div>
 
-                                    <form class="row g-3 needs-validation" novalidate>
+                                    <div class="col-12">
+                                        <label for="driver-password" class="form-label">Password</label>
+                                        <input type="password" name="password" class="form-control" id="driver-password" required>
+                                        <div class="invalid-feedback">Please enter your password!</div>
+                                    </div>
 
-                                        <div class="col-12">
-                                            <label for="yourUsername" class="form-label">Username</label>
-                                            <div class="input-group has-validation">
-                                                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                                <input type="text" name="username" class="form-control" id="yourUsername" required>
-                                                <div class="invalid-feedback">Please enter your username.</div>
-                                            </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMeLogIn">
+                                            <label class="form-check-label" for="rememberMeLogIn">Remember me</label>
                                         </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button id="btnDriverLogin1" class="btn btn-primary w-100" type="button">Login</button>
+                                        <br>
+                                    </div>
+                                    <!--  <div>
+                                          <h3 style="text-align: center">OR</h3>
+                                      </div>
 
-                                        <div class="col-12">
-                                            <label for="yourPassword" class="form-label">Password</label>
-                                            <input type="password" name="password" class="form-control" id="yourPassword" required>
-                                            <div class="invalid-feedback">Please enter your password!</div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                                                <label class="form-check-label" for="rememberMe">Remember me</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="button" id="btnDriverLoginSpa">Login</button>
-                                            <br>
-                                        </div>
-                                        <div>
-                                            <h3 style="text-align: center">OR</h3>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <!--<p class="small mb-0">Don't have account? <a href="pages-register.html">Create an account</a></p>-->
-                                            <button class="btn btn-primary w-100" style="background-color: #1F1D2E" type="button"><a style="color: #FFFFFF; text-decoration: none" >Register</a></button>
-                                        </div>
+                                      <div class="col-12">
+                                          &lt;!&ndash;<p class="small mb-0">Don't have account? <a href="pages-register.html">Create an account</a></p>&ndash;&gt;
+                                          <button class="btn btn-primary w-100" style="background-color: #1F1D2E" type="button" id="RegisterBtnLogin"><a style="color: #FFFFFF; text-decoration: none" >Register</a></button>
+                                      </div>-->
 
 
-                                    </form>
+                                </form>
 
-                                </div>
                             </div>
-
-                            <div class="car-img">
-                                <img src="assets/images/luxury.png" alt="" width="800px" height="500">
-                            </div>
-
                         </div>
+
+                        <div class="car-img">
+                            <img src="assets/images/luxury.png" alt="" width="800px" height="500">
+                        </div>
+
                     </div>
                 </div>
+            </div>
 
-            </section>
+        </section>
 
-        </div>
-    </main><!-- End #main -->
+    </div>
+    <!-- End #main -->
 
 </main>
+
+
+
 
 <!--Driver Schedule-->
 <main id="spaDriverSchedule">

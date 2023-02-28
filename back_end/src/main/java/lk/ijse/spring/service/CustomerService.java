@@ -1,5 +1,6 @@
 package lk.ijse.spring.service;
 
+import lk.ijse.spring.dto.AdminDTO;
 import lk.ijse.spring.dto.CustomerDTO;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public interface CustomerService {
 
     List<CustomerDTO> getAllCustomerDetail();
 
+    CustomerDTO checkCustomerLogIn(String userName);
 
     List<CustomerDTO> getTodayRegisteredCustomers();
 }

@@ -7,6 +7,39 @@ $('#BtnSignIn').click(function () {
     registerCustomer();
 })
 
+$('#btnCustomerLogIn').click(function (){
+    let userName = $('#customer-user-name').val();
+    let password = $('#customer-password').val();
+
+    $.ajax({
+        url: baseUrl + "customer?userName=" + userName,
+        method: "GET",
+        success: function (resp) {
+            console.log(resp.userName + "=" + resp.data.userName)
+            console.log(resp.userName + "=" + userName)
+            if (resp.data.userName === userName && resp.data.password === password) {
+
+                $("#LoginFormCss").attr("disabled","disabled");
+                $("#CarDetailCss").attr("disabled","disabled");
+                $("#CarStoreCss").attr("disabled","disabled");
+                $("#HeaderFormCss").attr("disabled","disabled");
+                $("#CartCss").removeAttr("disabled");
+                $('#spaMainIndex').css('display','none');
+                $('#spaCarStore').css('display','none');
+                $('#spaCart').css('display','block');
+                $('#spaOverview').css('display','none');
+                $('#spaCarDetail').css('display','none');
+                $('#spaLogin').css('display','none');
+                $('#spaRegister').css('display','none');
+                $('#spaUpdateIndex').css('display','none');
+            } else {
+                alert("Username or Password Incorrect!.");
+            }
+
+        }
+    });
+});
+
 function registerCustomer() {
     let nicFileName = $("#nicOrDrivingImg")[0].files[0].name;
 

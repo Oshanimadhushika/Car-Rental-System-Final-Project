@@ -108,6 +108,22 @@ $('#navHomeCarStore').click(function () {
     $('#spaUpdateIndex').css('display','none');
 
 })
+$('#navLogInCarStore').click(function () {
+    $("#CartCss").attr("disabled","disabled");
+    $("#CarDetailCss").attr("disabled","disabled");
+    $("#CarStoreCss").attr("disabled","disabled");
+    $("#HeaderFormCss").attr("disabled","disabled");
+    $("#LoginFormCss").removeAttr("disabled");
+    $('#spaMainIndex').css('display','none');
+    $('#spaCarStore').css('display','none');
+    $('#spaCart').css('display','none');
+    $('#spaOverview').css('display','none');
+    $('#spaCarDetail').css('display','none');
+    $('#spaLogin').css('display','block');
+    $('#spaRegister').css('display','none');
+    $('#spaUpdateIndex').css('display','none');
+
+})
 
 $('#goToCartButton1').click(function () {
     $("#CartCss").removeAttr("disabled");
@@ -234,6 +250,26 @@ $('#RegisterBtnLogin').click(function () {
     $('#spaUpdateIndex').css('display','none');
 
 })
+
+/*
+$('#btnCustomerLogIn').click(function () {
+    $("#LoginFormCss").attr("disabled","disabled");
+    $("#CarDetailCss").attr("disabled","disabled");
+    $("#CarStoreCss").attr("disabled","disabled");
+    $("#HeaderFormCss").attr("disabled","disabled");
+    $("#CartCss").removeAttr("disabled");
+    $('#spaMainIndex').css('display','none');
+    $('#spaCarStore').css('display','none');
+    $('#spaCart').css('display','block');
+    $('#spaOverview').css('display','none');
+    $('#spaCarDetail').css('display','none');
+    $('#spaLogin').css('display','none');
+    $('#spaRegister').css('display','none');
+    $('#spaUpdateIndex').css('display','none');
+
+})
+*/
+
 
 /*======================Cart=========================*/
 $('#BtnSendRentalRequest').click(function () {
@@ -373,6 +409,23 @@ $('#navCarStoreRegi').click(function () {
 
 })
 $('#navLogInRegi').click(function () {
+    $("#CartCss").attr("disabled","disabled");
+    $("#CarDetailCss").attr("disabled","disabled");
+    $("#CarStoreCss").attr("disabled","disabled");
+    $("#HeaderFormCss").attr("disabled","disabled");
+    $("#LoginFormCss").removeAttr("disabled");
+    $('#spaMainIndex').css('display','none');
+    $('#spaCarStore').css('display','none');
+    $('#spaCart').css('display','none');
+    $('#spaOverview').css('display','none');
+    $('#spaCarDetail').css('display','none');
+    $('#spaLogin').css('display','block');
+    $('#spaRegister').css('display','none');
+    $('#spaUpdateIndex').css('display','none');
+
+})
+
+$('#BtnSignIn').click(function () {
     $("#CartCss").attr("disabled","disabled");
     $("#CarDetailCss").attr("disabled","disabled");
     $("#CarStoreCss").attr("disabled","disabled");

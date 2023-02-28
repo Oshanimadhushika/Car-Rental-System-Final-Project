@@ -7,7 +7,7 @@ $(window).on('load',function () {
     $('#spaDriverSchedule').css('display', 'none');
 });
 
-$('#btnDriverLoginSpa').click(function (){
+$('#btnDriverLogin1').click(function (){
     $('#spaDriverLogin').css('display', 'none');
     $('#spaDriverSchedule').css('display', 'block');
 });
