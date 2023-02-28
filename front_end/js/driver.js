@@ -7,10 +7,12 @@ $(window).on('load',function () {
     $('#spaDriverSchedule').css('display', 'none');
 });
 
+/*
 $('#btnDriverLogin1').click(function (){
     $('#spaDriverLogin').css('display', 'none');
     $('#spaDriverSchedule').css('display', 'block');
 });
+*/
 
 /*$('#navDriverScheduleHome').click(function (){
     $('#spaMainIndex').css('display', 'block');

@@ -13,7 +13,7 @@ $('#btnDriverLogin1').click(function (){
     let password = $('#driver-password').val();
 
     $.ajax({
-        url: baseUrl + "driver?userName=" + userName,
+        url: baseUrl + "driverLogin?userName=" + userName,
         method: "GET",
         success: function (resp) {
             console.log(resp.userName + "=" + resp.data.userName)
