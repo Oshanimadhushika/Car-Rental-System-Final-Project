@@ -1,5 +1,6 @@
 var baseUrl="http://localhost:8080/back_end_war_exploded/";
 
+
 $("#btnAddVehicle").click(function () {
     let registrationId1 = $("#txtRegiNumberCar").val();
 
@@ -227,7 +228,7 @@ function loadAllCars(path) {
 <!--Button-->
                             <div class="row mt-3">
                                 <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
-                                    <button data-btnRentIt="${car.brand}" class="btn_RentIt" >RENT IT</button>
+                                    <button data-btnRentIt="${car.modal}" class="btn_RentIt" >RENT IT</button>
                                 </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
 <!--
@@ -264,6 +265,7 @@ function loadAllCars(path) {
             var bgColor = $(this).css("background-color");
             console.log($(this).attr("data-btnRentIt"));
 
+
             if(colorsAreEqual(bgColor, "rgb(68, 68, 68)")){
                 $(this).text("Added");
                 $(this).css({
@@ -283,6 +285,7 @@ function loadAllCars(path) {
                     "color":"#ffffff"
                 });
             }
+            setBrandToArray();
         })
     }
 
@@ -298,6 +301,32 @@ function loadAllCars(path) {
             }
         }
         return true;  // The colors are equal
+    }
+
+}
+
+var vNameAr=[];
+function setBrandToArray(param) {
+    let bool=true;
+
+    let elementToRemove = $(param).attr("data-btnRentIt");
+    let index = vNameAr.indexOf(elementToRemove);
+
+
+    for(let i=0;i<vNameAr.length;i++){
+        if(vNameAr[i]===$(param).attr("data-btnRentIt")){
+            console.log(vNameAr[i]+"==="+$(param).attr("data-btnRentIt"));
+            bool=false;
+        }
+    }
+
+    if(bool){
+        vNameAr.push($(param).attr("data-btnRentIt"));
+    }else{
+        console.log("index-"+index )
+        if (index > -1) {
+            vNameAr.splice(index, 1);
+        }
     }
 
 }
