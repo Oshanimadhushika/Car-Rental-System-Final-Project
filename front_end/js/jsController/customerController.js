@@ -36,6 +36,7 @@ $('#btnCustomerLogIn').click(function (){
                 /*this is want to call when the login rq is success*/
                 sendVehicleNameToCart();
                 loadCart();
+
             } else {
                 alert("Username or Password Incorrect!.");
             }
