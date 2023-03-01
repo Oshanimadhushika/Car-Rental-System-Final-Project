@@ -267,6 +267,7 @@ function rentItClick() {
     $(".btn_RentIt").click(function () {
         var bgColor = $(this).css("background-color");
         console.log($(this).attr("data-btnRentIt"));
+        setBrandToArray(this);
 
 
         if(colorsAreEqual(bgColor, "rgb(68, 68, 68)")){
@@ -306,7 +307,7 @@ function colorsAreEqual(color1, color2) {
     return true;  // The colors are equal
 }
 
-function setBrandToArray(param) {
+/*function setBrandToArray(param) {
     let bool=true;
 
     let elementToRemove = $(param).attr("data-btnRentIt");
@@ -329,7 +330,7 @@ function setBrandToArray(param) {
         }
     }
 
-}
+}*/
 
 function setBrandToArray(param) {
     let bool=true;
@@ -404,6 +405,14 @@ function setBrandToArray(param) {
 
     /*======================*/
 
+}
+
+
+/*-------------------------------
+*    send data to the cart
+* ------------------------------*/
+function sendVehicleNameToCart() {
+    return vNameAr;
 }
 
 

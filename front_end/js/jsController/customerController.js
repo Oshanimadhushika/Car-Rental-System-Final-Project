@@ -32,6 +32,10 @@ $('#btnCustomerLogIn').click(function (){
                 $('#spaLogin').css('display','none');
                 $('#spaRegister').css('display','none');
                 $('#spaUpdateIndex').css('display','none');
+
+                /*this is want to call when the login rq is success*/
+                sendVehicleNameToCart();
+                loadCart();
             } else {
                 alert("Username or Password Incorrect!.");
             }
