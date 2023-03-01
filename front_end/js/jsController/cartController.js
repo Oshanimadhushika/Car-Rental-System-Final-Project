@@ -9,8 +9,8 @@ function loadCart() {
         let cRow = `<tr>
                         <th scope="row">${carNames[i].model}</th>
                         <td><a class="text-primary fw-bold" href="#">${carNames[i].dRate}</a></td>
-                        <td>227,000</td>
-                        <td class="fw-bold">${carNames[i].mRate}</td>
+                        <td>${carNames[i].mRate}</td>
+                        <td class="fw-bold">${carNames[i].dWaiver}</td>
                         <td>${carNames[i].pickupD}</td>
                         <td>${carNames[i].returnD}</td>
 
@@ -28,7 +28,7 @@ function loadCart() {
                                        type="file">
                             </div>
                         </td>
-                        <td><i data-crtClose="${carNames[i].model}"  class="fa-solid fa-xmark fa-2xl icnCartClose"></i></td>
+                        <td><i data-crtClose="${carNames[i].model}"  class="bi bi-x-circle icnCartClose"></i></td>
                     </tr>`;
 
         $("#tblCartDetail").append(cRow);

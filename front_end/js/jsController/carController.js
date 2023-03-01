@@ -228,8 +228,7 @@ function loadAllCars(path) {
 <!--Button-->
                             <div class="row mt-3">
                                 <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
-                                <button data-dtaImg="${car.image3}" data-dtaModel="${car.model}" data-dtaDailyRate="${car.dailyRate}" data-dtaMonthlyRate="${car.monthlyRate}"
-                                 data-dtaWawier="${car.damageCost}" class="btn_RentIt">RENT IT</button>      
+                                <button data-dtaImg="${car.image3}"  data-dtaDailyRate="${car.dailyRate}" data-dtaMonthlyRate="${car.monthlyRate}" data-dtaWawier="${car.damageCost}" data-btnRentIt="${car.model}" class="btn_RentIt">RENT IT</button>   
                                   </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
 <!--
@@ -263,11 +262,15 @@ function loadAllCars(path) {
 
 
 }
+
+
 function rentItClick() {
     $(".btn_RentIt").click(function () {
+
+        setBrandToArray(this);
         var bgColor = $(this).css("background-color");
         console.log($(this).attr("data-btnRentIt"));
-        setBrandToArray(this);
+
 
 
         if(colorsAreEqual(bgColor, "rgb(68, 68, 68)")){
@@ -289,7 +292,7 @@ function rentItClick() {
                 "color":"#ffffff"
             });
         }
-        setBrandToArray(this);
+        /*setBrandToArray(this);*/
     })
 }
 
@@ -346,16 +349,16 @@ function setBrandToArray(param) {
         rDate=$("#lux-car_Store_Return_date").val();
 
     }else if($("#premiumCar_Store_pickup_date").val() && $("#premiumCar_Store_Return_date").val() ){
-        console.log("Value "+"======"+$("#lux-car_Store_pickup_date").val());
+        console.log("Value "+"======"+$("#premiumCar_Store_pickup_date").val());
         isDateAdd=true;
         pDate=$("#premiumCar_Store_pickup_date").val()
         rDate=$("#premiumCar_Store_Return_date").val();
 
-    }else if($("#car_Store_pickup_date").val() && $("#premiumCar_Store_Return_date").val()) {
+    }else if($("#car_Store_pickup_date").val() && $("#car_Store_Return_date").val()) {
         console.log("Value "+"======"+$("#car_Store_Return_date").val());
         isDateAdd=true;
         pDate=$("#car_Store_pickup_date").val()
-        rDate=$("#premiumCar_Store_Return_date").val()
+        rDate=$("#car_Store_Return_date").val()
     }
 
 

@@ -125,7 +125,7 @@ $('#navLogInCarStore').click(function () {
 
 })
 
-$('#goToCartButton1').click(function () {
+$('.goToCartButton').click(function () {
     $("#LoginFormCss").removeAttr("disabled");
     $("#RegisterFormCss").attr("disabled","disabled");
     $("#HeaderFormCss").attr("disabled","disabled");
@@ -141,7 +141,7 @@ $('#goToCartButton1').click(function () {
     $('#spaUpdateIndex').css('display','none');
 
 })
-$('#goToCartButton2').click(function () {
+/*$('#goToCartButton2').click(function () {
     $("#LoginFormCss").removeAttr("disabled");
     $("#RegisterFormCss").attr("disabled","disabled");
     $("#HeaderFormCss").attr("disabled","disabled");
@@ -175,7 +175,7 @@ $('#goToCartButton3').click(function () {
     $('#spaUpdateIndex').css('display','none');
 
 
-})
+})*/
 
 /*DetailViewIcon*/
 /*
@@ -222,9 +222,9 @@ $('#navHomeLogin').click(function () {
 $('#navCarstoreLogin').click(function () {
     $("#CartCss").attr("disabled","disabled");
     $("#CarDetailCss").attr("disabled","disabled");
-    $("#CarStoreCss").attr("disabled","disabled");
+    $("#LoginFormCss").attr("disabled","disabled");
     $("#HeaderFormCss").attr("disabled","disabled");
-    $("#LoginFormCss").removeAttr("disabled");
+    $("#CarStoreCss").removeAttr("disabled");
     $('#spaMainIndex').css('display','none');
     $('#spaCarStore').css('display','block');
     $('#spaCart').css('display','none');
