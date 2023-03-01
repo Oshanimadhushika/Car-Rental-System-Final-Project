@@ -261,51 +261,50 @@ function loadAllCars(path) {
         }
     });
 
-    function rentItClick() {
-        $(".btn_RentIt").click(function () {
-            var bgColor = $(this).css("background-color");
-            console.log($(this).attr("data-btnRentIt"));
-
-
-            if(colorsAreEqual(bgColor, "rgb(68, 68, 68)")){
-                $(this).text("Added");
-                $(this).css({
-                    "background":"#D50137",
-                    "color":"#ffffff"
-                });
-            }else if(colorsAreEqual(bgColor, "rgb(213, 1, 55)")){
-                $(this).text("Rent It");
-                $(this).css({
-                    "background":"#F7F7F7",
-                    "color":"#444444",
-                });
-            }else if(colorsAreEqual(bgColor, "rgb(247, 247, 247)")){
-                $(this).text("Added");
-                $(this).css({
-                    "background":"#D50137",
-                    "color":"#ffffff"
-                });
-            }
-            setBrandToArray(this);
-        })
-    }
-
-    function colorsAreEqual(color1, color2) {
-        var rgb1 = color1.match(/\d+/g);  // Get the RGB values of color1
-        var rgb2 = color2.match(/\d+/g);  // Get the RGB values of color2
-        if (rgb1.length !== 3 || rgb2.length !== 3) {
-            return false;  // Invalid input - not a valid color
-        }
-        for (var i = 0; i < 3; i++) {
-            if (parseInt(rgb1[i]) !== parseInt(rgb2[i])) {
-                return false;  // The colors are not equal
-            }
-        }
-        return true;  // The colors are equal
-    }
 
 }
+function rentItClick() {
+    $(".btn_RentIt").click(function () {
+        var bgColor = $(this).css("background-color");
+        console.log($(this).attr("data-btnRentIt"));
 
+
+        if(colorsAreEqual(bgColor, "rgb(68, 68, 68)")){
+            $(this).text("Added");
+            $(this).css({
+                "background":"#D50137",
+                "color":"#ffffff"
+            });
+        }else if(colorsAreEqual(bgColor, "rgb(213, 1, 55)")){
+            $(this).text("Rent It");
+            $(this).css({
+                "background":"#F7F7F7",
+                "color":"#444444",
+            });
+        }else if(colorsAreEqual(bgColor, "rgb(247, 247, 247)")){
+            $(this).text("Added");
+            $(this).css({
+                "background":"#D50137",
+                "color":"#ffffff"
+            });
+        }
+        setBrandToArray(this);
+    })
+}
+
+function colorsAreEqual(color1, color2) {
+    var rgb1 = color1.match(/\d+/g);  // Get the RGB values of color1
+    var rgb2 = color2.match(/\d+/g);  // Get the RGB values of color2
+    if (rgb1.length !== 3 || rgb2.length !== 3) {
+        return false;  // Invalid input - not a valid color
+    }
+    for (var i = 0; i < 3; i++) {
+        if (parseInt(rgb1[i]) !== parseInt(rgb2[i])) {
+            return false;  // The colors are not equal
+        }
+    }
+    return true;  // The colors are equal
+}
 
 function setBrandToArray(param) {
     let bool=true;
@@ -332,168 +331,80 @@ function setBrandToArray(param) {
 
 }
 
+function setBrandToArray(param) {
+    let bool=true;
+    let isDateAdd=false;
 
+    var rDate="";
+    var pDate="";
 
-/*function viewVehicle(path) {
+    if($("#lux-car_Store_pickup_date").val() && $("#lux-car_Store_Return_date").val() ){
+        console.log("Value "+"======"+$("#lux-car_Store_pickup_date").val())
+        isDateAdd=true;
+        pDate=$("#lux-car_Store_pickup_date").val();
+        rDate=$("#lux-car_Store_Return_date").val();
 
-    $("#ViewVehicleDiv").empty();
+    }else if($("#premiumCar_Store_pickup_date").val() && $("#premiumCar_Store_Return_date").val() ){
+        console.log("Value "+"======"+$("#lux-car_Store_pickup_date").val());
+        isDateAdd=true;
+        pDate=$("#premiumCar_Store_pickup_date").val()
+        rDate=$("#premiumCar_Store_Return_date").val();
 
-    $.ajax({
-        url: baseUrl + "car/" + path,
-        method: "GET",
-        success: function (resp) {
-            for (const car of resp.data) {
-
-                let div=` <div class="col-xxl-4 col-md-12">
-                            <div class="card info-card sales-card mt-5">
-
-                                <div class="card-body" id="ViewVehicleMainDiv">
-                                    <div class="d-flex align-items-center" style="margin-top: 5px; width:550px">
-                                        <div class="col-sm-3" id="ImageVehicle">
-                                            <img style="    width: 129px;height: 146px;" src=${"http://localhost:8080/back_end_war_exploded/"+car.image3} alt="">
-                                        </div>
-                                        
-                                         <div class="col-sm-3" id="DivModel" >
-                                            <h6 id="VehicleId" style="color: black; font-size: 15px; ">Vehicle ID</h6>
-                                            <p id="VehicleId" style="font-size: 15px">${car.registrationId}</p>
-                                        </div>
-
-                                        <div class="col-sm-3" id="DivModel" >
-                                            <h6 id="ModelTopic" style="color: black; font-size: 15px; ">Model</h6>
-                                            <p id="ModelName" style="font-size: 15px">${car.model}</p>
-                                        </div>
-
-                                        <div class="col-sm-3" id="DivDaily">
-                                            <h6 id="DailyTopic" style="color: black; font-size: 15px">Daily</h6>
-                                            <p id="DailyPrice" style="font-size: 15px">${car.dailyRate}</p>
-                                        </div>
-
-                                        <div class="col-sm-3" id="DivMonthly">
-                                            <h6 id="MonthlyTopic" style="color: black; font-size: 15px">Monthly</h6>
-                                            <p id="MonthlyPrice" style="font-size: 15px">${car.monthlyRate}</p>
-                                        </div>
-
-                                        <div class="col-sm-3" id="DivDamgeCost">
-                                            <h6 id="DamageCostTopic" style="color: black; font-size: 15px">Damage Cost</h6>
-                                            <p id="DamageCostPrice" style="font-size: 15px">${car.damageCost}</p>
-                                        </div>
-
-                                        <div class="col-sm-3" id="DivStatus">
-                                            <h6 id="StatusTopic" style="color: black; font-size: 15px">Status</h6>
-                                            <p id="TxtStatus" style="font-size: 15px">${car.availability}</p>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="d-flex align-items-center" style="margin-left: 60px">
-                                        <div class="col-sm-3">
-                                            <button class="btn btn-primary gap-5" id="btnAddMaintenance" style="background-color: #7b2407;color: white; border: none; width: 203px; margin-left: 353px">Add To Maintenance</button>
-                                        </div>
-
-                                        <div class="col-sm-3">
-                                            <button class="btn btn-primary" data-bs-toggle="modal" 
-                                            data-bs-target="#addItemModal" id="btnupdateCar" style="background-color: #06065f;color: white; border: none; width: 100px; margin-left: 398px">Update</button>
-                                        </div>
-                                        
-                                      <!--pop up update-->  
-                                        
-                                        
-                        <div class="modal fade" id="addItemModal" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
-                    <div class="modal-dialog-centered modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header text-light" style="background-color:#1F1D2E ">
-                                <h5 class="modal-title " id="addItemModalLabel">Update & Delete Car</h5>
-                                <button type="button" class="btn-close" style="background-color: white;" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div>
-                                        <label for="vhId" class="col-form-label">Vehicle Id : </label>
-                                        <input  type="text" class="form-control txtVehicleId-update" id="vhId" disabled>
-                                    </div>
-                                    <div >
-                                        <label for="vhBrand" class="col-form-label">Vehicle Brand : </label>
-                                        <input  type="text" class="form-control txtVehicleBrand-update" id="vhName">
-                                    </div>
-                                    <div >
-                                        <label for="vhModel" class="col-form-label">Vehicle Model : </label>
-                                        <input  type="text" class="form-control txtVehicleModel-update" id="vhModel">
-                                    </div>
-                                    <div >
-                                        <label for="vhDaily" class="col-form-label">Daily Rate:</label>
-                                        <input  type="text" class="form-control txtVehicleDaily-update" id="vhDaily">
-                                    </div>
-                                    <div >
-                                        <label for="vhMonthly" class="col-form-label">Monthly Rate:</label>
-                                        <input  type="text" class="form-control txtVehicleMonthly-update" id="vhMonthly">
-                                    </div>
-                                    <div >
-                                        <label for="vhDamage" class="col-form-label">Damage Cost:</label>
-                                        <input  type="text" class="form-control txtVehicleDamage-update" id="vhDamage">
-                                    </div>
-                                    
-                                     <div >
-                                        <label for="vhColour" class="col-form-label">Colour:</label>
-                                        <input  type="text" class="form-control txtVehicleColour-update" id="vhColour">
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btnUpdateCar btn btn-primary data-bs-dismiss="modal">Update</button>
-                                <button id="btnDeleteCar" type="button" class="btn btn-danger">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-             </div>
-         </div>
-    </div>
- </div><!-- End Sales Card -->
-                                  
-            `;
-
-                $("#ViewVehicleDiv").append(div);
+    }else if($("#car_Store_pickup_date").val() && $("#premiumCar_Store_Return_date").val()) {
+        console.log("Value "+"======"+$("#car_Store_Return_date").val());
+        isDateAdd=true;
+        pDate=$("#car_Store_pickup_date").val()
+        rDate=$("#premiumCar_Store_Return_date").val()
+    }
 
 
 
-                function viewUpdateCar() {
-                    var newDetails = {
-                        registrationId: $('.txtVehicleId-update').val(car.registrationId),
-                        Brand: $('.txtVehicleBrand-update').val(car.Brand),
-                        model: $('.txtVehicleModel-update').val(car.model),
-                        dailyRate: $('.txtVehicleDaily-update').val(car.dailyRate),
-                        monthlyRate: $('.txtVehicleMonthly-update').val(car.monthlyRate),
-                        DamageCost: $('.txtVehicleDamage-update').val(car.DamageCost),
-                        color: $('.txtVehicleColour-update').val(car.color)
-                    }
+    var cus={
+        model:$(param).attr("data-btnRentIt"),
+        imag:$(param).attr("data-dtaImg") ,
+        dRate:$(param).attr("data-dtaDailyRate") ,
+        mRate:$(param).attr("data-dtaMonthlyRate") ,
+        dWaiver:$(param).attr("data-dtaWawier") ,
+        tnRent:$(param).attr("data-btnRentIt") ,
+        pickupD:pDate,
+        returnD:rDate,
+    }
 
-                    $.ajax({
-                        url: baseUrl + "car",
-                        method: "put",
-                        contentType: "application/json",
-                        data: JSON.stringify(newDetails),
-                        success: function (res) {
-                            if (res.status === 200) {
-                                alert(res.message)
-                            } else {
-
-                            }
-                        }
-                    });
-
-                }
-
-                $('.btnupdateCar').click(function () {
-                    viewUpdateCar();
-                });
+    // let elementToRemove = $(param).attr("data-btnRentIt");
+    // alert(elementToRemove);
+    // let index = vNameAr.indexOf(elementToRemove.parentElement);
 
 
+    for(let i=0;i<vNameAr.length;i++){
+        console.log(vNameAr[i].model+"==="+$(param).attr("data-btnRentIt"));
+        if(vNameAr[i].model===$(param).attr("data-btnRentIt")){
+            //console.log(vNameAr[i]+"==="+$(param).attr("data-btnRentIt"));
+            bool=false;
+        }
+    }
+
+
+    if(bool){
+        // vNameAr.push($(param).attr("data-btnRentIt"));
+        vNameAr.push(cus);
+    }else{
+        /*console.log("index-"+index )
+        if (index > -1) {
+            vNameAr.splice(index, 1);
+        }*/
+
+        for (var i = 0; i < vNameAr.length; i++) {
+            if (vNameAr[i].model === $(param).attr("data-btnRentIt")) {
+                vNameAr.splice(i, 1);
+                break;
             }
         }
-    });
-}*/
 
+    }
 
+    /*======================*/
+
+}
 
 
 
@@ -662,3 +573,166 @@ function viewVehicle(path) {
         }
     });
 }
+
+
+
+
+
+/*function viewVehicle(path) {
+
+    $("#ViewVehicleDiv").empty();
+
+    $.ajax({
+        url: baseUrl + "car/" + path,
+        method: "GET",
+        success: function (resp) {
+            for (const car of resp.data) {
+
+                let div=` <div class="col-xxl-4 col-md-12">
+                            <div class="card info-card sales-card mt-5">
+
+                                <div class="card-body" id="ViewVehicleMainDiv">
+                                    <div class="d-flex align-items-center" style="margin-top: 5px; width:550px">
+                                        <div class="col-sm-3" id="ImageVehicle">
+                                            <img style="    width: 129px;height: 146px;" src=${"http://localhost:8080/back_end_war_exploded/"+car.image3} alt="">
+                                        </div>
+
+                                         <div class="col-sm-3" id="DivModel" >
+                                            <h6 id="VehicleId" style="color: black; font-size: 15px; ">Vehicle ID</h6>
+                                            <p id="VehicleId" style="font-size: 15px">${car.registrationId}</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivModel" >
+                                            <h6 id="ModelTopic" style="color: black; font-size: 15px; ">Model</h6>
+                                            <p id="ModelName" style="font-size: 15px">${car.model}</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivDaily">
+                                            <h6 id="DailyTopic" style="color: black; font-size: 15px">Daily</h6>
+                                            <p id="DailyPrice" style="font-size: 15px">${car.dailyRate}</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivMonthly">
+                                            <h6 id="MonthlyTopic" style="color: black; font-size: 15px">Monthly</h6>
+                                            <p id="MonthlyPrice" style="font-size: 15px">${car.monthlyRate}</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivDamgeCost">
+                                            <h6 id="DamageCostTopic" style="color: black; font-size: 15px">Damage Cost</h6>
+                                            <p id="DamageCostPrice" style="font-size: 15px">${car.damageCost}</p>
+                                        </div>
+
+                                        <div class="col-sm-3" id="DivStatus">
+                                            <h6 id="StatusTopic" style="color: black; font-size: 15px">Status</h6>
+                                            <p id="TxtStatus" style="font-size: 15px">${car.availability}</p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="d-flex align-items-center" style="margin-left: 60px">
+                                        <div class="col-sm-3">
+                                            <button class="btn btn-primary gap-5" id="btnAddMaintenance" style="background-color: #7b2407;color: white; border: none; width: 203px; margin-left: 353px">Add To Maintenance</button>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#addItemModal" id="btnupdateCar" style="background-color: #06065f;color: white; border: none; width: 100px; margin-left: 398px">Update</button>
+                                        </div>
+
+                                      <!--pop up update-->
+
+
+                        <div class="modal fade" id="addItemModal" tabindex="-1" aria-labelledby="addItemModalLabel" aria-hidden="true">
+                    <div class="modal-dialog-centered modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header text-light" style="background-color:#1F1D2E ">
+                                <h5 class="modal-title " id="addItemModalLabel">Update & Delete Car</h5>
+                                <button type="button" class="btn-close" style="background-color: white;" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div>
+                                        <label for="vhId" class="col-form-label">Vehicle Id : </label>
+                                        <input  type="text" class="form-control txtVehicleId-update" id="vhId" disabled>
+                                    </div>
+                                    <div >
+                                        <label for="vhBrand" class="col-form-label">Vehicle Brand : </label>
+                                        <input  type="text" class="form-control txtVehicleBrand-update" id="vhName">
+                                    </div>
+                                    <div >
+                                        <label for="vhModel" class="col-form-label">Vehicle Model : </label>
+                                        <input  type="text" class="form-control txtVehicleModel-update" id="vhModel">
+                                    </div>
+                                    <div >
+                                        <label for="vhDaily" class="col-form-label">Daily Rate:</label>
+                                        <input  type="text" class="form-control txtVehicleDaily-update" id="vhDaily">
+                                    </div>
+                                    <div >
+                                        <label for="vhMonthly" class="col-form-label">Monthly Rate:</label>
+                                        <input  type="text" class="form-control txtVehicleMonthly-update" id="vhMonthly">
+                                    </div>
+                                    <div >
+                                        <label for="vhDamage" class="col-form-label">Damage Cost:</label>
+                                        <input  type="text" class="form-control txtVehicleDamage-update" id="vhDamage">
+                                    </div>
+
+                                     <div >
+                                        <label for="vhColour" class="col-form-label">Colour:</label>
+                                        <input  type="text" class="form-control txtVehicleColour-update" id="vhColour">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btnUpdateCar btn btn-primary data-bs-dismiss="modal">Update</button>
+                                <button id="btnDeleteCar" type="button" class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+         </div>
+    </div>
+ </div><!-- End Sales Card -->
+
+            `;
+
+                $("#ViewVehicleDiv").append(div);
+
+
+
+                function viewUpdateCar() {
+                    var newDetails = {
+                        registrationId: $('.txtVehicleId-update').val(car.registrationId),
+                        Brand: $('.txtVehicleBrand-update').val(car.Brand),
+                        model: $('.txtVehicleModel-update').val(car.model),
+                        dailyRate: $('.txtVehicleDaily-update').val(car.dailyRate),
+                        monthlyRate: $('.txtVehicleMonthly-update').val(car.monthlyRate),
+                        DamageCost: $('.txtVehicleDamage-update').val(car.DamageCost),
+                        color: $('.txtVehicleColour-update').val(car.color)
+                    }
+
+                    $.ajax({
+                        url: baseUrl + "car",
+                        method: "put",
+                        contentType: "application/json",
+                        data: JSON.stringify(newDetails),
+                        success: function (res) {
+                            if (res.status === 200) {
+                                alert(res.message)
+                            } else {
+
+                            }
+                        }
+                    });
+
+                }
+
+                $('.btnupdateCar').click(function () {
+                    viewUpdateCar();
+                });
+
+
+            }
+        }
+    });
+}*/
