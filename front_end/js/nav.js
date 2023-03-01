@@ -309,6 +309,23 @@ $('#navHomeCart').click(function () {
 
 })
 
+$('#navCarStoreCart').click(function () {
+    $("#CartCss").attr("disabled","disabled");
+    $("#CarDetailCss").attr("disabled","disabled");
+    $("#LoginFormCss").attr("disabled","disabled");
+    $("#HeaderFormCss").attr("disabled","disabled");
+    $("#CarStoreCss").removeAttr("disabled");
+    $('#spaMainIndex').css('display','none');
+    $('#spaCarStore').css('display','block');
+    $('#spaCart').css('display','none');
+    $('#spaOverview').css('display','none');
+    $('#spaCarDetail').css('display','none');
+    $('#spaLogin').css('display','none');
+    $('#spaRegister').css('display','none');
+    $('#spaUpdateIndex').css('display','none');
+
+})
+
 
 /*===========================OverView===========================*/
 $('#navHomeOverview').click(function () {

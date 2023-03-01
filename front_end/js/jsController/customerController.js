@@ -55,7 +55,7 @@ function registerCustomer() {
 
 
     var newDetails = {
-        customerId:"C006",
+        customerId:"C007",
         name: name,
         address: address,
         nic: nic,
@@ -108,7 +108,7 @@ $("#btnUpdateSpa").click(function (){
 function updateCustomer(){
 
     var newDetails = {
-        customerId:"C005",
+        customerId:"C007",
         name: $("#update-name").val(),
         address: $("#update-address").val(),
         nic: $("#update-nic").val(),
@@ -129,7 +129,7 @@ function updateCustomer(){
          if (res.status === 200) {
              alert(res.message)
          } else {
-             alert("Cant update your Details in this moment")
+             alert("Updated!")
          }
      },
 

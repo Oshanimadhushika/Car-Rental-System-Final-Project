@@ -228,8 +228,9 @@ function loadAllCars(path) {
 <!--Button-->
                             <div class="row mt-3">
                                 <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
-                                    <button data-btnRentIt="${car.model}" class="btn_RentIt" >RENT IT</button>
-                                </div>
+                                <button data-dtaImg="${car.image3}" data-dtaModel="${car.model}" data-dtaDailyRate="${car.dailyRate}" data-dtaMonthlyRate="${car.monthlyRate}"
+                                 data-dtaWawier="${car.damageCost}" class="btn_RentIt">RENT IT</button>      
+                                  </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
 <!--
                                     <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">
