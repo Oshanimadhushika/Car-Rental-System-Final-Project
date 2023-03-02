@@ -43,6 +43,7 @@ function saveDriver(){
         }
     });
 }
+
 function loadAllDrivers(){
     $("#tableViewDriver").empty();
 

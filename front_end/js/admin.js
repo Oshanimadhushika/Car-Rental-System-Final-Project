@@ -70,6 +70,7 @@ $('#navViewVehicle').click(function (){
     $('#spaAdminLogin').css('display', 'none');
 
 
+    loadAllViewVehicle("allCarDetail");
     viewVehicle("allCarDetail");
 
 });

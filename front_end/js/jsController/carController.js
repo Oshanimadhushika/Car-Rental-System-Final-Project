@@ -310,30 +310,6 @@ function colorsAreEqual(color1, color2) {
     return true;  // The colors are equal
 }
 
-/*function setBrandToArray(param) {
-    let bool=true;
-
-    let elementToRemove = $(param).attr("data-btnRentIt");
-    let index = vNameAr.indexOf(elementToRemove);
-
-
-    for(let i=0;i<vNameAr.length;i++){
-        if(vNameAr[i]===$(param).attr("data-btnRentIt")){
-            console.log(vNameAr[i]+"==="+$(param).attr("data-btnRentIt"));
-            bool=false;
-        }
-    }
-
-    if(bool){
-        vNameAr.push($(param).attr("data-btnRentIt"));
-    }else{
-        console.log("index-"+index )
-        if (index > -1) {
-            vNameAr.splice(index, 1);
-        }
-    }
-
-}*/
 
 function setBrandToArray(param) {
     let bool=true;
@@ -417,6 +393,57 @@ function setBrandToArray(param) {
 function sendVehicleNameToCart() {
     return vNameAr;
 }
+
+function loadAllViewVehicle(path){
+    $("#tableViewVehicle").empty();
+
+    $.ajax({
+        url: baseUrl +"car/" + path,
+        method: "GET",
+        success: function (resp) {
+            for (const car of resp.data) {
+                let row = `<tr><td>${car.registrationId}</td><td>${car.brand}</td><td>${car.model}</td><td>${car.dailyRate}</td><td>${car.monthlyRate}</td><td>${car.damageCost}</td><td>${car.color}</td></tr>`;
+                $("#tableViewVehicle").append(row);
+
+                $("#tableViewVehicle>tr").off("click");
+                $("#tableViewVehicle>tr").click(function () {
+                    driver_nic = $(this).children(":eq(0)").text();
+                    $("#navViewVehicle").prop('disabled', false);
+                });
+            }bindRowClickEvents();
+        }
+    });
+}
+
+function bindRowClickEvents() {
+    $("#tableViewVehicle>tr").click(function () {
+        let id = $(this).children(":eq(0)").text();
+        let brand = $(this).children(":eq(1)").text();
+        let model = $(this).children(":eq(2)").text();
+        let dR = $(this).children(":eq(3)").text();
+        let mR = $(this).children(":eq(4)").text();
+        let damageWaiver = $(this).children(":eq(5)").text();
+        let colour = $(this).children(":eq(6)").text();
+
+        $('#txtVehiIdViewVehicle').val(id);
+        $('#txtBrandViewVehicle').val(brand);
+        $('#txtModelViewVehi').val(model);
+        $('#txtDailyRateViewVehi').val(dR);
+        $('#txtMonthlyRateViewVehi').val(mR);
+        $('#txtDamageCostViewVehi').val(damageWaiver);
+        $('#txtColourViewVehi').val(colour);
+
+    });
+}
+
+
+
+
+
+
+
+
+
 
 
 
