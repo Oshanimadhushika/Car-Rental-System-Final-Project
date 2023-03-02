@@ -16,6 +16,7 @@ $(window).on('load',function () {
 
     loadAllCars("allCarDetail");
 
+
 })
 
 

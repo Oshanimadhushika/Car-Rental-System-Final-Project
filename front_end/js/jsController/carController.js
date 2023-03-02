@@ -514,16 +514,18 @@ function updateVehicle(){
     });
 }
 
-$("#btnDeleteDriver").click(function (){
+$("#btnDeleteVehicle").click(function (){
     $.ajax({
-        url:baseUrl+"driver?driverId="+$("#DriverId").val(),
+        url:baseUrl+"car?vehicleId="+$("#txtVehiIdViewVehicle").val(),
         method:"delete",
         success(resp){
             alert(resp.message);
-            loadAllDrivers();
+            loadAllViewVehicle();
         }
     });
 });
+
+
 
 
 

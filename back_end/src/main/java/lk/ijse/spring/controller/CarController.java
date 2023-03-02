@@ -48,12 +48,16 @@ public class CarController {
 
 
 
-
-
     @PutMapping()
     public ResponseUtil updateCar(@RequestBody CarDTO dto){
         carService.updateCar(dto);
         return new ResponseUtil("200",dto.getRegistrationId()+": Updated.!",null);
+    }
+
+    @DeleteMapping(params = {"vehicleId"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteCar(@RequestParam String vehiId){
+        carService.deleteCar(vehiId);
+        return new ResponseUtil("200",vehiId+" :Car Deleted.!",null);
     }
 
 

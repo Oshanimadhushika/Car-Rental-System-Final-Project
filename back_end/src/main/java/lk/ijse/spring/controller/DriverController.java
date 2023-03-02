@@ -33,7 +33,7 @@ public class DriverController {
     }
 
     @DeleteMapping(params = {"driverId"},produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil deleteCustomer(@RequestParam String driverId){
+    public ResponseUtil deleteDriver(@RequestParam String driverId){
         driverService.deleteDriver(driverId);
         return new ResponseUtil("200",driverId+" :Driver Deleted.!",null);
     }
