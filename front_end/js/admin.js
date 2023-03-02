@@ -71,7 +71,7 @@ $('#navViewVehicle').click(function (){
 
 
     loadAllViewVehicle("allCarDetail");
-    viewVehicle("allCarDetail");
+    /*viewVehicle("allCarDetail");*/
 
 });
 

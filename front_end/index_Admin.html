@@ -1008,15 +1008,15 @@
 -->
 
 
-    <main id="adminViewVehicleSpa" style="margin-left: 380px; width: 990px; height:1000px; margin-top: 70px;">
-        <div class="carAdminBody container-fluid mt-5 ms-5" style="width:870px; height: 900px; ">
+    <main id="adminViewVehicleSpa" style="margin-left: 340px; width: 990px; height:1000px; margin-top: 70px;">
+        <div class="carAdminBody container-fluid mt-5 ms-5" style="margin-left:200px; width:940px; height: 900px;">
             <h1 style="border-bottom:4px solid darkred; display: inline-block">View Vehicle</h1>
             <form id="carAdminForm" style="margin-left: 5px; margin-top: 44px;" >
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-groupCF">
 
-                            <input class="form-control" id="txtVehiIdViewVehicle" placeholder="Vehicle Id" type="text">
+                            <input class="form-control " id="txtVehiIdViewVehicle" placeholder="Vehicle Id" type="text" disabled>
                             <span class="control-error" id="lblVehiIdViewVehicle"></span>
                         </div>
                     </div>
@@ -1077,12 +1077,31 @@
                 </div>
                 <br>
 
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-groupRNT">
+                            <!--  <input class="form-control" id="txtTransmission" placeholder="Transmission" type="text">
+                              <span class="control-error" id="lblTransmission"></span>-->
+
+
+                            <select  aria-label="Default select example" class="form-select mb-3"
+                                     id="txtAvailabiltyViewVehi" >
+                                <option>Availabilty</option>
+                                <option value="available">Available</option>
+                                <option value="nonAvailable">Non-Available</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="underMaintenance">Under-Maintenance</option>
+
+                            </select>
+                        </div>
+                    </div>
+
             </form>
 
             <div class="row">
 
                 <div class="col-sm-3" style="margin-left: 10px">
-                    <button class="btn btn-primary" id="btnUpdateVehicle" style="background-color: #1e97b6;color: #090808; border: none">Update</button>
+                    <button type="button" class="btn btn-primary" id="btnUpdateVehicle" style="background-color: #1e97b6;color: #090808; border: none">Update</button>
                 </div>
 
                 <div class="col-sm-3" style="margin-left: -90px">
@@ -1092,7 +1111,7 @@
 
             <div class="col-sm-9 mt-lg-3">
 
-                <table style="width: 840px;margin-left: -3px; margin-top: 46px;" class="table table-borderless" >
+                <table style="width: 930px;margin-left: -3px; margin-top: 46px;" class="table table-borderless" >
                     <thead class="bg-dark shadow-lg" style="background-color:white; color: black; ">
                     <tr>
                         <th scope="col" class="text-light">Vehicle Id</th>
@@ -1102,6 +1121,7 @@
                         <th scope="col" class="text-light">Monthly Rate</th>
                         <th scope="col" class="text-light">Damage Cost</th>
                         <th scope="col" class="text-light">Vehicle Colour</th>
+                        <th scope="col" class="text-light">Status</th>
                     </tr>
                     </thead>
                     <tbody id="tableViewVehicle">

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Transactional
 @Service
@@ -36,7 +37,19 @@ public class CarServiceImpl implements CarService {
     public void updateCar(CarDTO carDTO) {
 
         if (carRepo.existsById(carDTO.getRegistrationId())){
-            carRepo.save(mapper.map(carDTO, Car.class));
+            Optional<Car> updateCar=carRepo.findById(carDTO.getRegistrationId());
+
+            Car car=updateCar.get();
+            car.setBrand(carDTO.getBrand());
+            car.setModel(carDTO.getModel());
+            car.setDailyRate(carDTO.getDailyRate());
+            car.setMonthlyRate(carDTO.getMonthlyRate());
+            car.setDamageCost(carDTO.getDamageCost());
+            car.setColor(carDTO.getColor());
+            car.setAvailability(carDTO.getAvailability());
+            /*carRepo.save(mapper.map(carDTO, Car.class));*/
+            carRepo.save(updateCar.get());
+            
         }else {
             throw new RuntimeException("Car " + carDTO.getRegistrationId() + " Not Available to Update..!");
         }
@@ -45,6 +58,10 @@ public class CarServiceImpl implements CarService {
     @Override
     public void deleteCar(String id) {
 
+        if (!carRepo.existsById(id)){
+            throw new RuntimeException("Vehicle "+id+" Not Available To Delete.");
+        }
+        carRepo.deleteById(id);
     }
 
     @Override

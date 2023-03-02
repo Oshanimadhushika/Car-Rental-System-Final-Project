@@ -48,11 +48,7 @@ public class CarController {
 
 
 
-//    @PostMapping
-//    public ResponseUtil saveCar(@RequestBody CarDTO dto){
-//        carService.saveCar(dto);
-//        return new ResponseUtil("200", "Registration Successfully....", dto);
-//    }
+
 
     @PutMapping()
     public ResponseUtil updateCar(@RequestBody CarDTO dto){

@@ -55,7 +55,7 @@ public class DriverServiceImpl implements DriverService {
     public void deleteDriver(String id) {
 
         if (!driverRepo.existsById(id)){
-            throw new RuntimeException("Customer "+id+" Not Available To Delete.");
+            throw new RuntimeException("Driver "+id+" Not Available To Delete.");
         }
         driverRepo.deleteById(id);
     }

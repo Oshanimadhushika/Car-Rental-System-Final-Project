@@ -7,6 +7,11 @@ $("#btnAddVehicle").click(function () {
     saveCar()
 })
 
+$("#btnUpdateVehicle").click(function () {
+  updateVehicle()
+})
+
+
 function saveCar() {
     var Vdata = new FormData();
 
@@ -401,8 +406,21 @@ function loadAllViewVehicle(path){
         url: baseUrl +"car/" + path,
         method: "GET",
         success: function (resp) {
+
+                lastServiceMileage=resp.lastServiceMileage;
+                freeServiceMileage=resp.freeServiceMileage;
+                fuelType=resp.fuelType;
+                image1 = resp. image1;
+                image2 =resp. image2;
+                image3= resp.image3;
+                image4 =resp. image4;
+                noOfPassenger=resp.noOfPassenger;
+                priceForExtraKm=resp.priceForExtraKm;
+                transmissionType=resp.transmissionType;
+                type=resp.type;
+
             for (const car of resp.data) {
-                let row = `<tr><td>${car.registrationId}</td><td>${car.brand}</td><td>${car.model}</td><td>${car.dailyRate}</td><td>${car.monthlyRate}</td><td>${car.damageCost}</td><td>${car.color}</td></tr>`;
+                let row = `<tr><td>${car.registrationId}</td><td>${car.brand}</td><td>${car.model}</td><td>${car.dailyRate}</td><td>${car.monthlyRate}</td><td>${car.damageCost}</td><td>${car.color}</td><td>${car.availability}</td></tr>`;
                 $("#tableViewVehicle").append(row);
 
                 $("#tableViewVehicle>tr").off("click");
@@ -410,12 +428,12 @@ function loadAllViewVehicle(path){
                     driver_nic = $(this).children(":eq(0)").text();
                     $("#navViewVehicle").prop('disabled', false);
                 });
-            }bindRowClickEvents();
+            }bindRowClickEventsVehi();
         }
     });
 }
 
-function bindRowClickEvents() {
+function bindRowClickEventsVehi() {
     $("#tableViewVehicle>tr").click(function () {
         let id = $(this).children(":eq(0)").text();
         let brand = $(this).children(":eq(1)").text();
@@ -424,6 +442,7 @@ function bindRowClickEvents() {
         let mR = $(this).children(":eq(4)").text();
         let damageWaiver = $(this).children(":eq(5)").text();
         let colour = $(this).children(":eq(6)").text();
+        let status = $(this).children(":eq(7)").text();
 
         $('#txtVehiIdViewVehicle').val(id);
         $('#txtBrandViewVehicle').val(brand);
@@ -432,10 +451,79 @@ function bindRowClickEvents() {
         $('#txtMonthlyRateViewVehi').val(mR);
         $('#txtDamageCostViewVehi').val(damageWaiver);
         $('#txtColourViewVehi').val(colour);
+        $('#txtAvailabiltyViewVehi').val(status);
 
     });
 }
 
+function updateVehicle(){
+
+        let registrationId= $("#txtVehiIdViewVehicle").val();
+        let brand= $("#txtBrandViewVehicle").val();
+        let model= $("#txtModelViewVehi").val();
+        let dailyRate= $("#txtDailyRateViewVehi").val();
+        let monthlyRate= $("#txtMonthlyRateViewVehi").val();
+        let damageCost= $("#txtDamageCostViewVehi").val();
+        let color= $("#txtColourViewVehi").val();
+        let availability= $("#txtAvailabiltyViewVehi").val();
+
+        var newDetails = {
+            registrationId:registrationId,
+            brand:brand,
+            model:model,
+            dailyRate:dailyRate,
+            monthlyRate:monthlyRate,
+            damageCost:damageCost,
+            color:color,
+            availability:availability,
+
+
+            lastServiceMileage :lastServiceMileage,
+            freeServiceMileage:freeServiceMileage,
+            fuelType:fuelType,
+            image1 : image1,
+            image2 : image2,
+            image3 : image3,
+            image4 : image4,
+            noOfPassenger:noOfPassenger,
+            priceForExtraKm:priceForExtraKm,
+            transmissionType:transmissionType,
+            type:type
+
+
+    }
+
+    $.ajax({
+        url: baseUrl + "car",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(newDetails),
+        success: function (res) {
+
+
+
+            if (res.status === 200) {
+                alert(res.message)
+                loadAllViewVehicle();
+            } else {
+                alert("Updated")
+            }
+
+        }
+
+    });
+}
+
+$("#btnDeleteDriver").click(function (){
+    $.ajax({
+        url:baseUrl+"driver?driverId="+$("#DriverId").val(),
+        method:"delete",
+        success(resp){
+            alert(resp.message);
+            loadAllDrivers();
+        }
+    });
+});
 
 
 
@@ -447,8 +535,10 @@ function bindRowClickEvents() {
 
 
 
-function viewVehicle(path) {
-    /*$("#view-car-main-div").empty();*/
+
+
+/*function viewVehicle(path) {
+    /!*$("#view-car-main-div").empty();*!/
     $("#view-car-container").empty();
 
     $.ajax({
@@ -611,7 +701,7 @@ function viewVehicle(path) {
 
         }
     });
-}
+}*/
 
 
 
