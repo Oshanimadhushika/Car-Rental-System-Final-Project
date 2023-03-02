@@ -845,11 +845,12 @@
 
 <!--Admin View Vehicle-->
 <main id="spaAdminViewVehicle">
+<!--
     <main id="adminViewVehicleSpa" class="main" style="margin-left: 380px; width: 900px; height:800px; margin-top: 70px;">
 
         <div class="pagetitle">
             <h1 style="border-bottom:4px solid darkred; display: inline-block">VIEW VEHICLE</h1>
-        </div><!-- End Page Title -->
+        </div>&lt;!&ndash; End Page Title &ndash;&gt;
 
 
         <div class="form-group col-md-6 mb-3" style="margin-left: 30px; margin-top: 30px; border:black">
@@ -869,7 +870,7 @@
                     data-bs-target=".addItemModal"  style="background-color: #06065f;color: white; border: none; width: 100px;    margin-left: 693px;  margin-top: -83px;">Update</button>
         </div>
 
-       <!-- <div class="dropdown-center" style="margin-left: 30px; margin-top: 30px">
+       &lt;!&ndash; <div class="dropdown-center" style="margin-left: 30px; margin-top: 30px">
             <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Short By
             </button>
@@ -880,20 +881,20 @@
                 <li><a class="dropdown-item" href="#">Under-Maintenance</a></li>
             </ul>
         </div>
--->
+&ndash;&gt;
 
 
         <section class="section dashboard" style="margin-left:-37px; width: 1500px;">
             <div class="row">
 
-                <!-- Left side columns -->
+                &lt;!&ndash; Left side columns &ndash;&gt;
                 <div class="col-lg-8">
                     <div class="row" id="ViewVehicleDiv">
 
 
 
 
-                        <!--
+                        &lt;!&ndash;
                                Sales Card
                               <div class="col-xxl-4 col-md-12">
                                   <div class="card info-card sales-card mt-5">
@@ -945,8 +946,8 @@
                                   </div>
                               </div> End Sales Card
 
-      -->
-<!--
+      &ndash;&gt;
+&lt;!&ndash;
 
 
                          Sales Card
@@ -995,14 +996,151 @@
                             </div>
                         </div> End Sales Card
 
--->
+&ndash;&gt;
 
                     </div>
-                </div><!-- End Left side columns -->
+                </div>&lt;!&ndash; End Left side columns &ndash;&gt;
             </div>
         </section>
 
-    </main><!-- End #main -->
+    </main>&lt;!&ndash; End #main &ndash;&gt;
+
+-->
+
+
+    <main id="adminViewVehicleSpa" style="margin-left: 380px; width: 990px; height:1000px; margin-top: 70px;">
+        <div class="carAdminBody container-fluid mt-5 ms-5" style="width:870px; height: 900px; ">
+            <h1 style="border-bottom:4px solid darkred; display: inline-block">View Vehicle</h1>
+            <form id="carAdminForm" style="margin-left: 5px; margin-top: 44px;" >
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-groupCF">
+
+                            <input class="form-control" id="txtVehiIdViewVehicle" placeholder="Vehicle Id" type="text">
+                            <span class="control-error" id="lblVehiIdViewVehicle"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-groupCF">
+
+                            <input class="form-control" id="txtBrandViewVehicle" placeholder="Brand" type="text">
+                            <span class="control-error" id="lblBrandViewVehicle"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-groupTF">
+
+                            <input class="form-control" id="txtModelViewVehi" placeholder="Model" type="text">
+                            <span class="control-error" id="lblModelViewVehi"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-groupTT">
+                            <input class="form-control" id="txtDailyRateViewVehi" placeholder="Daily Rate" type="text">
+                            <span class="control-error" id="lblDailyRateViewVehi"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-groupNFP">
+                            <input class="form-control" id="txtMonthlyRateViewVehi" placeholder="Monthly Rate" type="text">
+                            <span class="control-error" id="lblMonthlyRateViewVehi"></span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-groupFT">
+                            <input class="form-control" id="txtDamageCostViewVehi" placeholder="Damage Cost" type="text">
+                            <span class="control-error" id="lblDamageCostViewVehi"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-groupMRT">
+                            <input class="form-control" id="txtColourViewVehi" placeholder="Vehicle Colour" type="text">
+                            <span class="control-error" id="lblColourViewVehi"></span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+            </form>
+
+            <div class="row">
+
+                <div class="col-sm-3" style="margin-left: 10px">
+                    <button class="btn btn-primary" id="btnUpdateVehicle" style="background-color: #1e97b6;color: #090808; border: none">Update</button>
+                </div>
+
+                <div class="col-sm-3" style="margin-left: -90px">
+                    <button class="btn btn-primary" id="btnDeleteVehicle" style="background-color: #820808;color: #fffdfd; border: none">Delete</button>
+                </div>
+            </div>
+
+            <div class="col-sm-9 mt-lg-3">
+
+                <table style="width: 840px;margin-left: -3px; margin-top: 46px;" class="table table-borderless" >
+                    <thead class="bg-dark shadow-lg" style="background-color:white; color: black; ">
+                    <tr>
+                        <th scope="col" class="text-light">Vehicle Id</th>
+                        <th scope="col" class="text-light">Brand</th>
+                        <th scope="col" class="text-light">Model</th>
+                        <th scope="col" class="text-light">Daily Rate</th>
+                        <th scope="col" class="text-light">Monthly Rate</th>
+                        <th scope="col" class="text-light">Damage Cost</th>
+                        <th scope="col" class="text-light">Vehicle Colour</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tableViewVehicle">
+                    <!-- <tr class="bg-light shadow-sm">
+                         <td>DR-001</td>
+                         <td>Oshani Madhushika</td>
+                         <td>No:78,Perera Mawatha,Panadura</td>
+                         <td>05/02/1999</td>
+                         <td>199925365v</td>
+                         <td>25632125333</td>
+                         <td>Available</td>
+                     </tr>
+
+                     <tr class="bg-light shadow-sm">
+                         <td>DR-001</td>
+                         <td>Oshani Madhushika</td>
+                         <td>No:78,Perera Mawatha,Panadura</td>
+                         <td>05/02/1999</td>
+                         <td>199925365v</td>
+                         <td>25632125333</td>
+                         <td>Non-Available</td>
+                     </tr>
+
+                     <tr class="bg-light shadow-sm">
+                         <td>DR-001</td>
+                         <td>Oshani Madhushika</td>
+                         <td>No:78,Perera Mawatha,Panadura</td>
+                         <td>05/02/1999</td>
+                         <td>199925365v</td>
+                         <td>25632125333</td>
+                         <td>Non-Available</td>
+                     </tr>-->
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
 </main>
 
 <!--Admin View Vehicle Schedule-->
