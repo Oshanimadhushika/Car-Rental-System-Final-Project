@@ -9,6 +9,7 @@ $("#btnAddVehicle").click(function () {
 
 $("#btnUpdateVehicle").click(function () {
   updateVehicle()
+    loadAllViewVehicle()
 })
 
 
@@ -499,7 +500,6 @@ function updateVehicle(){
         contentType: "application/json",
         data: JSON.stringify(newDetails),
         success: function (res) {
-
 
 
             if (res.status === 200) {
