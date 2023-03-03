@@ -5,12 +5,17 @@ var customer_nic;
 
 $('#btnAddDriver').click(function () {
     saveDriver();
-})
+    clearAllDriver();
 
+
+})
 
 
 $('#btnUpdateDriver').click(function () {
     updateDriver();
+    clearAllDriver();
+
+
 })
 
 function saveDriver(){
@@ -42,6 +47,7 @@ function saveDriver(){
             console.log(ob.responseJSON.message)
         }
     });
+
 }
 
 function loadAllDrivers(){
@@ -63,6 +69,7 @@ function loadAllDrivers(){
             }bindRowClickEvents();
         }
     });
+
 }
 
 function updateDriver(){
@@ -85,10 +92,11 @@ function updateDriver(){
             if (res.status === 200) {
                 alert(res.message)
             } else {
-                alert("Cant update your Details in this moment")
+                alert("Updated..!")
             }
         }
     });
+
 }
 
 function bindRowClickEvents() {
@@ -118,6 +126,19 @@ $("#btnDeleteDriver").click(function (){
         success(resp){
             alert(resp.message);
             loadAllDrivers();
+
         }
     });
+    clearAllDriver();
 });
+
+function clearAllDriver() {
+
+    $('#DriverId').val("");
+    $('#DriverName').val("");
+    $('#DriverAddress').val("");
+    $('#DriverDob').val("");
+    $('#DriverLicenseNumber').val("");
+    $('#DriverNic').val("");
+
+}

@@ -5,11 +5,14 @@ $("#btnAddVehicle").click(function () {
     let registrationId1 = $("#txtRegiNumberCar").val();
 
     saveCar()
+    clearAllVehicle();
 })
 
 $("#btnUpdateVehicle").click(function () {
   updateVehicle()
+    clearTextViewVehicle()
     loadAllViewVehicle()
+
 })
 
 
@@ -523,9 +526,18 @@ $("#btnDeleteVehicle").click(function (){
             loadAllViewVehicle();
         }
     });
+    clearTextViewVehicle()
 });
 
+function clearAllVehicle() {
 
+    $('#txtRegiNumberCar,#txtBrand,#txtType,#txtModel,#txtTransmission,#txtColour,#txtNoOfPassenger,#txtLastServiceMileage,#txtFreeMileage,#txtFuel,#txtDailyRate,#txtMonthlyRate,#txtPriceForExKm,#txtDamageCost,#txtAvailabilty,#ImgFrontView,#ImgSideView,#ImgInteriorView,#ImgBackView').val("");
+
+}
+
+function clearTextViewVehicle() {
+    $(`#txtVehiIdViewVehicle,#txtBrandViewVehicle,#txtModelViewVehi,#txtDailyRateViewVehi,#txtMonthlyRateViewVehi,#txtDamageCostViewVehi,#txtColourViewVehi,#txtAvailabiltyViewVehi`).val("");
+}
 
 
 
