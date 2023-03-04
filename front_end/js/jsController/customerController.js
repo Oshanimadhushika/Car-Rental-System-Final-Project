@@ -5,6 +5,7 @@ var customer_nic;
 
 $('#BtnSignIn').click(function () {
     registerCustomer();
+    clearAllRegiForm();
 })
 
 $('#btnCustomerLogIn').click(function (){
@@ -108,6 +109,7 @@ function navToLogIn(data) {
 
 $("#btnUpdateSpa").click(function (){
     updateCustomer();
+
 })
 
 function updateCustomer(){
@@ -174,3 +176,232 @@ function clearAllRegiForm() {
 
 }
 
+
+
+/*VALIDATIONS*/
+//validation start
+
+const cusNICRegEx = /^[0-9/A-z]{10,15}$/;
+const cusDrivingRegEx = /^[0-9/A-z]{9}$/;
+const cusNameRegEx = /^[A-z ]{2,20}$/;
+const cusAddressRegEx = /^[0-9/A-z. ,]{7,}$/;
+/*const cusAddressRegEx=/^[0-9/A-z]{20}$/;*/
+const cusContactRegEx = /^[0-9]{3}[-]?[0-9]{7}$/;
+const cusEmailRegEx = /^[a-z0-9]{3,}[@]?[a-z]{1,}[.]?[a-z]{2,}$/;
+const cusPasswordRegEx = /^[a-z0-9]{7}$/;
+const cusUseNameRegEx = /^[a-z ]{7}$/;
+
+
+$('#nameSignIn,#emailSignIn,#nicSignIn,#addressSign,#contactSignIn,#drivingLicenseSignIn,#UsernameSignIn,#PasswordSignIn').on('keydown', function (eventOb) {
+    if (eventOb.key == "Tab") {
+        eventOb.preventDefault(); // stop execution of the button
+    }
+});
+
+$('#nameSignIn,#emailSignIn,#nicSignIn,#addressSign,#contactSignIn,#drivingLicenseSignIn,#UsernameSignIn,#PasswordSignIn').on('blur', function () {
+    formValid();
+});
+
+
+$("#nameSignIn").on('keyup', function (eventOb) {
+    setButton();
+
+
+});
+$("#emailSignIn").on('keyup', function (eventOb) {
+    setButton();
+    if (eventOb.key == "Enter") {
+        checkIfCustValid();
+    }
+});
+
+$("#addressSign").on('keyup', function (eventOb) {
+    setButton();
+    if (eventOb.key == "Enter") {
+        checkIfCustValid();
+    }
+});
+
+$("#contactSignIn").on('keyup', function (eventOb) {
+    setButton();
+    if (eventOb.key == "Enter") {
+        checkIfCustValid();
+    }
+});
+
+$("#drivingLicenseSignIn").on('keyup', function (eventOb) {
+    setButton();
+    if (eventOb.key == "Enter") {
+        checkIfCustValid();
+    }
+});
+
+$("#UsernameSignIn").on('keyup', function (eventOb) {
+    setButton();
+    if (eventOb.key == "Enter") {
+        checkIfCustValid();
+    }
+});
+$("#PasswordSignIn").on('keyup', function (eventOb) {
+    setButton();
+    if (eventOb.key == "Enter") {
+        checkIfCustValid();
+    }
+});
+
+// focusing events end
+$("#BtnSignIn").attr('disabled', true);
+
+
+function formValid() {
+    var cusName = $("#nameSignIn").val();
+    $("#nameSignIn").css('border', '2px solid green');
+    $("#lblnameSignIn").text("");
+    if (cusNameRegEx.test(cusName)) {
+        var cusEmail = $("#emailSignIn").val();
+        if (cusEmailRegEx.test(cusEmail)) {
+            $("#emailSignIn").css('border', '2px solid green');
+            $("#lblemailSignIn").text("");
+            var cusNic = $("#nicSignIn").val();
+            if (cusNICRegEx.test(cusNic)) {
+                $("#nicSignIn").css('border', '2px solid green');
+                $("#lblnicSignIn").text("");
+                var cusAddress = $("#addressSign").val();
+                if (cusAddressRegEx.test(cusAddress)) {
+                    $("#addressSignIn").css('border', '2px solid red');
+                    $("#lbladdressSign").text("");
+                    var carContact = $("#contactSignIn").val();
+                    if (cusContactRegEx.test(carContact)) {
+                        $("#contactSignIn").css('border', '2px solid green');
+                        $("#lblcontactSignIn").text("");
+                        var carDrivingLice = $("#drivingLicenseSignIn").val();
+                        if (cusDrivingRegEx.test(carDrivingLice)) {
+                            $("#drivingLicenseSignIn").css('border', '2px solid green');
+                            $("#lbldrivingLicenseSignIn").text("");
+                            var carUser = $("#UsernameSignIn").val();
+                            if (cusUseNameRegEx.test(carUser)) {
+                                $("#UsernameSignIn").css('border', '2px solid green');
+                                $("#lblUsernameSignIn").text("");
+
+
+                                var cusPassword = $("#PasswordSignIn").val();
+                                if (cusPasswordRegEx.test(cusPassword)) {
+                                    $("#PasswordSignIn").css('border', '2px solid green');
+                                    $("#lblPasswordSignIn").text("");
+                                    return true;
+                                } else {
+                                    $("#PasswordSignIn").css('border', '2px solid red');
+                                    $("#lblPasswordSignIn").text("Invalid Please Enter Again(Ex :Please must be include only letters and numbers at least 6");
+                                    return false;
+                                }
+                            } else {
+                                $("#UsernameSignIn").css('border', '2px solid red');
+                                $("#lblUsernameSignIn").text("Invalid Please Enter Again(Ex :Please must be include only letters at least 6");
+                                return false;
+                            }
+                        } else {
+                            $("#drivingLicenseSignIn").css('border', '2px solid red');
+                            $("#lbldrivingLicenseSignIn").text("Invalid Please Enter Again(Ex : 45645645L");
+                            return false;
+                        }
+                    } else {
+                        $("#contactSignIn").css('border', '2px solid red');
+                        $("#lblcontactSignIn").text("Invalid Please Enter Again(Ex :0714524520)");
+                        return false;
+                    }
+                } else {
+                    $("#addressSign").css('border', '2px solid green');
+                    $("#lbladdressSign").text("Invalid Please Enter Again(Ex : 02,Bibile)");
+                    return false;
+                }
+            } else {
+                $("#nicSignIn").css('border', '2px solid red');
+                $("#lblnicSignIn").text("Invalid Please Enter Again(Ex : 200108202209 / 20010820220V)");
+                return false;
+            }
+        } else {
+            $("#emailSignIn").css('border', '2px solid red');
+            $("#lblemailSignIn").text("Invalid Please Enter Again(Ex : oshani12@gmail.com)");
+            return false;
+        }
+    } else {
+        $("#nameSignIn").css('border', '2px solid red');
+        $("#lblnameSignIn").text("Invalid Please Enter Again(Ex : Oshani)");
+        return false;
+    }
+}
+
+
+function checkIfCustValid() {
+    var cusName = $("#nameSignIn").val();
+    if (cusNameRegEx.test(cusName)) {
+        $("#emailSignIn").focus();
+        var cusEmail = $("#emailSignIn").val();
+        if (cusEmailRegEx.test(cusEmail)) {
+            $("#nicSignIn").focus();
+            var cusNic = $("#nicSignIn").val();
+            if (cusNICRegEx.test(cusNic)) {
+                $("#addressSign").focus();
+                var cusAddress = $("#addressSign").val();
+                if (cusAddressRegEx.test(cusAddress)) {
+                    $("#contactSignIn").focus();
+                    var cusContact = $("#contactSignIn").val();
+                    if (cusContactRegEx.test(cusContact)) {
+                        $("#drivingLicenseSignIn").focus();
+                        var cusDrivingLic = $("#drivingLicenseSignIn").val();
+                        if (cusDrivingRegEx.test(cusDrivingLic)) {
+                            $("#UsernameSignIn").focus();
+                            var cusUser = $("#UsernameSignIn").val();
+                            if (cusUseNameRegEx.test(cusUser)) {
+                                $("#PasswordSignIn").focus();
+                                var cusPassword = $("#PasswordSignIn").val();
+                                if (cusPasswordRegEx.test(cusPassword)) {
+                                    var resp = cusPasswordRegEx.test(cusPassword);
+                                    if (resp) {
+                                        if ($("#nicOrDrivingImg").val() == "") {
+                                            alert("Please Upload Driver License Image.....")
+                                        } else {
+                                            registerCustomer();
+                                            clearAllRegiForm();
+                                        }
+                                    }
+                                } else {
+                                    $("#PasswordSignIn").focus();
+                                }
+                            } else {
+                                $("#UsernameSignIn").focus();
+                            }
+                        } else {
+                            $("#drivingLicenseSignIn").focus();
+                        }
+                    } else {
+                        $("#contactSignIn").focus();
+                    }
+                } else {
+                    $("#addressSign").focus();
+                }
+
+            } else {
+                $("#nicSignIn").focus()
+            }
+        } else {
+            $("#emailSignIn").focus();
+        }
+    } else {
+        $("#nameSignIn").focus();
+    }
+
+}
+
+function setButton() {
+    let b = formValid();
+    if (b) {
+        $("#BtnSignIn").attr('disabled', false);
+    } else {
+        $("#BtnSignIn").attr('disabled', true);
+    }
+}
+
+$('#BtnSignIn').click(function () {
+    checkIfCustValid();
+});

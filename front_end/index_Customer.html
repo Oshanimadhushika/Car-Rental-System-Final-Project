@@ -2452,36 +2452,47 @@
                                             <div class="form-group col-md-6 mb-3">
                                                 <!--                                            <label for="name">Your Name</label>-->
                                                 <input  type="text" placeholder="Your Name" name="name" class="form-control" id="nameSignIn" required>
+                                                <p><small class="text-danger pl-1" id="lblnameSignIn"></small></p>
                                             </div>
 
                                             <!--email-->
                                             <div class="form-group col-md-6 mb-3">
                                                 <!--                                            <label for="name">Your Email</label>-->
                                                 <input type="email" placeholder="Email" class="form-control" name="email" id="emailSignIn" required>
+                                                <p><small class="text-danger pl-1" id="lblemailSignIn"></small></p>
+
                                             </div>
 
                                             <!--nic-->
                                             <div class="form-group col-md-6 mb-3">
                                                 <input type="text" placeholder="NIC" name="name" class="form-control" id="nicSignIn" required>
+                                                <p><small class="text-danger pl-1" id="lblnicSignIn"></small></p>
+
                                             </div>
 
                                             <!--Address-->
                                             <div class="form-group col-md-6">
                                                 <input type="text" placeholder="Address" name="name" class="form-control" id="addressSign" required>
+                                                <p><small class="text-danger pl-1" id="lbladdressSign"></small></p>
+
                                             </div>
 
                                             <!--Contact-->
                                             <div class="form-group col-md-6">
                                                 <input type="text" placeholder="Contact" name="name" class="form-control" id="contactSignIn" required>
+                                                <p><small class="text-danger pl-1" id="lblcontactSignIn"></small></p>
+
                                             </div>
 
                                             <!--Driving License-->
                                             <div class="form-group col-md-6">
                                                 <input type="text" placeholder="Driving License" name="name" class="form-control" id="drivingLicenseSignIn" required>
+                                                <p><small class="text-danger pl-1" id="lbldrivingLicenseSignIn"></small></p>
+
                                             </div>
 
                                             <div class="w-100">
-                                                <label for="register-form-NIC-image" class="form-label ">NIC Image or Driving Licence Image</label>
+                                                <label for="nicOrDrivingImg" class="form-label ">NIC Image or Driving Licence Image</label>
                                                 <input style="border: 1px solid gray" class="form-control  " type="file" id="nicOrDrivingImg">
                                             </div>
 
@@ -2490,20 +2501,25 @@
 
                                             <!--username-->
                                             <div class="col-12">
-                                                <label class="form-label" for="yourUsername">Username</label>
+                                                <label class="form-label" for="UsernameSignIn">Username</label>
                                                 <div class="input-group has-validation">
                                                     <span class="input-group-text" id="inputGroupPrepend">@</span>
                                                     <input class="form-control" id="UsernameSignIn" name="username" required
                                                            type="text">
+
+                                                    <p><small class="text-danger pl-1" id="lblUsernameSignIn"></small></p>
+
                                                     <div class="invalid-feedback">Please enter your username.</div>
                                                 </div>
                                             </div>
 
                                             <!--Password-->
                                             <div class="col-12">
-                                                <label class="form-label" for="yourPassword">Password</label>
+                                                <label class="form-label" for="passwordSignIn">Password</label>
                                                 <input class="form-control" id="PasswordSignIn" name="passwordSignIn" required
                                                        type="password">
+                                                <p><small class="text-danger pl-1" id="lblPasswordSignIn"></small></p>
+
                                                 <div class="invalid-feedback">Please enter your password!</div>
                                             </div>
 
