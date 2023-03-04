@@ -168,93 +168,9 @@ function loadAllCustomers(){
 }
 
 
+function clearAllRegiForm() {
 
-/*function cleanRegisterForm() {
-    $('#register-form-name,#register-form-nic,#register-form-email,#register-form-mobile, #register-form-address,#register-form-user-name ,#register-form-password,#register-form-drivingNo').css({
-        border: '1px solid gray',
-    })
-    $('#register-form-name,#register-form-nic,#register-form-email,#register-form-mobile, #register-form-address,#register-form-user-name ,#register-form-password,#register-form-drivingNo').val("")
-
-}*/
-
-
-/*function openCustomerHome(data){
-    $("#registerForm").css("display", "none")
-
-    $("#customer").css("display", "block")
-    $("#customerNavbar").css("display", "block")
-
-    $("#customer-profile-nic").val(data.nic)
-    $("#customer-profile-name").val(data.user_name)
-    $("#customer-profile-email").val(data.email)
-    $("#customer-profile-address").val(data.address)
-    $("#customer-profile-mobile").val(data.mobile)
-}*/
-
-/*function loadImage(){
-    var data = new FormData();
-
-    let file = $("#driverOrDrivingImg")[0].files[0];
-    let nicFileName = $("#driverOrDrivingImg")[0].files[0].name;
-
-    data.append("myFile", file, nicFileName);
-
-    $.ajax({
-        url: baseUrl + "api/v1/upload",
-        method: 'post',
-        async: true,
-        contentType: false,
-        processData: false,
-        data: data,
-        success: function (resp) {
-            alert("Successfully Uploaded");
-            //loadTheLastUploadedImage();
-        },
-        error: function (err) {
-            console.log(err);
-        }
-    });
-}*/
-
-
-/*
-
-$("#admin-customer-viewBtn").click(function () {
-    if (customer_nic == null) {
-        return
-    }
-
-    $.ajax({
-        url: baseUrl + "customer/customerDetail/" + customer_nic,
-        method: "GET",
-        success: function (resp) {
-
-            if (resp.code === 200) {
-                // console.log("view buttn nic: ", customer_nic)
-                //console.log(resp,"pressed success")
-                setDataToViewCustomerModal(resp.data);
-                // console.log(resp.data);
-            }
-        },
-        error: function (err) {
-            // console.log(resp,"error success")
-            console.log(err);
-        }
-    });
-})
-*/
-
-/*
-function setDataToViewCustomerModal(data) {
-    $("#admin-view-customer-nic").val(data.nic)
-    $("#admin-view-customer-address").val(data.address)
-    $("#admin-view-customer-email").val(data.email)
-    $("#admin-view-customer-mobile").val(data.contactNumber)
-    $("#admin-view-customer-name").val(data.name)
-    //  $("#admin-view-customer-registerDate").val(data.register_date)
-    $("#admin-view-customer-imgOne").attr("src", baseUrl + data.imageLocation)
-
+    $('#nicSignIn,#addressSign,#contactSignIn,#nameSignIn,#drivingLicenseSignIn,#emailSignIn,#PasswordSignIn,#UsernameSignIn').val("");
 
 }
-*/
 
