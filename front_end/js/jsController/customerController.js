@@ -61,7 +61,7 @@ function registerCustomer() {
 
 
     var newDetails = {
-        customerId:"C007",
+        customerId:"C008",
         name: name,
         address: address,
         nic: nic,
@@ -115,7 +115,7 @@ $("#btnUpdateSpa").click(function (){
 function updateCustomer(){
 
     var newDetails = {
-        customerId:"C007",
+        customerId:"C008",
         name: $("#update-name").val(),
         address: $("#update-address").val(),
         nic: $("#update-nic").val(),

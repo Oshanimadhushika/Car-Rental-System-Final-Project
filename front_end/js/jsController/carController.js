@@ -237,7 +237,7 @@ function loadAllCars(path) {
 <!--Button-->
                             <div class="row mt-3">
                                 <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
-                                <button data-dtaImg="${car.image3}"  data-dtaDailyRate="${car.dailyRate}" data-dtaMonthlyRate="${car.monthlyRate}" data-dtaWawier="${car.damageCost}" data-btnRentIt="${car.model}" class="btn_RentIt">RENT IT</button>   
+                                <button data-registrationId="${car.registrationId}" data-dtaImg="${car.image3}"  data-dtaDailyRate="${car.dailyRate}" data-dtaMonthlyRate="${car.monthlyRate}" data-dtaWawier="${car.damageCost}" data-btnRentIt="${car.model}" class="btn_RentIt">RENT IT</button>   
                                   </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
 <!--
@@ -357,6 +357,7 @@ function setBrandToArray(param) {
         tnRent:$(param).attr("data-btnRentIt") ,
         pickupD:pDate,
         returnD:rDate,
+        regId:$(param).attr("data-registrationId")
     }
 
     // let elementToRemove = $(param).attr("data-btnRentIt");
