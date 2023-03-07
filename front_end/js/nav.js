@@ -290,6 +290,8 @@ $('#BtnSendRentalRequest').click(function () {
     $('#spaRegister').css('display','none');
     $('#spaUpdateIndex').css('display','none');
 
+    saveRental();
+
 })
 
 $('#navHomeCart').click(function () {

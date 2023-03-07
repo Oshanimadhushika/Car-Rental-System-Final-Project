@@ -54,13 +54,11 @@ function loadCart() {
     addRentalTOTheRentAr();
 
     checkDriver();
-    getDateRange();
-    getAmount();
     deleteCartItem();
+    getDateRange();
     getAmount();
     getLocations();
     setSlip();
-    saveRental();
 }
 
 function deleteCartItem() {
@@ -92,18 +90,20 @@ function deleteCartItem() {
 }
 
 function btnColourRemover(pr) {
-
     // console.log("Color Remover :"+"-=====-"+$(pr).attr("data-btnRentIt"));
-    $(pr).text("Add To Cart");
+    $(pr).text("Rent It");
     $(pr).css({
-        "background":"#F7F7F7",
-        "color":"#444444",
+        "background": "#F7F7F7",
+        "color": "#444444",
     });
 }
 
+var driverPayment = 0;
 
 function checkDriver() {
-    $(".cart-driver-chex-box").click(function () {
+    $(".cartDriverCheck").click(function () {
+        // console.log("CheckBox "+"===="+$('.cartDriverCheck').is(":checked"))
+
         console.log($(this).attr("data-cartDriverCheckBoxRegId"));
         // rentalAr.push()
         // console.log(carNames.length);
@@ -134,6 +134,7 @@ function checkDriver() {
             }
         }
 
+
     })
 }
 
@@ -143,16 +144,16 @@ function addRentalTOTheRentAr() {
         console.log("Rent Id : " + carNames[i].regId);
         var rentalObj = {
             rentalId: carNames[i].regId,
-            amount: 0,
+            amount: amount,
             date: curDay("-"),
             pickupDate: carNames[i].pickupD,
-            pickupLocation: $("#addressPickUp").val(),
+            pickupLocation: $("#addressPickup").val(),
             rentalDate: carNames[i].returnD,
             returnLocation: $("#addressReturn").val(),
             totalDamageWaiverPayment: carNames[i].dWaiver,
             cusId: "C001",
             driver: "No",
-            img:new FormData(),
+            img:"",
         }
         rentalAr.push(rentalObj);
     }
@@ -172,6 +173,7 @@ function getDateRange() {
     $("#clzTTDays").text(dayCount);
 
 }
+
 
 function getAmount() {
     for (let i = 0; i < carNames.length; i++) {
@@ -199,12 +201,12 @@ function getAmount() {
     $("#totalRentAmount").text(amount);
 }
 
-function getLocations() {
 
-    $("#addressPickUp").keyup(function () {
+function getLocations() {
+    $("#addressPickup").keyup(function () {
         // console.log($("#addressPickup").val());
         for (let i = 0; i < rentalAr.length; i++) {
-            rentalAr[i].pickupLocation=$("#addressPickUp").val();
+            rentalAr[i].pickupLocation=$("#addressPickup").val();
         }
     })
 
@@ -216,7 +218,28 @@ function getLocations() {
     })
 }
 
-function setSlip() {
+
+function setSlip(){
+
+
+    $('.slipPicker').on('change', () => {
+
+
+        $('#tblCartDetail tr').each((index, element) => {
+            console.log(index+"========="+element);
+
+            const selectedFile = $(element).find('.slipPicker').prop('files')[0];
+
+
+
+            rentalAr[index].img=selectedFile;
+
+
+        });
+    });
+}
+
+/*function setSlip() {
     $(".slipPicker").change(function () {
         for (let i = 0; i < rentalAr.length; i++) {
             console.log(rentalAr[i].rentalId + "==========================" + $(this).attr("data-slip"));
@@ -224,20 +247,12 @@ function setSlip() {
             if (rentalAr[i].rentalId === $(this).attr("data-slip")) {
                 var data = new FormData();
                 let slip_img = $(this)[0].files[0];
-                // console.log("slip name 1 : "+$(this)[0].files[0]);
-                // console.log("slip name 2 : "+$(".slipPicker")[0].files[0]);
-                // console.log("slip name 3 : "+$(this).attr("data-sf"));
-                // console.log("slip name 3 : "+$(this).attr("data-sf")[0].files[0]);
 
-                // let slipFileName = slip_img.name;
-
-                // console.log("slip eke")
-                // data.append("file", slip_img);
                 rentalAr[i].img.append("file",slip_img);
             }
         }
     })
-}
+}*/
 
 function saveRental() {
     var now = new Date();
@@ -245,39 +260,31 @@ function saveRental() {
     var month = ("0" + (now.getMonth() + 1)).slice(-2);
     var today = now.getFullYear() + "-" + (month) + "-" + (day);
 
-    // console.log("save REntal Ekeeeeeeeeeeeeeeeeeeeeeeeeeee");
-    // console.log("value eka - "+$(".slipPicker").attr("data-slip"))
+
 
     for (let i = 0; i < rentalAr.length; i++) {
         var data = new FormData();
 
-        /*let slip_img = $("#slip-image")[0].files[0];
-        let slipFileName = slip_img.name;
 
-        data.append("file", slip_img);*/
+        data.append("file", rentalAr[i].img);
 
-        // var driver_status;
-        /*if ($('#customer-reservation-customer-driverCheck').is(":checked")) {
-            driver_status = "YES"
-        } else {
-            driver_status = "NO"
-        }*/
+
 
         let reservation = {
             rentalId: "R001",
             date: today,
             pickupDate: rentalAr[i].pickupDate,
-            amount: rentalAr[i].amount,
             returnDate: rentalAr[i].rentalDate,
-            totalDamageWaiverPayment: rentalAr[i].totalDamageWaiverPayment,
+            amount: rentalAr[i].amount,
+            total_damage_viewer_payment: rentalAr[i].totalDamageWaiverPayment,
             pickupLocation: rentalAr[i].pickupLocation,
             returnLocation: rentalAr[i].returnLocation,
-            bankSlip:rentalAr[i].img,
+            bankSlip:rentalAr[i].img.name,
             noOfDays:dayCount,
             reservationStatus: "Pending",
             driverStatus: rentalAr[i].driver,
             customer: {
-                nic:loggedCustomerId
+                customerId:loggedCustomerId
             },
             car: {
                 registrationId: rentalAr[i].rentalId
@@ -286,7 +293,7 @@ function saveRental() {
         data.append("reservation", new Blob([JSON.stringify(reservation)], {type: "application/json"}));
 
         $.ajax({
-            url: baseUrl + "reservation",
+            url: baseurl + "reservation",
             method: 'post',
             async: true,
             contentType:  false,
@@ -294,14 +301,11 @@ function saveRental() {
             data: data,
             success: function (resp) {
                 console.log(resp.data)
-                // alert(resp.message);
-                // listNo=0;
-                // getAvailableCar();
-                // $("#bookNowModel").modal("toggle");
+
             },
             error: function (err) {
                 console.log(err);
-                // getAvailableCar();
+
             }
         });
     }
