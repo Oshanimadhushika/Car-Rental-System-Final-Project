@@ -20,6 +20,8 @@ $('#btnCustomerLogIn').click(function (){
             console.log(resp.userName + "=" + userName)
             if (resp.data.userName === userName && resp.data.password === password) {
 
+                loggedCustomerId=resp.data.customerId;
+
                 $("#LoginFormCss").attr("disabled","disabled");
                 $("#CarDetailCss").attr("disabled","disabled");
                 $("#CarStoreCss").attr("disabled","disabled");

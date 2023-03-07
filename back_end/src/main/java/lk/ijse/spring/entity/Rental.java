@@ -1,11 +1,13 @@
 package lk.ijse.spring.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,9 +16,12 @@ import java.time.LocalDate;
 public class Rental {
     @Id
     private String rentalId;
-    private LocalDate date;
-    private LocalDate pickupDate;
-    private LocalDate returnDate;
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "Asia/Kolkata")
+    private Date date;
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "Asia/Kolkata")
+    private Date pickupDate;
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "Asia/Kolkata")
+    private Date returnDate;
     private double amount;
     private double total_damage_viewer_payment;
     private String pickupLocation;

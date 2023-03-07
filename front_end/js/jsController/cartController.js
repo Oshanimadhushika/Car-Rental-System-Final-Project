@@ -1,3 +1,4 @@
+var baseUrl="http://localhost:8080/back_end_war_exploded/";
 var carNames = sendVehicleNameToCart(); /*Benz, BMW, Premio */
 console.log(carNames);
 
@@ -32,7 +33,7 @@ function loadCart() {
 
                         <td>
                             <div class="input-group-text">
-                                <input data-cartDriverCheckBoxRegId="${carNames[i].regId}" aria-label="Checkbox for following text input" class="form-check-input mt-0"
+                                <input data-cartDriverCheckBoxRegId="${carNames[i].regId}" aria-label="Checkbox for following text input" class="form-check-input mt-0 cartDriverCheck"
                                        type="checkbox"
                                        value="">&nbsp;Need
                             </div>
@@ -40,7 +41,7 @@ function loadCart() {
 
                         <td>
                             <div class="w-100">
-                                <input data-slip="${carNames[i].regId}" data-sf="${this}" class="form-control" id="register-form-NIC-image1" style="border: 1px solid gray"
+                                <input data-slip="${carNames[i].regId}" data-sf="${this}" class="form-control slipPicker" id="register-form-NIC-image1" style="border: 1px solid gray"
                                        type="file">
                             </div>
                         </td>
@@ -102,22 +103,20 @@ var driverPayment = 0;
 
 function checkDriver() {
     $(".cartDriverCheck").click(function () {
-        // console.log("CheckBox "+"===="+$('.cartDriverCheck').is(":checked"))
+
 
         console.log($(this).attr("data-cartDriverCheckBoxRegId"));
-        // rentalAr.push()
-        // console.log(carNames.length);
+
 
 
         for (let i = 0; i < rentalAr.length; i++) {
             console.log(rentalAr[i].rentalId + "==========================" + $(this).attr("data-cartDriverCheckBoxRegId"));
 
             if (rentalAr[i].rentalId === $(this).attr("data-cartDriverCheckBoxRegId")) {
-                //console.log(vNameAr[i]+"==="+$(param).attr("data-btnRentIt"));
-                // rentalAr[i].driver="Need"
+
 
                 if (rentalAr[i].driver === "No") {
-                    // alert("if eke")
+
                     rentalAr[i].driver = "Yes";
                     driverPayment = parseInt(driverPayment) + (1000 * parseInt(dayCount));
                     $("#driverCost").text(driverPayment);
@@ -127,7 +126,7 @@ function checkDriver() {
                     driverPayment = parseInt(driverPayment) - (1000 * parseInt(dayCount));
                     $("#driverCost").text(driverPayment);
 
-                    // alert("else of eke")
+
                     rentalAr[i].driver = "No";
 
                 }
@@ -271,7 +270,7 @@ function saveRental() {
 
 
         let reservation = {
-            rentalId: "R001",
+            rentalId: "R003",
             date: today,
             pickupDate: rentalAr[i].pickupDate,
             returnDate: rentalAr[i].rentalDate,
@@ -293,7 +292,7 @@ function saveRental() {
         data.append("reservation", new Blob([JSON.stringify(reservation)], {type: "application/json"}));
 
         $.ajax({
-            url: baseurl + "reservation",
+            url: baseUrl + "reservation",
             method: 'post',
             async: true,
             contentType:  false,
