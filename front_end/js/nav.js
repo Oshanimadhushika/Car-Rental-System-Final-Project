@@ -275,7 +275,7 @@ $('#btnCustomerLogIn').click(function () {
 
 
 /*======================Cart=========================*/
-$('#BtnSendRentalRequest').click(function () {
+$('#cartBtnSendRentalRq').click(function () {
     $("#CartCss").removeAttr("disabled");
     $("#RegisterFormCss").attr("disabled","disabled");
     $("#HeaderFormCss").attr("disabled","disabled");
