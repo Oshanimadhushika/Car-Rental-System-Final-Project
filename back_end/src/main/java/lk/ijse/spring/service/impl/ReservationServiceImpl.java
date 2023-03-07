@@ -41,40 +41,21 @@ public class ReservationServiceImpl implements ReservationService {
 
     public void requestReservation(ReservationDTO reservationDTO) {
         if (!carReservationRepo.existsById(reservationDTO.getRentalId())) {
-            if (true) {
 
-                Rental carReservation = mapper.map(reservationDTO, Rental.class);
+            Rental carReservation = mapper.map(reservationDTO, Rental.class);
 
-                /*Customer customer = customerRepo.findById(reservationDTO.getCustomer().getNic()).get();*/
-                /* Car car = carRepo.findById(reservationDTO.getCar().getRegistrationId()).get();*/
+            Customer customer = customerRepo.findById(reservationDTO.getCustomer().getCustomerId()).get();
+            Car car = carRepo.findById(reservationDTO.getCar().getRegistrationId()).get();
 
-                Customer customer = new Customer();
-                Car car = new Car();
 
-                carReservation.setCustomer(customer);
-                carReservation.setCar(car);
+            carReservation.setCustomer(mapper.map(customer,Customer.class));
+            carReservation.setCar(car);
 
-                if (reservationDTO.getDriverStatus().equalsIgnoreCase("YES")) {
+            System.out.println("Driver eke ======="+reservationDTO.getDriverStatus());
+            carReservationRepo.save(carReservation);
 
-                /*Driver driver = driverRepo.selectDriverForReservation(
-                        reservationDTO.getPick_up_date(),
-                        reservationDTO.getReturn_date());
-
-                DriverScheduleDTO driverScheduleDTO = new DriverScheduleDTO(
-                        reservationDTO.getPick_up_time(),
-                        reservationDTO.getPick_up_date(),
-                        reservationDTO.getReturn_date(),
-                        mapper.map(driver, DriverDTO.class),
-                        mapper.map(carReservation, ReservationDTO.class));
-
-                driverScheduleRepo.save(mapper.map(driverScheduleDTO, DriverSchedule.class));*/
-
-                } else {
-                    carReservationRepo.save(carReservation);
-                }
-            } else {
-                throw new RuntimeException("Your Reservation Request can't Send in this moment,Try Again..!");
-            }
+        } else {
+            throw new RuntimeException("Your Reservation Request can't Send in this moment,Try Again..!");
         }
 
     }
