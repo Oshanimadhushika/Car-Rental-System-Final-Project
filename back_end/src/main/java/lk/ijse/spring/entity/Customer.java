@@ -26,6 +26,6 @@ public class Customer {
     private String imageLocation;
     private String userName;
 
-    @OneToMany(mappedBy = "customerId")
-    private List<Rental> rentalDetails;
+    @OneToMany
+    private List<Rental> rentalDetail;
 }
