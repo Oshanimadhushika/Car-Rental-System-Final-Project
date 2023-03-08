@@ -270,7 +270,7 @@ function saveRental() {
 
 
         let reservation = {
-            rentalId: "R004",
+            rentalId: "R005",
             date: today,
             pickupDate: rentalAr[i].pickupDate,
             returnDate: rentalAr[i].rentalDate,
