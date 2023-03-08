@@ -28,7 +28,6 @@ public class ReservationController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseUtil requestReservation(@RequestPart("reservation") ReservationDTO carReservation, @RequestPart("file") MultipartFile file) {
-        System.out.println(carReservation);
         carReservation.setBankSlip("uploads/" + carReservation.getBankSlip());
 
         carReservationService.requestReservation(carReservation);
