@@ -9,4 +9,7 @@ public interface RentalRepo extends JpaRepository<Rental,String> {
 
     @Query(value = "SELECT * FROM driver WHERE status='Available' ORDER BY driverId DESC limit 1", nativeQuery = true)
     Driver getDriverByDriverStatus();
+
+    @Query(value = "SELECT rentalId FROM Rental ORDER BY rentalId DESC limit 1", nativeQuery = true)
+    String generateReservationId();
 }
