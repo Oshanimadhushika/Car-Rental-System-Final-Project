@@ -9,8 +9,7 @@ public interface ReservationService {
 
     String generateReservationId();
 
-    void updateReservation(ReservationDTO reservationDTO);
-
+    void updateReservation(ReservationDTO ReservationDTO);
 
     void requestReservation(ReservationDTO ReservationDTO);
 

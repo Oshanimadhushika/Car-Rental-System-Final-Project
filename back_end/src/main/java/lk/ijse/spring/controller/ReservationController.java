@@ -1,5 +1,6 @@
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.CarDTO;
 import lk.ijse.spring.dto.ReservationDTO;
 import lk.ijse.spring.service.ReservationService;
 import lk.ijse.spring.util.ResponseUtil;
@@ -67,4 +68,9 @@ public class ReservationController {
         return new ResponseUtil("200", "Done", carReservationService.getAllReservation());
     }
 
+    @PutMapping()
+    public ResponseUtil updateReservation(@RequestBody ReservationDTO dto){
+        carReservationService.updateReservation(dto);
+        return new ResponseUtil("200",dto.getReservationStatus()+": Updated.!",null);
+    }
 }
