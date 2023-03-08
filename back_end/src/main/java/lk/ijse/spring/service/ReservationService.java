@@ -17,7 +17,9 @@ public interface ReservationService {
 
     List<ReservationDTO> getAllPendingReservation();
 
+/*
     ReservationDTO getReservationDetail(String id);
+*/
 
     List<ReservationDTO> getAllTodayReservation();
 
@@ -28,5 +30,7 @@ public interface ReservationService {
     List<ReservationDTO> getAllReservation();
 
     List<ReservationDTO> getRentalByReservationStatus();
+
+    List<ReservationDTO> getReservationDetail(String id);
 
 }

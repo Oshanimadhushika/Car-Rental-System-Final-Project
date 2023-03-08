@@ -17,5 +17,5 @@ public interface RentalRepo extends JpaRepository<Rental,String> {
     String generateReservationId();
 
     @Query(value = "SELECT * FROM rental WHERE customerId=:customerId", nativeQuery = true)
-    List<Rental> getRentalByReservationStatus(@Param("customerId") String customerId);
+    List<Rental> getRentalByCustomerId(@Param("customerId") String customerId);
 }

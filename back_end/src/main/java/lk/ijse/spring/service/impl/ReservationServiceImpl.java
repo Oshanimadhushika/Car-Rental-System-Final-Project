@@ -125,9 +125,11 @@ public class ReservationServiceImpl implements ReservationService {
         return null;
     }
 
+/*
     public ReservationDTO getReservationDetail(String id) {
         return null;
     }
+*/
 
     public List<ReservationDTO> getAllTodayReservation() {
         return null;
@@ -151,5 +153,10 @@ public class ReservationServiceImpl implements ReservationService {
     public List<ReservationDTO> getRentalByReservationStatus() {
         return mapper.map(carReservationRepo.getRentalByReservationStatus(), new TypeToken<List<ReservationDTO>>() {}.getType());
 
+    }
+
+    @Override
+    public List<ReservationDTO> getReservationDetail(String id) {
+        return mapper.map(carReservationRepo.getRentalByCustomerId(id),new TypeToken<List<ReservationDTO>>(){}.getType());
     }
 }
