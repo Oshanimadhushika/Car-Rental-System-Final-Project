@@ -159,6 +159,5 @@ public class ReservationServiceImpl implements ReservationService {
 
     @Override
     public List<ReservationDTO> getReservationDetail(String id) {
-        return mapper.map(carReservationRepo.getRentalByCustomerId(id),new TypeToken<List<ReservationDTO>>(){}.getType());
-    }
+        return mapper.map(carReservationRepo.getRentalByCustomerId(id),new TypeToken<List<ReservationDTO>>(){}.getType());    }
 }

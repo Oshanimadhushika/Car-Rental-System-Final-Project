@@ -76,6 +76,8 @@ public class ReservationController {
 
     @GetMapping(path = "getCustomerId/{cid}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getReservationDetail(@PathVariable String cid) {
+        System.out.println("cid"+cid);
         return new ResponseUtil("200", "Done", carReservationService.getReservationDetail(cid));
+
     }
 }
