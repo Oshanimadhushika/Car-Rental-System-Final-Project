@@ -17,15 +17,7 @@ public interface ReservationService {
 
     List<ReservationDTO> getAllPendingReservation();
 
-/*
-    ReservationDTO getReservationDetail(String id);
-*/
 
-    List<ReservationDTO> getAllTodayReservation();
-
-    List<ReservationDTO> getAllTodayPickUps();
-
-    List<ReservationDTO> getCustomerReservationByStatus(String id, String status);
 
     List<ReservationDTO> getAllReservation();
 

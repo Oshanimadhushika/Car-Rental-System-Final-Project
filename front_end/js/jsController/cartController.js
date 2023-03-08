@@ -316,3 +316,53 @@ function saveRental() {
     }
 
 }
+
+/*
+$('#cartBtnSendRentalRq').click(function (){
+    alert("hellow request");
+    $.ajax({
+        url: baseUrl + "reservation/getCustomerId?="+loggedCustomerId,
+        method: "GET",
+        success: function (resp) {
+            loggedCustomerId=resp.data.customerId;
+
+            alert("hrllow overview")
+            $("#CartCss").removeAttr("disabled");
+            $("#RegisterFormCss").attr("disabled","disabled");
+            $("#HeaderFormCss").attr("disabled","disabled");
+            $("#CarStoreCss").attr("disabled","disabled");
+            $("#LoginFormCss").attr("disabled","disabled");
+            $('#spaMainIndex').css('display','none');
+            $('#spaCarStore').css('display','none');
+            $('#spaCart').css('display','none');
+            $('#spaOverview').css('display','block');
+            $('#spaCarDetail').css('display','none');
+            $('#spaLogin').css('display','none');
+            $('#spaRegister').css('display','none');
+            $('#spaUpdateIndex').css('display','none');
+
+            saveRental();
+
+
+            for (const reser of resp.data) {
+                let row =` <tr>
+                        <td>${reser.model}</td>
+                        <td>${reser.driverId}</td>
+                        <td>${reser.pickupD}</td>
+                        <td>${reser.returnD}</td>
+                        <td>${reser.pickupLocation}</td>
+                        <td>${reser.returnLocation}</td>
+                        <td>${driver.status}</td>
+                        </td><td>${reser.amount}</td>
+                        <td>${reser.reservationStatus}</td>
+                       <td><i class="bi bi-x-circle-fill"></i></td>
+
+                </tr>`;
+                $("#tableOverview").append(row);
+
+
+            }
+
+        }
+    });
+});*/
