@@ -7,7 +7,6 @@ $('#btnAddDriver').click(function () {
     saveDriver();
     clearAllDriver();
 
-
 })
 
 

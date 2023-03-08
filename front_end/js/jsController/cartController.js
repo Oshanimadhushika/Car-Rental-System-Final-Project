@@ -238,20 +238,6 @@ function setSlip(){
     });
 }
 
-/*function setSlip() {
-    $(".slipPicker").change(function () {
-        for (let i = 0; i < rentalAr.length; i++) {
-            console.log(rentalAr[i].rentalId + "==========================" + $(this).attr("data-slip"));
-
-            if (rentalAr[i].rentalId === $(this).attr("data-slip")) {
-                var data = new FormData();
-                let slip_img = $(this)[0].files[0];
-
-                rentalAr[i].img.append("file",slip_img);
-            }
-        }
-    })
-}*/
 
 function saveRental() {
     var now = new Date();
@@ -311,21 +297,18 @@ function saveRental() {
                     data: data,
                     success: function (resp) {
                         console.log(resp.data)
-                        // alert(resp.message);
-                        // listNo=0;
-                        // getAvailableCar();
-                        // $("#bookNowModel").modal("toggle");
+
                     },
                     error: function (err) {
                         console.log(err);
-                        // getAvailableCar();
+
                     }
                 });
 
             },
             error: function (err) {
                 console.log(err);
-                // getAvailableCar();
+
             }
         })
 

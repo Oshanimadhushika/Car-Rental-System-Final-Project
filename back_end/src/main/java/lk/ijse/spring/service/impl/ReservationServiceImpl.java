@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -48,6 +49,19 @@ public class ReservationServiceImpl implements ReservationService {
 
         } else {
             return "R001";
+        }
+    }
+
+    @Override
+    public void updateReservation(ReservationDTO reservationDTO) {
+
+        if (carRepo.existsById(reservationDTO.getRentalId())){
+            Optional<Rental> updateReservation = carReservationRepo.findById(reservationDTO.getRentalId());
+            Rental rental = updateReservation.get();
+            rental.setReservationStatus(reservationDTO.getReservationStatus());
+            carReservationRepo.save(updateReservation.get());
+        }else {
+            throw new RuntimeException("Reservation"+reservationDTO.getRentalId()+"Not Available to Update..!");
         }
     }
 
