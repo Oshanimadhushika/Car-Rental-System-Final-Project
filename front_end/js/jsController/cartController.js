@@ -264,7 +264,7 @@ function saveRental() {
     for (let i = 0; i < rentalAr.length; i++) {
 
         $.ajax({
-            url: baseurl + "reservation/generateReservationId",
+            url: baseUrl + "reservation/generateReservationId",
             method: 'get',
             async:false,
             success: function (resp) {
@@ -303,7 +303,7 @@ function saveRental() {
                 data.append("reservation", new Blob([JSON.stringify(reservation)], {type: "application/json"}));
 
                 $.ajax({
-                    url: baseurl + "reservation",
+                    url: baseUrl + "reservation",
                     method: 'post',
                     async: true,
                     contentType:  false,
