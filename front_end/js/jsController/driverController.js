@@ -26,6 +26,7 @@ function saveDriver(){
         dob: $("#DriverDob").val(),
         drivingLicenseNumber: $("#DriverLicenseNumber").val(),
         nic: $("#DriverNic").val(),
+        status:"available"
 
 
     }
