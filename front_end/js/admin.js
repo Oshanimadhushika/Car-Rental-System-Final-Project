@@ -17,6 +17,7 @@ $('#navReservation').click(function (){
     $('#spaAdminLogin').css('display', 'none');
 
 
+    pickups();
 
 });
 

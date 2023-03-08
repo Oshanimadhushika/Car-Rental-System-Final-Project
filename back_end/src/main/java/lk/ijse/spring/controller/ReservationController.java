@@ -63,4 +63,9 @@ public class ReservationController {
         return new ResponseUtil("200", "Done", carReservationService.getReservationDetail(id));
     }
 
+    @GetMapping(path = "detail", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllReservation() {
+        return new ResponseUtil("200", "Done", carReservationService.getAllReservation());
+    }
+
 }
