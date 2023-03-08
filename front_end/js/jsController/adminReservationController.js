@@ -67,6 +67,7 @@ function acceptClick() {
             contentType: "application/json",
             data: JSON.stringify(accept),
             success: function (res) {
+                pickups();
                 if (res.status === 200) {
                     alert(res.message)
                 } else {
@@ -94,6 +95,7 @@ function denyClick() {
             contentType: "application/json",
             data: JSON.stringify(deny),
             success: function (res) {
+                pickups();
                 if (res.status === 200) {
                     alert(res.message)
                 } else {
