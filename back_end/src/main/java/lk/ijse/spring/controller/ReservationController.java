@@ -73,4 +73,9 @@ public class ReservationController {
         carReservationService.updateReservation(dto);
         return new ResponseUtil("200",dto.getReservationStatus()+": Updated.!",null);
     }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllReservationByStatus() {
+        return new ResponseUtil("200", "Done", carReservationService.getAllReservationByStatus());
+    }
 }

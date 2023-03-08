@@ -55,7 +55,7 @@ public class ReservationServiceImpl implements ReservationService {
     @Override
     public void updateReservation(ReservationDTO reservationDTO) {
 
-        if (carRepo.existsById(reservationDTO.getRentalId())){
+        if (carReservationRepo.existsById(reservationDTO.getRentalId())){
             Optional<Rental> updateReservation = carReservationRepo.findById(reservationDTO.getRentalId());
             Rental rental = updateReservation.get();
             rental.setReservationStatus(reservationDTO.getReservationStatus());
@@ -127,6 +127,11 @@ public class ReservationServiceImpl implements ReservationService {
 
     public ReservationDTO getReservationDetail(String id) {
         return null;
+    }
+
+    @Override
+    public List<ReservationDTO> getAllReservationByStatus() {
+        return mapper.map(carReservationRepo.getRentalByReservationStatus(), new TypeToken<List<ReservationDTO>>() {}.getType());
     }
 
     public List<ReservationDTO> getAllTodayReservation() {

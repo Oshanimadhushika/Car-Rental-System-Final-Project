@@ -53,15 +53,54 @@ function pickups() {
 function acceptClick() {
     $(".btnAccept").click(function () {
         let rAId=$(this).attr("data-btnAc");
+
+
+        var accept={
+            rentalId:rAId,
+            reservationStatus: "Accepted"
+        }
         console.log(rAId);
 
+        $.ajax({
+            url: baseUrl + "reservation",
+            method: "put",
+            contentType: "application/json",
+            data: JSON.stringify(accept),
+            success: function (res) {
+                if (res.status === 200) {
+                    alert(res.message)
+                } else {
+                    alert('Updated!');
+                }
+            }
+        });
+
     })
+
 }
 
 function denyClick() {
     $(".btnDeny").click(function () {
         let rDId=$(this).attr("data-btnDny");
+        var deny={
+            rentalId:rDId,
+            reservationStatus: "Not-Allowed"
+        }
         console.log(rDId);
+
+        $.ajax({
+            url: baseUrl + "reservation",
+            method: "put",
+            contentType: "application/json",
+            data: JSON.stringify(deny),
+            success: function (res) {
+                if (res.status === 200) {
+                    alert(res.message)
+                } else {
+                    alert('Updated!');
+                }
+            }
+        });
 
     })
 }
