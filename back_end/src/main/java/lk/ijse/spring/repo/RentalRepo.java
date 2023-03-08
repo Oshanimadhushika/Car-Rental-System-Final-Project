@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface RentalRepo extends JpaRepository<Rental,String> {
 
-    @Query(value = "SELECT * FROM Rental WHERE reservationStatus='Pending'", nativeQuery = true)
+    @Query(value = "SELECT * FROM rental WHERE reservationStatus='Pending'", nativeQuery = true)
     List<Rental> getRentalByReservationStatus();
 
-    @Query(value = "SELECT rentalId FROM Rental ORDER BY rentalId DESC limit 1", nativeQuery = true)
+    @Query(value = "SELECT rentalId FROM rental ORDER BY rentalId DESC limit 1", nativeQuery = true)
     String generateReservationId();
 }

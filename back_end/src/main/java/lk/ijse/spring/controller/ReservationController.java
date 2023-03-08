@@ -65,7 +65,7 @@ public class ReservationController {
 
     @GetMapping(path = "detail", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllReservation() {
-        return new ResponseUtil("200", "Done", carReservationService.getAllReservation());
+        return new ResponseUtil("200", "Done", carReservationService.getRentalByReservationStatus());
     }
 
     @PutMapping()
@@ -74,8 +74,8 @@ public class ReservationController {
         return new ResponseUtil("200",dto.getReservationStatus()+": Updated.!",null);
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+   /* @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllReservationByStatus() {
         return new ResponseUtil("200", "Done", carReservationService.getAllReservationByStatus());
-    }
+    }*/
 }
