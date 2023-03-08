@@ -10,6 +10,7 @@ import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.repo.RentalRepo;
 import lk.ijse.spring.service.ReservationService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -82,5 +83,11 @@ public class ReservationServiceImpl implements ReservationService {
 
     public List<ReservationDTO> getCustomerReservationByStatus(String id, String status) {
         return null;
+    }
+
+    @Override
+    public List<ReservationDTO> getAllReservation() {
+        return mapper.map(carReservationRepo.findAll(), new TypeToken<List<ReservationDTO>>() {}.getType());
+
     }
 }
