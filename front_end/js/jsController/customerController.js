@@ -63,7 +63,7 @@ function registerCustomer() {
 
 
     var newDetails = {
-        customerId:"C008",
+        customerId:"C009",
         name: name,
         address: address,
         nic: nic,
@@ -117,7 +117,7 @@ $("#btnUpdateSpa").click(function (){
 function updateCustomer(){
 
     var newDetails = {
-        customerId:"C008",
+        customerId:"C009",
         name: $("#update-name").val(),
         address: $("#update-address").val(),
         nic: $("#update-nic").val(),
@@ -186,7 +186,7 @@ function clearAllRegiForm() {
 const cusNICRegEx = /^[0-9/A-z]{10,15}$/;
 const cusDrivingRegEx = /^[0-9/A-z]{9}$/;
 const cusNameRegEx = /^[A-z ]{2,20}$/;
-const cusAddressRegEx = /^[0-9/A-z. ,]{7,}$/;
+const cusAddressRegEx = /^[0-9/A-z]{7,20}$/;
 /*const cusAddressRegEx=/^[0-9/A-z]{20}$/;*/
 const cusContactRegEx = /^[0-9]{3}[-]?[0-9]{7}$/;
 const cusEmailRegEx = /^[a-z0-9]{3,}[@]?[a-z]{1,}[.]?[a-z]{2,}$/;
@@ -270,7 +270,7 @@ function formValid() {
                 $("#lblnicSignIn").text("");
                 var cusAddress = $("#addressSign").val();
                 if (cusAddressRegEx.test(cusAddress)) {
-                    $("#addressSignIn").css('border', '2px solid red');
+                    $("#addressSignIn").css('border', '2px solid yellow');
                     $("#lbladdressSign").text("");
                     var carContact = $("#contactSignIn").val();
                     if (cusContactRegEx.test(carContact)) {
@@ -293,12 +293,12 @@ function formValid() {
                                     return true;
                                 } else {
                                     $("#PasswordSignIn").css('border', '2px solid red');
-                                    $("#lblPasswordSignIn").text("Invalid Please Enter Again(Ex :Please must be include only letters and numbers at least 6");
+                                    $("#lblPasswordSignIn").text("Invalid Please Enter Again(Ex :Please must be include only letters and numbers at least 7");
                                     return false;
                                 }
                             } else {
                                 $("#UsernameSignIn").css('border', '2px solid red');
-                                $("#lblUsernameSignIn").text("Invalid Please Enter Again(Ex :Please must be include only letters at least 6");
+                                $("#lblUsernameSignIn").text("Invalid Please Enter Again(Ex :Please must be include only letters at least 7");
                                 return false;
                             }
                         } else {
@@ -312,8 +312,8 @@ function formValid() {
                         return false;
                     }
                 } else {
-                    $("#addressSign").css('border', '2px solid green');
-                    $("#lbladdressSign").text("Invalid Please Enter Again(Ex : 02,Bibile)");
+                    $("#addressSign").css('border', '2px solid yellow');
+                    $("#lbladdressSign").text("Invalid Please Enter Again(Ex : opanayaka)");
                     return false;
                 }
             } else {

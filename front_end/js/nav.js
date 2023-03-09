@@ -275,7 +275,7 @@ $('#btnCustomerLogIn').click(function () {
 
 
 /*======================Cart=========================*/
-/*$('#cartBtnSendRentalRq').click(function () {
+$('#cartBtnSendRentalRq').click(function () {
     $("#CartCss").removeAttr("disabled");
     $("#RegisterFormCss").attr("disabled","disabled");
     $("#HeaderFormCss").attr("disabled","disabled");
@@ -292,7 +292,8 @@ $('#btnCustomerLogIn').click(function () {
 
     saveRental();
 
-})*/
+
+})
 
 $('#navHomeCart').click(function () {
     $("#HeaderFormCss").removeAttr("disabled");

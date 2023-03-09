@@ -317,32 +317,20 @@ function saveRental() {
 
 }
 
-$('#cartBtnSendRentalRq').click(function (){
-    saveRental();
-    $("#tableOverview").empty();
+
+/*
+$("#cartBtnSendRentalRq").click(function () {
+
+    $("#car-overView").empty();
     $.ajax({
         url: baseUrl + "reservation?getCustomerId/"+loggedCustomerId,
         method: "GET",
         success: function (resp) {
             loggedCustomerId=resp.data.customerId;
 
-            $("#CartCss").removeAttr("disabled");
-            $("#RegisterFormCss").attr("disabled","disabled");
-            $("#HeaderFormCss").attr("disabled","disabled");
-            $("#CarStoreCss").attr("disabled","disabled");
-            $("#LoginFormCss").attr("disabled","disabled");
-            $('#spaMainIndex').css('display','none');
-            $('#spaCarStore').css('display','none');
-            $('#spaCart').css('display','none');
-            $('#spaOverview').css('display','block');
-            $('#spaCarDetail').css('display','none');
-            $('#spaLogin').css('display','none');
-            $('#spaRegister').css('display','none');
-            $('#spaUpdateIndex').css('display','none');
-
             for (const reser of resp.data) {
-                let row =` <tr><td>${reser.modal}</td><td>${reser.driverStatus}</td><td>${reser.pickupD}</td><td>${reser.returnD}</td><td>${reser.pickupLocation}</td><td>${reser.returnLocation}</td><td>${reser.amount}</td><td>${reser.reservationStatus}</td><td><i class="bi bi-x-circle-fill"></i></td></tr>`;
-                $("#tableOverview").append(row);
+                let row =`<tr><td>${reser.car.registrationId}</td><td>${reser.driverStatus}</td><td>${reser.pickupDate}</td><td>${reser.returnDate}</td><td>${reser.pickupLocation}</td><td>${reser.returnLocation}</td><td>${reser.amount}</td><td>${reser.reservationStatus}</td><td><i class="bi bi-x-circle-fill"></i></td></tr>`;
+                $("#car-overView").append(row);
                 console.log(row);
 
 
@@ -351,3 +339,5 @@ $('#cartBtnSendRentalRq').click(function (){
         }
     });
 });
+*/
+

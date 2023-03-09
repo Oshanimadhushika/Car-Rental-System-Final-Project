@@ -17,8 +17,6 @@ public interface ReservationService {
 
     List<ReservationDTO> getAllPendingReservation();
 
-
-
     List<ReservationDTO> getAllReservation();
 
     List<ReservationDTO> getRentalByReservationStatus();

@@ -79,7 +79,8 @@ function updateDriver(){
         address: $("#DriverAddress").val(),
         dob: $("#DriverDob").val(),
         nic: $("#DriverNic").val(),
-        drivingLicenseNumber: $("#DriverLicenseNumber").val()
+        drivingLicenseNumber: $("#DriverLicenseNumber").val(),
+        status:"available"
 
     }
 
