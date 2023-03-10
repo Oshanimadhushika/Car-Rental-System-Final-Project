@@ -318,10 +318,10 @@ function saveRental() {
 }
 
 
-/*
+
 $("#cartBtnSendRentalRq").click(function () {
 
-    $("#car-overView").empty();
+    // $("#car-overView").empty();
     $.ajax({
         url: baseUrl + "reservation?getCustomerId/"+loggedCustomerId,
         method: "GET",
@@ -339,5 +339,5 @@ $("#cartBtnSendRentalRq").click(function () {
         }
     });
 });
-*/
+
 
